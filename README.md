@@ -10,4 +10,14 @@ https://medium.com/@rvprasad/a-git-workflow-for-writing-papers-in-latex-4cfb31be
 
 
 
+# packages 
+http://www.texample.net/tikz/examples/area/electrical-engineering/
+
+
+circuitikz
+signalflowdiagram
+bodegraph
+
+
+
 
