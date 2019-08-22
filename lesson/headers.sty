@@ -22,21 +22,42 @@
 
 
 
+% CADRE
 \newcommand{\Cadre}[3]{\begin{center}
     \renewcommand{\labelitemi}{$\bullet$}
     \boxput*(0,1){\colorbox{gray!30}{\textbf{#1}}}
       {\setlength{\fboxsep}{2pt}
-      \fcolorbox{gray!60}{white}{\begin{Bflushleft}
+      \fcolorbox{gray!50}{white}{\begin{Bflushleft}
     \begin{minipage}{#2}
       \vspace{4mm}\par#3
     \end{minipage}
     \end{Bflushleft}}}
     \end{center}
 }
-    
-    
 
+\definecolor{TopRow}{rgb}{0.4,0.7,1}
+\definecolor{NormalRow}{rgb}{0.8,0.9,1}
+\definecolor{light-gray}{gray}{0.70}
 
+%
+\newcommand{\Competences}[1]{%
+\Cadre{Compétences}{0.99\linewidth}{%
+\normalsize
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}m{40mm}|m{45mm}|m{45mm}|m{45mm}|}
+   \hline
+   \rowcolor{light-gray}
+   \multicolumn{1}{|>{\centering\arraybackslash}m{40mm}|}{\textbf{Compétence}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Savoir-faire}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Moyens mis à disposition}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Résultats attendus}} \\
+   \hline
+    #1
+   \hline
+\end{tabular}
+\end{center}
+}
+}
 
 
 
