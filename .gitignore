@@ -2,3 +2,11 @@
 *.log
 *.idx
 *.toc
+*.mtc*
+*.maf
+*.out
+*.thm
+*.fdb_latexmk
+*.maf
+*.synctex.gz
+*.fls
