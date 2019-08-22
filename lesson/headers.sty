@@ -4,21 +4,38 @@
 
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesPackage{monextension}[2007/09/19 Extension personnelle, V1.0]
+\ProvidesPackage{headers}[2019/08/22 Extension personnelle, V1.0]
 
 % extensions
 
-\RequirePackage[latin1]{inputenc}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern}
-\RequirePackage{graphicx}
-\RequirePackage[frenchb]{babel}
+%\RequirePackage[latin1]{inputenc}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage{lmodern}
+%\RequirePackage{graphicx}
+%\RequirePackage[frenchb]{babel}
 
 % commandes personnelles
 
 \newcommand{\langue}{\emph} % mots en langues étrangères
 \newcommand{\citital}{\emph} % citation en italique
 \newcommand{\nomprog}{\texttt} % nom de programme en police teletype
+
+
+
+\newcommand{\Cadre}[3]{\begin{center}
+    \renewcommand{\labelitemi}{$\bullet$}
+    \boxput*(0,1){\colorbox{gray!30}{\textbf{#1}}}
+      {\setlength{\fboxsep}{2pt}
+      \fcolorbox{gray!60}{white}{\begin{Bflushleft}
+    \begin{minipage}{#2}
+      \vspace{4mm}\par#3
+    \end{minipage}
+    \end{Bflushleft}}}
+    \end{center}
+}
+    
+    
+
 
 
 
