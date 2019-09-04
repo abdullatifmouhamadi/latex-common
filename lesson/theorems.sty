@@ -1,0 +1,191 @@
+% https://fr.wikibooks.org/wiki/LaTeX/Cr%C3%A9er_une_extension_ou_une_classe
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{theorems}[2019/08/22 Extension personnelle, V1.0]
+
+% extensions
+
+%\RequirePackage[latin1]{inputenc}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage{lmodern}
+%\RequirePackage{graphicx}
+%\RequirePackage[frenchb]{babel}
+
+% commandes personnelles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% moi-même
+\renewcommand{\thesection}{\arabic{section}} % Remove chapter number to sections
+
+
+%
+%% Default fixed font does not support bold face
+%\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+%\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+%
+%
+%\definecolor{deepblue}{rgb}{0,0,0.5}
+%\definecolor{deepred}{rgb}{0.6,0,0}
+%\definecolor{deepgreen}{rgb}{0,0.5,0}
+%
+%\lstset{
+%language=Python,
+%basicstyle=\ttm,
+%otherkeywords={self},             % Add keywords here
+%keywordstyle=\ttb\color{deepblue},
+%emph={MyClass,__init__},          % Custom highlighting
+%emphstyle=\ttb\color{deepred},    % Custom highlighting style
+%stringstyle=\color{deepgreen},
+%frame=tb,                         % Any extra options here
+%showstringspaces=false            % 
+%}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
+
+
+
+\declaretheoremstyle[%
+    spaceabove=-6pt, 
+    spacebelow=6pt, 
+    headfont=\normalfont\bfseries,
+    notefont=\mdseries\bfseries, 
+    notebraces={(}{)}, 
+    bodyfont = \normalfont,
+    postheadspace=\newline,
+   % qed=$\blacksquare$, 
+    numberwithin=section,
+    headpunct={:},
+        mdframed={%
+		middlelinecolor=black,
+		middlelinewidth=1pt,
+		backgroundcolor=white,
+		roundcorner=2pt}]{style0}
+
+\declaretheoremstyle[%
+    spaceabove=-6pt, 
+    spacebelow=6pt, 
+    headfont=\normalfont\bfseries,
+    notefont=\mdseries\bfseries, 
+    notebraces={(}{)}, 
+    bodyfont = \normalfont,
+    postheadspace=\newline,
+	postheadhook = {\hspace*{\parindent}},
+   % qed=$\blacksquare$, 
+    numberwithin=section,
+    headpunct={:},
+        mdframed={%
+		middlelinecolor=black,
+		middlelinewidth=2pt,
+		backgroundcolor=gray!20,
+		roundcorner=0pt}]{style1}
+		
+
+\declaretheoremstyle[%
+    spaceabove=-6pt, 
+    spacebelow=6pt, 
+    headfont=\normalfont\bfseries,
+    notefont=\mdseries\bfseries, 
+    notebraces={(}{)}, 
+    bodyfont = \normalfont,
+    postheadspace=\newline,
+    %qed=$\blacksquare$, 
+    numberwithin=section,
+    headpunct={:},
+        mdframed={%
+		skipabove=\topsep,
+		skipbelow=\topsep,
+		innertopmargin=2pt,
+		innerbottommargin=2pt,
+		leftmargin=0pt,
+		splitbottomskip=0ex,
+		splittopskip=0ex,
+		topline=false,
+		leftline=true,
+		bottomline=false,
+		rightline=false,
+		innerrightmargin=0pt,
+		innerlinewidth=2pt,
+		font=\normalfont,
+		linecolor=black}]{style2}
+
+\declaretheoremstyle[
+  spaceabove=-6pt, 
+  spacebelow=6pt, 
+  headfont=\normalfont\bfseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    notefont=\mdseries\bfseries, 
+    headpunct={:},
+    postheadspace=\newline,
+    %numberwithin=section,
+    mdframed={
+        backgroundcolor=gray!20, 
+        linecolor=gray!30, 
+        roundcorner=2pt, 
+        skipabove=\parsep, 
+        skipbelow=\parsep }]{style3}
+
+
+
+
+\declaretheoremstyle[%
+        spaceabove=-6pt, 
+        spacebelow=6pt, 
+        headfont=\normalfont\bfseries,
+        notefont=\mdseries\bfseries, 
+        notebraces={(}{)}, 
+        bodyfont = \normalfont,
+        postheadspace=\newline,
+        postheadhook = {\hspace*{\parindent}},
+       % qed=$\blacksquare$, 
+        numberwithin=section,
+        headpunct={:},
+            mdframed={%
+            middlelinecolor=gray!50,
+            middlelinewidth=1pt,
+            backgroundcolor=gray!5,
+            roundcorner=4pt}]{style4}
+		
+\declaretheorem[style=style1,name=Propriété]{propriete}
+\declaretheorem[style=style0,name=Définition]{definition}
+\declaretheorem[style=style2,name=Remarque]{remark}
+\declaretheorem[style=style2,name=Exemple]{example}
+
+\declaretheorem[style=style3,name=Important]{important}
+
+\declaretheorem[style=style4,name=Exercice]{exercise}
+
+
+\definecolor{shadecolor}{gray}{0.9}
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
