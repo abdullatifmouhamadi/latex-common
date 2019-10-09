@@ -1,0 +1,124 @@
+% https://fr.wikibooks.org/wiki/LaTeX/Cr%C3%A9er_une_extension_ou_une_classe
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{tests}[2019/08/22 Extension personnelle, V1.0]
+
+
+
+
+\newcommand{\LWidth}{0.24}
+\newcommand{\CWidth}{0.37}
+\newcommand{\RWidth}{0.30}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS
+\newcommand\sectionTitle[1]{
+    \begin{minipage}[]{\LWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+         \textbf{BTS Systèmes Numériques}\\
+         \footnotesize Option B Électronique \& Communication%\\2019
+    \end{minipage}
+}
+
+\newcommand\projectAim[1]{
+    \begin{minipage}[b]{\LWidth\textwidth}
+        \vspace{.1cm}
+        \centering
+        \textbf{Évaluation du projet} \\
+        %Candidats non scolaires
+        ~
+        \vspace{.1cm}
+    \end{minipage}
+}
+
+\newcommand\generalTitle[1]{
+    \begin{minipage}[b]{\CWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+        %\textbf{Épreuve professionnelle de synthèses}\\
+        %Épreuve E6-2\\
+        %Projet Technique
+        ~\\~\\
+        \textbf{#1}
+        ~\\~
+
+        %\vspace{.1cm}
+    \end{minipage}
+}
+\newcommand\projectTitle[1]{
+    \begin{minipage}[b]{\CWidth\textwidth}
+        \centering
+        \vspace{.1cm}
+        \textbf{TITRE}\\
+        #1
+        %\vspace{0.1cm}
+        
+    \end{minipage}
+}
+
+\newcommand\identityTitle[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+        \textit{Nom :} \dotfill \\
+        \textit{Prénom :} \dotfill \\
+        \textit{Date :} \dotfill
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+\newcommand\evaluationJury[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+        \begin{center}
+         \textbf{Commission d’évaluation}
+        \end{center}
+        
+         \footnotesize \textit{Nom ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prénom ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Signature}\\~\\
+         \vspace{0.2cm} \line(1,0){200}\\
+         \vspace{0.2cm} \line(1,0){200}\\
+         \vspace{0.2cm} \line(1,0){200} \\
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+\newcommand\noteJury[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+         \textbf{Note : } \\
+        %\vspace{.1cm}
+        
+    \end{minipage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand\levelC{
+    $\openbox \openbox \openbox \openbox$
+}
+
+
+
+
+\newcommand\testHeader[2]{
+    \begin{center}
+        \begin{tabular}{|l|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
+            \cline{2-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\projectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
+            \cline{1-1}\cline{4-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\noteJury} \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+
