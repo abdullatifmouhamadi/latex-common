@@ -91,6 +91,25 @@
 		backgroundcolor=white,
 		roundcorner=2pt}]{style0}
 
+
+\declaretheoremstyle[%
+    spaceabove=-6pt, 
+    spacebelow=6pt, 
+    headfont=\normalfont\bfseries,
+    notefont=\mdseries\bfseries, 
+    notebraces={(}{)}, 
+    bodyfont = \normalfont,
+    postheadspace=\newline,
+    % qed=$\blacksquare$, 
+    %numberwithin=section,
+    headpunct={:},
+        mdframed={%
+        middlelinecolor=black,
+        middlelinewidth=1pt,
+        backgroundcolor=white,
+        roundcorner=2pt}]{style0bis}
+
+
 \declaretheoremstyle[%
     spaceabove=-6pt, 
     spacebelow=6pt, 
@@ -184,6 +203,12 @@
 \declaretheorem[style=style3,name=Important]{important}
 
 \declaretheorem[style=style4,name=Exercice]{exercise}
+
+
+
+\declaretheorem[style=style0bis,name=Définition]{definitionS}
+
+
 
 
 \definecolor{shadecolor}{gray}{0.9}
