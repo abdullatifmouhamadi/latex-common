@@ -77,24 +77,13 @@
     \pgf@x=1.15\pgf@x%
     \pgf@y=-.5\pgf@y%
   }
-  \anchor{PRESET}{
-    \pgf@process{\northeast}%
-    \pgf@x=0pt%
-    \pgf@y=1.12\pgf@y%
-  }
-  \anchor{CLEAR}{
-    \pgf@process{\northeast}%
-    \pgf@x=0pt%
-    \pgf@y=-1.12\pgf@y%
-  }
+
   % Draw the rectangle box and the port labels
   \backgroundpath{
     % Rectangle box
     \pgfpathrectanglecorners{\southwest}{\northeast}
     % Angle (>) for clock input
     \pgfnodecircle{N_Qn}[stroke]{ \pgfpoint{1.1\pgf@x}{-0.5\pgf@y}}{2pt}
-    \pgfnodecircle{N_PRESET}[stroke]{ \pgfpoint{0\pgf@x}{-39\pgf@y}}{2pt}
-    \pgfnodecircle{N_CLEAR}[stroke]{ \pgfpoint{0\pgf@x}{39\pgf@y}}{2pt}
 
     \pgf@anchor@DH@H
     \pgf@xa=\pgf@x \pgf@ya=1.0\pgf@y
@@ -127,11 +116,6 @@
     \pgf@anchor@DH@Qn
     \pgftext[right,base,at={\pgfpoint{0.85\pgf@x}{\pgf@y}},x=-\pgfshapeinnerxsep]{\raisebox{-.75ex}{$\overline{\mbox{Q}}$}}
 
-    \pgf@anchor@DH@PRESET
-    \pgftext[top,at={\pgfpoint{\pgf@x}{0.85\pgf@y}},y=-\pgfshapeinnerysep]{PRESET}
-
-    \pgf@anchor@DH@CLEAR
-    \pgftext[bottom,at={\pgfpoint{\pgf@x}{0.85\pgf@y}},y=\pgfshapeinnerysep]{CLEAR}
     \endgroup
   }
 }
@@ -229,6 +213,158 @@
     \endgroup
   }
 }
+
+
+
+
+\pgfdeclareshape{RSH}{
+  % The 'minimum width' and 'minimum height' keys, not the content, determine
+  % the size
+
+  \latchHead
+
+  % Define anchors for signal ports
+  \anchor{S}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=.5\pgf@y%
+  }
+  \anchor{CLK}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=0\pgf@y%
+  }
+  \anchor{R}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=-0.5\pgf@y%
+  }
+  \anchor{Q}{
+    \pgf@process{\northeast}%
+    \pgf@y=.5\pgf@y%
+  }
+  \anchor{Qn}{
+    \pgf@process{\northeast}%
+    \pgf@x=1.15\pgf@x%
+    \pgf@y=-.5\pgf@y%
+  }
+  % Draw the rectangle box and the port labels
+  \backgroundpath{
+    % Rectangle box
+    \pgfpathrectanglecorners{\southwest}{\northeast}
+    % Angle (>) for clock input
+    \pgfnodecircle{N_Qn}[stroke]{ \pgfpoint{1.1\pgf@x}{-0.5\pgf@y}}{2pt}
+
+    \pgf@anchor@dff@CLK
+    \pgf@xa=\pgf@x \pgf@ya=0.0\pgf@y
+    \pgf@xb=\pgf@x \pgf@yb=0.0\pgf@y
+    \pgf@xc=\pgf@x \pgf@yc=0.0\pgf@y
+    \pgfmathsetlength\pgf@x{1.6ex} % size depends on font size
+    \advance\pgf@ya by \pgf@x
+    \advance\pgf@xb by \pgf@x
+    \advance\pgf@yc by -\pgf@x
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+    \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+    \pgfclosepath
+
+
+    % Draw port labels
+    \begingroup
+    \tikzset{flip flop/port labels} % Use font from this style
+    \tikz@textfont
+
+    \pgf@anchor@RSH@S
+    \pgftext[left,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=\pgfshapeinnerxsep]{\raisebox{-0.75ex}{S}}
+
+    \pgf@anchor@RSH@R
+    \pgftext[left,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=\pgfshapeinnerxsep]{\raisebox{-0.75ex}{R}}
+
+    \pgf@anchor@RSH@Q
+    \pgftext[right,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=-\pgfshapeinnerxsep]{\raisebox{-.75ex}{Q}}
+
+    \pgf@anchor@RSH@Qn
+    \pgftext[right,base,at={\pgfpoint{0.85\pgf@x}{\pgf@y}},x=-\pgfshapeinnerxsep]{\raisebox{-.75ex}{$\overline{\mbox{Q}}$}}
+    \endgroup
+  }
+}
+
+
+
+
+\pgfdeclareshape{JKH}{
+  % The 'minimum width' and 'minimum height' keys, not the content, determine
+  % the size
+
+  \latchHead
+
+  % Define anchors for signal ports
+  \anchor{J}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=.5\pgf@y%
+  }
+  \anchor{CLK}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=0\pgf@y%
+  }
+  \anchor{K}{
+    \pgf@process{\northeast}%
+    \pgf@x=-1\pgf@x%
+    \pgf@y=-0.5\pgf@y%
+  }
+  \anchor{Q}{
+    \pgf@process{\northeast}%
+    \pgf@y=.5\pgf@y%
+  }
+  \anchor{Qn}{
+    \pgf@process{\northeast}%
+    \pgf@x=1.15\pgf@x%
+    \pgf@y=-.5\pgf@y%
+  }
+  % Draw the rectangle box and the port labels
+  \backgroundpath{
+    % Rectangle box
+    \pgfpathrectanglecorners{\southwest}{\northeast}
+    % Angle (>) for clock input
+    \pgfnodecircle{N_Qn}[stroke]{ \pgfpoint{1.1\pgf@x}{-0.5\pgf@y}}{2pt}
+
+    \pgf@anchor@JKH@CLK
+    \pgf@xa=\pgf@x \pgf@ya=0.0\pgf@y
+    \pgf@xb=\pgf@x \pgf@yb=0.0\pgf@y
+    \pgf@xc=\pgf@x \pgf@yc=0.0\pgf@y
+    \pgfmathsetlength\pgf@x{1.6ex} % size depends on font size
+    \advance\pgf@ya by \pgf@x
+    \advance\pgf@xb by \pgf@x
+    \advance\pgf@yc by -\pgf@x
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+    \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+    \pgfclosepath
+
+
+    % Draw port labels
+    \begingroup
+    \tikzset{flip flop/port labels} % Use font from this style
+    \tikz@textfont
+
+    \pgf@anchor@JKH@J
+    \pgftext[left,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=\pgfshapeinnerxsep]{\raisebox{-0.75ex}{J}}
+
+    \pgf@anchor@JKH@K
+    \pgftext[left,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=\pgfshapeinnerxsep]{\raisebox{-0.75ex}{K}}
+
+    \pgf@anchor@JKH@Q
+    \pgftext[right,base,at={\pgfpoint{\pgf@x}{\pgf@y}},x=-\pgfshapeinnerxsep]{\raisebox{-.75ex}{Q}}
+
+    \pgf@anchor@JKH@Qn
+    \pgftext[right,base,at={\pgfpoint{0.85\pgf@x}{\pgf@y}},x=-\pgfshapeinnerxsep]{\raisebox{-.75ex}{$\overline{\mbox{Q}}$}}
+    \endgroup
+  }
+}
+
+
 
 
 
@@ -741,5 +877,9 @@
 
 \tikzset{every DH node/.style={draw,minimum width=2cm,minimum height=2.828427125cm,very thick,inner sep=1mm,outer sep=0pt,cap=round,add font=\sffamily}}
 
+
+
+\tikzset{every RSH node/.style={draw,minimum width=2cm,minimum height=2.828427125cm,very thick,inner sep=1mm,outer sep=0pt,cap=round,add font=\sffamily}}
+\tikzset{every JKH node/.style={draw,minimum width=2cm,minimum height=2.828427125cm,very thick,inner sep=1mm,outer sep=0pt,cap=round,add font=\sffamily}}
 
 
