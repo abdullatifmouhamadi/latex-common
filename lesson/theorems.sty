@@ -214,3 +214,46 @@
 \definecolor{shadecolor}{gray}{0.9}
 \def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
 
+
+
+
+
+%%% Exercise 
+
+
+\numberwithin{equation}{subsection}
+
+
+
+\Newassociation{hint}{Hint}{hintfile}
+\renewenvironment{Hint}[1]{\noindent\hypertarget{hint:#1}{\textbf{Hint for \hyperlink{ex:#1}{#1}.}}\quad}{\par\bigskip}
+
+
+\let\oldhint\hint
+\let\oldendhint\endhint
+\renewenvironment{hint}{\par \hyperlink{sol:\exnr}{Hint available.}\oldhint}{\oldendhint}
+
+
+
+
+
+%%%% Fin Exercice
+
+
+
+\newenvironment{demonstration}
+  {\addmargin[.25in]{1in}\textit{\textbf{Démonstration}~~~}\it
+  {\endaddmargin}}
+
+%
+%\newenvironment{exercice}
+%  {\headline{$\clubsuit$ ~\textbf{Exerice} ~ $\clubsuit$} \vspace{.2cm}
+%  {~}}
+%  
+  
+%\newenvironment{solution}
+%  {\begin{mdframed}[backgroundcolor=gray!20]\textbf{\textit{Solution : }}
+%  {~\end{mdframed}}}
+  
+
+
