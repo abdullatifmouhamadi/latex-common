@@ -9,3 +9,202 @@
 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER
+\newcommand{\LWidth}{0.24}
+\newcommand{\CWidth}{0.43}
+\newcommand{\RWidth}{0.24}
+
+
+
+\newcommand\NomHeader[1]{
+    \begin{minipage}[b]{\LWidth\textwidth}
+        \vspace{.1cm}
+        \textbf{Nom :} %\dotfill
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+\newcommand\PrenomHeader[1]{
+    \begin{minipage}[b]{\CWidth\textwidth}
+        \vspace{.1cm}
+        ~~~~~~~~~~~
+        \textbf{Prénom :} %\dotfill
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+
+\newcommand\DateHeader[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+        \textbf{Date :} %\dotfill
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+
+\newcommand\generalTitle[1]{
+    \begin{minipage}[]{\CWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+        ~\\~\\~
+        \Large \textbf{BTS Systèmes Numériques} \\
+        \normalsize Option B \'Electronique et Communication
+        %\textbf{#1}
+
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+\newcommand\sectionTitle[1]{
+    \begin{minipage}[]{\LWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+        ~\\~\\~
+         \textbf{\'Etablissement} \\
+         \normalsize CFAI Poitou-Charentes%\\2019
+    \end{minipage}
+}
+
+\newcommand\projectTitle[1]{
+    \begin{minipage}[b]{\CWidth\textwidth}
+        \centering
+        \vspace{.1cm}
+        \footnotesize #1
+        %\vspace{0.1cm}
+    \end{minipage}
+}
+
+
+\newcommand\sessionTitle[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+        \centering
+        \textbf{Session 2020} 
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+
+\newcommand\epreuveHeader[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \centering
+        \vspace{.1cm}
+        \textbf{\'Epreuve E5}
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN HEADER
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BOXES
+
+
+\newcommand{\competencesEvaluesBox}[2]{%
+%\Cadre{\normalsize #1}{0.99\linewidth}{%
+\normalsize \textbf{#1:}
+\begin{flushleft}
+\begin{tabular}{| >{\centering}m{1cm} | l |  c | }
+    \hline
+    #2
+   \hline
+\end{tabular}
+\end{flushleft}
+%}
+}
+
+
+
+
+\newcommand{\equipeEvaluesBox}[1]{%
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}m{38mm}|m{45mm}|m{45mm}|m{45mm}|}
+   \hline
+   \rowcolor{light-gray}
+   \multicolumn{1}{|>{\centering\arraybackslash}m{38mm}|}{\textbf{Compétence}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Savoir-faire}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Moyens mis à disposition}} &
+   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Résultats attendus}} \\
+   \hline
+    #1
+   \hline
+\end{tabular}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin BOXES
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COMMISSION
+\newcommand\commissionHeader[2]{
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\sessionTitle}\\
+            \cline{4-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\epreuveHeader} \\
+            \cline{1-1}\cline{5-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \begin{center}
+        \Large \textbf{Contrôle en Cours de Formation}\\
+        \large #1
+    \end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMMISSION
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CCF1
+\newcommand\testHeader[2]{
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\sessionTitle}\\
+            \cline{4-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\epreuveHeader} \\
+            \cline{1-1}\cline{5-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
+            \hline
+            \multicolumn{1}{|c}{ \NomHeader } & \multicolumn{2}{c|}{ \PrenomHeader } & \multicolumn{2}{c|}{ \DateHeader } \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+
+
+
+\newcommand\competencesCCFOne[1]{
+\competencesEvaluesBox{Compétences évaluées}{
+    C5.1 & Préparer la solution et le plan d’action  \\
+    \hline
+    C5.2 & Mettre en œuvre une solution matérielle $/$ logicielle en situation \\
+    \hline
+    C5.3 & Effectuer la recette d’un produit avec le client \\
+}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FIN CCF1
+
+
+
+
+
+
