@@ -106,9 +106,10 @@
 
 \newcommand{\competencesEvaluesBox}[2]{%
 %\Cadre{\normalsize #1}{0.99\linewidth}{%
-\normalsize \textbf{#1:}
 \begin{flushleft}
-\begin{tabular}{| >{\centering}m{1cm} | l |  c | }
+\normalsize \textbf{#1:}
+
+\begin{tabular}{| >{\centering}m{.05\textwidth} | m{.902\textwidth} |  c | }
     \hline
     #2
    \hline
@@ -119,25 +120,58 @@
 
 
 
+\newcommand{\supportsUtiliseesBox}[1]{%
+%\Cadre{\normalsize #1}{0.99\linewidth}{%
+\begin{flushleft}
+\normalsize \textbf{Supports utilisé pour l'épreuve:}
 
-\newcommand{\equipeEvaluesBox}[1]{%
-\begin{center}
-\begin{tabular}{|>{\raggedright\arraybackslash}m{38mm}|m{45mm}|m{45mm}|m{45mm}|}
-   \hline
-   \rowcolor{light-gray}
-   \multicolumn{1}{|>{\centering\arraybackslash}m{38mm}|}{\textbf{Compétence}} &
-   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Savoir-faire}} &
-   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Moyens mis à disposition}} &
-   \multicolumn{1}{|>{\centering\arraybackslash}m{45mm}|}{\textbf{Résultats attendus}} \\
-   \hline
+\begin{tabular}{ | m{.452\textwidth}   m{.5\textwidth} | }
+    \hline
     #1
    \hline
 \end{tabular}
-\end{center}
+\end{flushleft}
+%}
+}
+
+\newcommand{\supportsUtiliseesBoxFilled}[1]{%
+\supportsUtiliseesBox{
+    Télécommunications, téléphonie et réseaux téléphoniques & $\Box$ \\
+    \textbf{Informatique, réseaux} et infrastructures & $\boxtimes$ \\
+    Multimédia, son et image, radio et télédiffusion  & $\Box$\\
+    Mobilité et systèmes embarqués  & $\Box$\\
+    \textbf{Électronique} et informatique médicale  & $\boxtimes$\\
+    \textbf{Mesure, instrumentation et microsystèmes}  & $\boxtimes$\\
+    \textbf{Automatique} et robotique  & $\boxtimes$\\
+}
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin BOXES
+
+
+\newcommand{\equipeEvaluesBox}[1]{%
+\begin{flushleft}
+    \begin{tabular}{| m{.31\textwidth} | m{.31\textwidth} |  m{.31\textwidth} | }
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Identification de l'équipe} & \textbf{Nom} & \textbf{Prénom} \\
+        \hline
+        #1
+       \hline
+    \end{tabular}
+\end{flushleft}
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN BOXES
+
+
+
+
+
 
 
 
@@ -165,6 +199,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMMISSION
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CCF1
