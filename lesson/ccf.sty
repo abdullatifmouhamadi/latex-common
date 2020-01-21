@@ -8,6 +8,14 @@
 
 
 
+%% cells
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER
@@ -147,8 +155,6 @@
 }
 
 
-
-
 \newcommand{\equipeEvaluesBox}[1]{%
 \begin{flushleft}
     \begin{tabular}{| m{.31\textwidth} | m{.31\textwidth} |  m{.31\textwidth} | }
@@ -198,6 +204,42 @@
     \end{center}
 }
 
+
+\newcommand\commissionValidation[1]{
+    \begin{center}
+
+        \textbf{Commission de Validation}
+        \begin{tabular}{|  m{.225\linewidth} |  m{.225\linewidth} | m{.225\linewidth} | m{.225\linewidth} |}
+            \hline
+            \makecell{ \textbf{Nom~~~~Prénom} } &
+            \makecell{ \textbf{Nom~~~~Prénom} } & 
+            \makecell{ \textbf{Nom~~~~Prénom} } & 
+            \makecell{ \textbf{Nom~~~~Prénom} }\\
+            \hline
+            \makecell{~\\~\\~}&~&~&~\\
+            \hline
+        \end{tabular}
+        
+        ~\\~
+        
+        \begin{tabular}{|  m{.4\linewidth} |  m{0.545\linewidth} |}
+            \hline
+            \makecell[l]{ ~\\ \textbf{Président de la commission de validation} ~\\ ~\\ } &
+            \makecell[l]{ ~\\ \textbf{Nom~~~~Prénom} ~\\~\\ }\\
+            \hline
+        \end{tabular}
+        \begin{tabular}{|  m{.2\linewidth} |  m{0.745\linewidth} |}
+            %\hline
+            \makecell[l]{ ~\\ \textbf{Date:} ~\\ ~\\ } &
+            \makecell[l]{ ~\\ \textbf{ Signature } ~\\~\\ }\\
+            \hline
+        \end{tabular}
+        
+        \end{center}
+}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COMMISSION
 
 
@@ -236,6 +278,31 @@
 }
 }
 
+
+\newcommand\competencesCCFTwo[1]{
+\competencesEvaluesBox{Compétences évaluées}{
+    C6.1 & Superviser le fonctionnement d’un produit matériel$/$logiciel  \\
+    \hline
+    C6.2 & Analyser les comptes rendus d’exploitation \\
+    \hline
+    C7.1 & Diagnostiquer les causes d’un dysfonctionnement \\
+    \hline
+    C7.3 & Dépanner une installation matérielle$/$logicielle \\
+    \hline
+    C7.4 & Assurer la traçabilité \\
+}
+}
+
+
+
+
+\newcommand\studentIdentityBox[1]{
+\fbox{
+\begin{minipage}[]{.975\linewidth}
+\textbf{Nom et Prénom de l'étudiant:} #1
+\end{minipage}
+}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FIN CCF1
