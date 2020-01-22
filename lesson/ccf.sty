@@ -18,6 +18,7 @@
 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER
 \newcommand{\LWidth}{0.24}
 \newcommand{\CWidth}{0.43}
@@ -180,6 +181,26 @@
     \end{minipage}
 }
 }
+
+\newcommand{\EmptyReponseBox}[1]{%
+\fbox{
+    \begin{minipage}[]{.975\linewidth}
+        #1
+    \end{minipage}
+}
+}
+
+
+\newcommand{\callForValidationBox}[1]{%
+\begin{tabular}{ | m{.553\textwidth}  m{.4\textwidth} | }
+    \hline
+    \rowcolor{gray!40} \textbf{Cadre réservé au formateur} & ~ \\
+    \rowcolor{gray!40} \makecell[l]{ $\Box$ \'Etape validée} & \makecell[l]{ $\Box$ \'Etape non validée ou non réalisée}  \\
+    \hline
+\end{tabular}
+}
+
+
 
 
 
