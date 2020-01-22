@@ -172,6 +172,17 @@
 
 
 
+\newcommand{\ReponseBox}[1]{%
+\fbox{
+    \begin{minipage}[]{.975\linewidth}
+    \underline{Réponse:}
+    \Pointilles[#1]
+    \end{minipage}
+}
+}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN BOXES
 
 
@@ -262,6 +273,12 @@
             \multicolumn{1}{|c}{ \NomHeader } & \multicolumn{2}{c|}{ \PrenomHeader } & \multicolumn{2}{c|}{ \DateHeader } \\
             \hline
         \end{tabular}
+    \end{center}
+
+
+    \begin{center}
+        \Large \textbf{Contrôle en Cours de Formation}\\
+        \large #1
     \end{center}
 }
 
