@@ -1,0 +1,26 @@
+% https://fr.wikibooks.org/wiki/LaTeX/Cr%C3%A9er_une_extension_ou_une_classe
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{pretty}[2019/08/22 Extension personnelle, V1.0]
+
+
+
+\definecolor{clam}{RGB}{208,83,56}
+\definecolor{red-bordeaux}{RGB}{109,7,26}
+\definecolor{pretty-blue}{rgb}{0.137,0.466,0.741}
+
+
+% THEME 1
+% Version orange-jaune
+\definecolor{left-color}{RGB}{239, 155, 15} %left - color
+\definecolor{saidoblue}{RGB}{204, 85, 0} % plan-color
+\definecolor{vert}{RGB}{255, 215, 0}  % right- color
+
+
+\newcommand{\bdx}[1]{{\color{red-bordeaux}\textbf{#1}}}
+\newcommand{\dav}[1]{{\color{green}\textbf{#1}}}
+\newcommand{\ttle}[1]{{\color{saidoblue}\footnotesize \textbf{#1}}}
+
