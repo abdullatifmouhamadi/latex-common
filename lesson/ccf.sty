@@ -116,7 +116,7 @@
 \newcommand{\competencesEvaluesBox}[2]{%
 %\Cadre{\normalsize #1}{0.99\linewidth}{%
 \begin{flushleft}
-\normalsize \textbf{#1:}
+\large \textbf{#1:}
 
 \begin{tabular}{| >{\centering}m{.05\textwidth} | m{.902\textwidth} |  c | }
     \hline
@@ -132,9 +132,9 @@
 \newcommand{\supportsUtiliseesBox}[1]{%
 %\Cadre{\normalsize #1}{0.99\linewidth}{%
 \begin{flushleft}
-\normalsize \textbf{Supports utilisé pour l'épreuve:}
+\large \textbf{Supports utilisé pour l'épreuve:}
 
-\begin{tabular}{ | m{.452\textwidth}   m{.5\textwidth} | }
+\begin{tabular}{ | m{.555\textwidth}   m{.4\textwidth} | }
     \hline
     #1
    \hline
@@ -157,6 +157,7 @@
 
 
 \newcommand{\equipeEvaluesBox}[1]{%
+\large
 \begin{flushleft}
     \begin{tabular}{| m{.31\textwidth} | m{.31\textwidth} |  m{.31\textwidth} | }
         \hline
@@ -258,6 +259,18 @@
     \fbox{CCF2 – Promotion #1}
     
 \end{center}
+}
+
+
+\newcommand{\presentationBox}[2]{%
+\fbox{
+\begin{minipage}[b]{.974\textwidth}
+    \large
+    #1
+
+    #2
+\end{minipage}
+}
 }
 
 
@@ -394,11 +407,11 @@
 
 
 \newcommand\studentIdentityBox[1]{
-\fbox{
-\begin{minipage}[]{.973\linewidth}
-\textbf{Nom et Prénom de l'étudiant:} #1
-\end{minipage}
-}
+\begin{tabular}{| m{.975\textwidth} |}
+    \hline
+    \textbf{Nom et Prénom de l'étudiant:} #1\\
+   \hline
+\end{tabular}
 }
 
 
