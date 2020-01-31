@@ -12,6 +12,11 @@
 %\newcommand\ImageBox[3]{
 %  \includegraphics[width=#1,height=#2]{#3}}
 %}
+\definecolor{arrowblue}{RGB}{98,145,224}
+
+\newcommand\ImageNode[3][]{
+  \node[draw=arrowblue!80!black,line width=1pt,#1] (#2) {\includegraphics[width=1.5cm,height=1.5cm]{#3}};
+}
 
 
 
