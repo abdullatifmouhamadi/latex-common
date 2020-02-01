@@ -15,8 +15,13 @@
 \definecolor{arrowblue}{RGB}{98,145,224}
 
 \newcommand\ImageNode[3][]{
+  \node[draw=arrowblue!80!black,line width=0.5pt,#1] (#2) {\includegraphics[width=1.5cm,height=1.5cm]{#3}};
+}
+
+\newcommand\ImageNodeRounded[3][]{
   \node[draw=arrowblue!80!black,line width=1pt,#1] (#2) {\includegraphics[width=1.5cm,height=1.5cm]{#3}};
 }
+
 
 
 
