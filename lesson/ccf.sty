@@ -20,9 +20,9 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER
-\newcommand{\LWidth}{0.24}
+\newcommand{\LWidth}{0.245}
 \newcommand{\CWidth}{0.43}
-\newcommand{\RWidth}{0.24}
+\newcommand{\RWidth}{0.245}
 
 
 
@@ -118,7 +118,7 @@
 \begin{flushleft}
 \large \textbf{#1:}
 
-\begin{tabular}{| >{\centering}m{.05\textwidth} | m{.902\textwidth} |  c | }
+\begin{tabular}{| >{\centering}m{.05\textwidth} | m{.9045\textwidth} |  c | }
     \hline
     #2
    \hline
@@ -126,7 +126,6 @@
 \end{flushleft}
 %}
 }
-
 
 
 \newcommand{\supportsUtiliseesBox}[1]{%
@@ -170,8 +169,11 @@
 \end{flushleft}
 }
 
-
-
+\newcommand{\nombreElevesActivite}[1]{
+    \framebox[\textwidth][l]{
+        \textbf{Nombre d’élèves pour cette activité : #1}
+    }
+}
 
 
 \newcommand{\ReponseBox}[1]{%
