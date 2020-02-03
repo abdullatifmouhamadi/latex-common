@@ -289,20 +289,28 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COMMISSION
-\newcommand\commissionHeader[2]{
+
+\def \commissionPageTitle {
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
             %\hline
             %\multicolumn{6}{|c|}{January 2010 Results} \\
             \hline
-            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\sessionTitle}\\
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{}} & \multicolumn{2}{c|}{\sessionTitle}\\
             \cline{4-5}
             \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\epreuveHeader} \\
             \cline{1-1}\cline{5-5}
             %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
             \hline
         \end{tabular}
-    \end{center}
+    \end{center}  
+}
+
+
+
+\newcommand\commissionHeader[2]{
+
+    \commissionPageTitle
 
     \begin{center}
         \Large \textbf{Contrôle en Cours de Formation}\\
@@ -312,6 +320,8 @@
 
 
 \newcommand\commissionValidation[1]{
+
+    \normalsize
     \begin{center}
 
         \textbf{Commission de Validation}
