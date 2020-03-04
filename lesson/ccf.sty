@@ -86,7 +86,7 @@
 }
 
 
-\newcommand\sessionTitle[1]{
+\newcommand\sessionTitle[1]{ % deprecated
     \begin{minipage}[b]{\RWidth\textwidth}
         \vspace{.1cm}
         \centering
@@ -95,12 +95,32 @@
     \end{minipage}
 }
 
+\newcommand\sessionTitleNew[1]{
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \vspace{.1cm}
+        \centering
+        \textbf{#1} 
+        %\vspace{.1cm}
+    \end{minipage}
+}
 
-\newcommand\epreuveHeader[1]{
+
+
+\newcommand\epreuveHeader[1]{ % deprecated
     \begin{minipage}[b]{\RWidth\textwidth}
         \centering
         \vspace{.1cm}
         \textbf{\'Epreuve E5}
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+
+\newcommand\epreuveHeaderNew[1]{ % deprecated
+    \begin{minipage}[b]{\RWidth\textwidth}
+        \centering
+        \vspace{.1cm}
+        \textbf{#1}
         %\vspace{.1cm}
     \end{minipage}
 }
@@ -434,3 +454,55 @@
 
 
 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROJECT HEADERS
+
+
+
+\newcommand\projectTestHeader[2]{
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{}} & \multicolumn{2}{c|}{\sessionTitleNew{#1}}\\
+            \cline{4-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\epreuveHeaderNew{#2}} \\
+            \cline{1-1}\cline{5-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
+            \hline
+        \end{tabular}
+    \end{center}  
+}
+
+
+\newcommand\projectTestHeaderResponse[2]{
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{}} & \multicolumn{2}{c|}{\sessionTitleNew{#1}}\\
+            \cline{4-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\epreuveHeaderNew{#2}} \\
+            \cline{1-1}\cline{5-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
+            \hline
+            \multicolumn{1}{|c}{ \NomHeader } & \multicolumn{2}{c|}{ \PrenomHeader } & \multicolumn{2}{c|}{ \DateHeader } \\
+            \hline
+        \end{tabular}
+    \end{center}  
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN PROJECT HEADERS
