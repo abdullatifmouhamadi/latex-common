@@ -23,48 +23,6 @@
 
 \RequirePackage{multido}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXERCICES
-\declaretheorem[sibling=equation,name=Exercice]{exerciseb}
-
-
-
-%\newenvironment{exercise}
-%{\mdfsetup{
-%backgroundcolor=gray!16,
-%roundcorner=4pt,
-%middlelinecolor=black,
-%middlelinewidth=1pt,
-%}
-%\begin{exerciseb}\edef\exnr{\theequation}\hypertarget{ex:\theequation}{}
-%\begin{mdframed}
-%~\newline
-%}
-%{\par\bigskip \end{mdframed}\end{exerciseb}}
-
-
-
-\Newassociation{solution}{Solution}{solutionfile}
-%\renewenvironment{Solution}[1]{\noindent\hypertarget{sol:#1}{\textbf{Solution to \hyperlink{ex:#1}{#1}.}}\quad}{\par\bigskip}
-\renewenvironment{Solution}[1]
-{\mdfsetup{
-linecolor=gray!50,
-backgroundcolor=gray!16,
-roundcorner=4pt, 
-}
-\begin{mdframed}
-\noindent\hypertarget{sol:#1}{\textbf{Solution to \hyperlink{ex:#1}{#1}.}}\quad
-}
-{\par\bigskip \end{mdframed}}
-
-
-\let\oldsolution\solution
-\let\oldendsolution\endsolution
-\renewenvironment{solution}{\par \hyperlink{sol:\exnr}{Solution.}\oldsolution}{\oldendsolution}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROFESSOR/STUDENT
 
@@ -76,6 +34,8 @@ roundcorner=4pt,
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CENTER

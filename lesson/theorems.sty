@@ -202,7 +202,7 @@
 
 \declaretheorem[style=style3,name=Important]{important}
 
-\declaretheorem[style=style4,name=Exercice]{exercise}
+%\declaretheorem[style=style4,name=Exercice]{exercise}
 
 
 
@@ -218,26 +218,62 @@
 
 
 
-%%% Exercise 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SOUTION
 \numberwithin{equation}{subsection}
+\declaretheorem[sibling=equation,name=Exercice]{exerciseb}
 
 
 
+\newenvironment{exercise}
+{\mdfsetup{
+backgroundcolor=gray!16,
+roundcorner=4pt,
+middlelinecolor=black,
+middlelinewidth=1pt,
+}
+\begin{exerciseb}\edef\exnr{\theequation}\hypertarget{ex:\theequation}{}
+\begin{mdframed}
+~\newline
+}
+{\par\bigskip \end{mdframed}\end{exerciseb}}
+
+
+
+
+
+\Newassociation{solution}{Solution}{solutionfile}
 \Newassociation{hint}{Hint}{hintfile}
+
+%\renewenvironment{Solution}[1]{\noindent\hypertarget{sol:#1}{\textbf{Solution to \hyperlink{ex:#1}{#1}.}}\quad}{\par\bigskip}
+
+
+\renewenvironment{Solution}[1]
+{\mdfsetup{
+linecolor=gray!50,
+backgroundcolor=gray!16,
+roundcorner=4pt, 
+}
+\begin{mdframed}
+\noindent\hypertarget{sol:#1}{\textbf{Solution to \hyperlink{ex:#1}{#1}.}}\quad
+}
+{\par\bigskip \end{mdframed}}
+
+
+
+
 \renewenvironment{Hint}[1]{\noindent\hypertarget{hint:#1}{\textbf{Hint for \hyperlink{ex:#1}{#1}.}}\quad}{\par\bigskip}
 
+\let\oldsolution\solution
+\let\oldendsolution\endsolution
+\renewenvironment{solution}{\par \hyperlink{sol:\exnr}{Solution.}\oldsolution}{\oldendsolution}
 
 \let\oldhint\hint
 \let\oldendhint\endhint
 \renewenvironment{hint}{\par \hyperlink{sol:\exnr}{Hint available.}\oldhint}{\oldendhint}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END SOUTION
 
-
-
-%%%% Fin Exercice
 
 
 
