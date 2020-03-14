@@ -20,7 +20,7 @@
 	\fancyhf{}%
   	\fancyfoot[RO]{% pages impaires
   	\ClearShipoutPicture
-  	%\vskip0.1pt  	
+	  %\vskip0.1pt 
   	\begin{tikzpicture}
   	\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage};
   	\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$) {\pagenumber@font\thepage};
@@ -86,34 +86,34 @@
 	    	  \fi
 	    \fi
 	    % cercle vide en bas à gauche
-	    \fill[chapterbotcircle@color] (1,-27) circle (3cm);
-	    \fill[white] (1,-27) circle (2.5cm);
+	    %\fill[chapterbotcircle@color] (1,-27) circle (3cm);
+	    %\fill[white] (1,-27) circle (2.5cm);
 	    % Petit cercle presque centré verticalement
-	    \fill[chaptermidcircle@color] (1.2,-17) circle (.7cm);
-	    \fill[white] (1.2,-17) circle (0.6cm);
+	    %\fill[chaptermidcircle@color] (1.2,-17) circle (.7cm);
+	    %\fill[white] (1.2,-17) circle (0.6cm);
 	     % Traits verticaux à gauche
-	    \draw[very thick,chapterrule@color] (1cm,0) -- (1cm,-\paperheight);
-	    \draw[very thick,chapterrule@color] (1.2cm,0) -- (1.2cm,-\paperheight);
+	    %\draw[very thick,chapterrule@color] (1cm,0) -- (1cm,-\paperheight);
+	    %\draw[very thick,chapterrule@color] (1.2cm,0) -- (1.2cm,-\paperheight);
 	    % Ellipse en haut à gauche
-	    \fill[chapterellipse@bg@color] (0,0) ellipse[x radius=9cm,y radius=5cm];
+	    %\fill[chapterellipse@bg@color] (0,0) ellipse[x radius=9cm,y radius=5cm];
 	    % Ombre de l'ellipse
-	    \foreach \rx/\ry/\c in { %
-	    8.7/4.7/10,% 
-	    8.66/4.66/30,%
-	    8.62/4.62/50,%
-	    8.58/4.58/70,%
-	    8.54/4.54/90%
-	    }
-	    {
-		\fill[fill=black!\c!chapterellipse@bg@color] (0,0) ellipse[x radius=\rx cm,y radius=\ry cm];
-	    }
+	    %%\foreach \rx/\ry/\c in { %
+	    %%8.7/4.7/10,% 
+	    %%8.66/4.66/30,%
+	    %%8.62/4.62/50,%
+	    %%8.58/4.58/70,%
+	    %%8.54/4.54/90%
+	    %%}
+	    %%{
+		%%\fill[fill=black!\c!chapterellipse@bg@color] (0,0) ellipse[x radius=\rx cm,y radius=\ry cm];
+	    %%}
 	    % ellipse
-	    \fill[chapterellipse@color] (0,0) ellipse[x radius=8.5cm,y radius=4.5cm];    
+	    %\fill[chapterellipse@color] (0,0) ellipse[x radius=8.5cm,y radius=4.5cm];    
 	    % Dans l'ellipse en haut à gauche ...
 	    \clip (0,0) ellipse[x radius=8.5cm,y radius=4.5cm];
 	     % Traits verticaux à gauche
-	    \draw[very thick,chapterrule@color] (1cm,0) -- (1cm,-\paperheight);
-	    \draw[very thick,chapterrule@color] (1.2cm,0) -- (1.2cm,-\paperheight);
+	    %%\draw[very thick,chapterrule@color] (1cm,0) -- (1cm,-\paperheight);
+	    %%\draw[very thick,chapterrule@color] (1.2cm,0) -- (1.2cm,-\paperheight);
 	    \fill[chapter@bg@color] (0,-0.8) rectangle+(15,-1.3);
 	    \node[text=chaptertitlename@color,right] at (0.1,-1.5) {\huge\chaptertitlename@font\bfseries\chaptertitlename~\thechapter};
   \end{tikzpicture}
