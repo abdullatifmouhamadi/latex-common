@@ -505,7 +505,7 @@
 			{%
 				\ifnum\x=\i\macr\fi%
 			}%
-			\input{corriges/\thechapter-\i}%
+			\input{tmp/corriges/\thechapter-\i}%
 		}
 	}
 
@@ -540,7 +540,7 @@
 \fi
 
 \newenvironment{correction}
-  {\OuvrirFlux{corriges/\thechapter-\theexercice.tex}%
+  {\OuvrirFlux{tmp/corriges/\thechapter-\theexercice.tex}%
    \EcritureFlux{\begin{corrige}[\thechapter]{\i}}%
    \CommencerExportFlux}
   {\ArreterExportFlux%
