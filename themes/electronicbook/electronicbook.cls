@@ -71,7 +71,11 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{cellspace}
 \RequirePackage[cmyk,table]{xcolor} 
+%\RequirePackage{kpfonts} % mouha
 \RequirePackage{titlesec}
+%\RequirePackage[explicit]{titlesec} % mouha
+\RequirePackage{titletoc} % mouha
+
 \RequirePackage{tikz}
 \usetikzlibrary{calc,decorations.pathmorphing,decorations.text}
 \RequirePackage[tmargin=2cm,bmargin=2.5cm,hmargin=2cm]{geometry}
