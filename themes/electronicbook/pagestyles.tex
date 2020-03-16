@@ -1,12 +1,15 @@
 %%%%%%%%%%%% Définition des styles de page
 
+\def\basPageTitre{Dossier ressource v1.0}
+
 \fancypagestyle{chapterstart}{% 1ère page des chapitres
 	\fancyhf{}%
+	\fancyfoot[LE]{\basPageTitre}
   	\fancyfoot[RO,RE]{%
   	%\vskip0.1pt
   	\begin{tikzpicture}
-  	\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage};
-  	\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$) {\pagenumber@font\thepage};
+  	\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  	\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
   	\end{tikzpicture}
   	}
 }
@@ -18,20 +21,21 @@
 
 \fancypagestyle{main}{% 
 	\fancyhf{}%
+	\fancyfoot[R,L]{\basPageTitre}
   	\fancyfoot[RO]{% pages impaires
   	\ClearShipoutPicture
 	  %\vskip0.1pt 
   	\begin{tikzpicture}
-  	\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage};
-  	\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-2pt,2pt)$) {\pagenumber@font\thepage};
+  	\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  	\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
   	\end{tikzpicture}
   	}
   	\fancyfoot[LE]{% pages paires	
   		\ClearShipoutPicture
   		%\vskip0.1pt
   		\begin{tikzpicture}
-  		\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage};
-  		\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(2pt,2pt)$) {\pagenumber@font\thepage};
+  		\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  		\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
   		\end{tikzpicture}
   	}
 }
