@@ -3,47 +3,59 @@
 \def\basPageTitre{Dossier ressource v1.0}
 
 \fancypagestyle{chapterstart}{% 1ère page des chapitres
+	\renewcommand{\headrulewidth}{0pt}
 	\fancyhf{}%
-	\fancyfoot[LE]{\basPageTitre}
+	\fancyfoot[R,L]{\basPageTitre}
   	\fancyfoot[RO,RE]{%
   	%\vskip0.1pt
   	\begin{tikzpicture}
-  	\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
-  	\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  	  %\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+	  %\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+	  \node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=0pt, inner xsep=2ex,text=black] {\pagenumber@font\thepage~/~\pageref*{LastPage}};
   	\end{tikzpicture}
   	}
 }
 
 \fancypagestyle{toc}{% Sommaire
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
 	\fancyhf{}%
   	\fancyfoot{}
 }
 
 \fancypagestyle{main}{% 
 	\fancyhf{}%
+	\fancyhead[LO,RE]{\includegraphics[scale=0.02]{common/themes/electronicbook/uimm.png}}
+	%\fancyhead[R]{UIMM}
+	\fancyhead[LE,RO]{\rightmark}
 	\fancyfoot[R,L]{\basPageTitre}
   	\fancyfoot[RO]{% pages impaires
   	\ClearShipoutPicture
 	  %\vskip0.1pt 
   	\begin{tikzpicture}
-  	\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
-  	\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
-  	\end{tikzpicture}
+  	%\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  	%\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(-1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+	\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=0pt, inner xsep=2ex,text=black] {\pagenumber@font\thepage~/~\pageref*{LastPage}};  
+	\end{tikzpicture}
   	}
   	\fancyfoot[LE]{% pages paires	
   		\ClearShipoutPicture
   		%\vskip0.1pt
   		\begin{tikzpicture}
-  		\node[rounded corners=3pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
-  		\node[rounded corners=3pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
-  		\end{tikzpicture}
+  		%\node[rounded corners=4pt,fill=shadow@color,inner ysep=5pt, inner xsep=2ex,text=shadow@color] (shadow) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+  		%\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=5pt, inner xsep=2ex,text=white] at ($(shadow)+(1pt,1pt)$) {\pagenumber@font\thepage~/~\pageref*{LastPage}};
+		\node[rounded corners=4pt,fill=pagenumber@bg@color,inner ysep=0pt, inner xsep=2ex,text=black] {\pagenumber@font\thepage~/~\pageref*{LastPage}};  
+		\end{tikzpicture}
   	}
 }
 
 %%%%%%%%%%%% En-tête et pied de page
 
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\footrule}{\hbox to \headwidth{\color{easi@default@blue}\leaders\hrule height \footrulewidth\hfill}}
+%\renewcommand{\headrule}{\hbox to \headwidth{\color{easi@default@blue}\leaders\hrule height \footrulewidth\hfill}}
+
 \pagestyle{main}
 
 %%%%%%%%%%%% Définitions par défaut

@@ -78,7 +78,8 @@
 \RequirePackage{lastpage} % mouha
 \RequirePackage{tikz}
 \usetikzlibrary{calc,decorations.pathmorphing,decorations.text}
-\RequirePackage[tmargin=2cm,bmargin=2.5cm,hmargin=2cm]{geometry}
+%\RequirePackage[tmargin=2cm,bmargin=2.5cm,hmargin=2cm]{geometry} original
+\RequirePackage[tmargin=1.5cm,bmargin=2cm,hmargin=1cm]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{eso-pic}
 \RequirePackage{array}
