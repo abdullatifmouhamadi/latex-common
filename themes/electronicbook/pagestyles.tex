@@ -61,27 +61,31 @@
 
 
 \titleformat{\chapter}
-%\titleformat{name=\chapter,numberless}[display]
 	{
 	%\gdef\chapterlabel{} \normalfont\sffamily\Large\bfseries
 	\thispagestyle{chapterstart}
 	\pagecolor{white}
 	\bfseries\LARGE\raggedleft
 	\color{chapter@title@color}
-	\chaptertitle@font
+	%\chaptertitle@font
 	}
-	{\gdef\chapterlabel{\thechapter)\ }}{0pt}
-	{\begin{tikzpicture}[remember picture,overlay]
+	{\gdef\chapterlabel{\thechapter)\ }}{7ex}
+	{\formatchapter}
+
+\newcommand{\formatchapter}[1]{%
+	\begin{tikzpicture}[remember picture,overlay]
 		\node[xshift=2.25cm, yshift=-2cm] at (current page.north west) {\includegraphics[scale=.078]{common/themes/electronicbook/uimm.png}};
 		\node[yshift=-3cm, yshift=-0.25cm] at (current page.north west)
 		{\begin{tikzpicture}[remember picture, overlay]
 		%\draw[fill=easi@light@blue, rounded corners=12pt] (4.3,0) rectangle (.97\paperwidth,2.5cm);
+		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@light@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~\chaptername};
 		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@light@blue, minimum width=.76\paperwidth] {\color{white}\chapterlabel#1};
-		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@light@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~#1};
+		\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@default@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~#1};
 		\end{tikzpicture}
 		};
 	\end{tikzpicture}
-	}
+}
+  
 \titlespacing*{\chapter}{0pt}{64pt}{-20pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% Tables des matières %%%%%%%%%%%%%%%%%%%%%

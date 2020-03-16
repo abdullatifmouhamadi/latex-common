@@ -1,0 +1,29 @@
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{utils}[2020/01/01 Extension personnelle, V1.0]
+
+
+
+\RequirePackage[framemethod=TikZ]{mdframed}
+
+
+\newenvironment{bloomObjectifs}
+{
+	\par\medskip
+	\begin{mdframed}[backgroundcolor=easi@light@blue,roundcorner=16pt,middlelinecolor=easi@light@blue]
+	\color{white}%
+	\Large \textbf{Objectifs pédagogiques : }
+	\large
+    \begin{itemize}
+        \renewcommand{\labelitemi}{$\circ$}
+}
+{
+	\end{itemize}
+	\end{mdframed}
+	\medskip
+}
+
+
+
+
