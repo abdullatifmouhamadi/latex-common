@@ -242,7 +242,7 @@
 	\end{lrbox}
 	\vspace*{\spacebeforedef}
 	\begin{tikzpicture}
-	\node[fill=def@bg@color] (texte) {\usebox{\def@box}};
+	\node[fill=def@bg@color!25] (texte) {\usebox{\def@box}};
 	\node[fill=deftitle@bg@color,text=deftitle@color,below left,draw=deftitle@bg@color,very thick,text width={\dimexpr\marginleft-2mm},align=center] at ($(texte.north west)+(1pt,0)$) {\deftitle@font \titletext\pluriel@def \ifnum\thebreak@box>0\par(suite)\fi};
 	\end{tikzpicture}
 }
@@ -314,7 +314,7 @@
 	\end{lrbox}
 	\vspace*{\spacebeforeex}
 	\begin{tikzpicture}
-	\node[fill=ex@bg@color] (texte) {\usebox{\ex@box}};
+	\node[fill=ex@bg@color!25] (texte) {\usebox{\ex@box}};
 	\node[fill=extitle@bg@color,text=extitle@color,below left,draw=extitle@bg@color,very thick,text width={\dimexpr\marginleft-2mm},align=center] at ($(texte.north west)+(1pt,0)$) {\extitle@font \titletext\pluriel@ex \ifnum\thebreak@box>0\par(suite)\fi};
 	\end{tikzpicture}
 }
