@@ -12,7 +12,7 @@
 {%
 \begin{tikzpicture}
 \node (numsec) {\sectiontitle@font\thesection};
-\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(2pt,-2pt)$) -- ($(numsec.north east)+(1mm,0mm)+(2pt,-2pt)$) -- ($(numsec.south east)+(2pt,-2pt)$) -- ($(numsec.south west)+(-1mm,0)+(2pt,-2pt)$) -- cycle;
+\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(1pt,-1pt)$) -- ($(numsec.north east)+(1mm,0mm)+(1pt,-1pt)$) -- ($(numsec.south east)+(1pt,-1pt)$) -- ($(numsec.south west)+(-1mm,0)+(1pt,-1pt)$) -- cycle;
 \fill[rounded corners=2pt,fill=section@title@color] (numsec.north west) -- ($(numsec.north east)+(1mm,0mm)$) -- (numsec.south east) -- ($(numsec.south west)+(-1mm,0)$) -- cycle;
 \node[white] at (numsec) {\sectiontitle@font\thesection};
 \end{tikzpicture}
@@ -36,7 +36,7 @@
 	{%
 	\begin{tikzpicture}
 	\node (numsec) {\subsectiontitle@font\thesubsection};
-	\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(2pt,-2pt)$) -- ($(numsec.north east)+(1mm,0mm)+(2pt,-2pt)$) -- ($(numsec.south east)+(2pt,-2pt)$) -- ($(numsec.south west)+(-1mm,0)+(2pt,-2pt)$) -- cycle;
+	\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(1pt,-1pt)$) -- ($(numsec.north east)+(1mm,0mm)+(1pt,-1pt)$) -- ($(numsec.south east)+(1pt,-1pt)$) -- ($(numsec.south west)+(-1mm,0)+(1pt,-1pt)$) -- cycle;
 	\fill[rounded corners=2pt,fill=subsection@title@color] (numsec.north west) -- ($(numsec.north east)+(1mm,0mm)$) -- (numsec.south east) -- ($(numsec.south west)+(-1mm,0)$) -- cycle;
 	\node[white] at (numsec) {\subsectiontitle@font\thesubsection};
 	\end{tikzpicture}
@@ -64,7 +64,7 @@
 {%
 \begin{tikzpicture}
 \node (numsec) {\subsubsectiontitle@font\thesubsubsection};
-\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(2pt,-2pt)$) -- ($(numsec.north east)+(1mm,0mm)+(2pt,-2pt)$) -- ($(numsec.south east)+(2pt,-2pt)$) -- ($(numsec.south west)+(-1mm,0)+(2pt,-2pt)$) -- cycle;
+\fill[rounded corners=2pt,fill=shadow@color] ($(numsec.north west)+(1pt,-1pt)$) -- ($(numsec.north east)+(1mm,0mm)+(1pt,-1pt)$) -- ($(numsec.south east)+(1pt,-1pt)$) -- ($(numsec.south west)+(-1mm,0)+(1pt,-1pt)$) -- cycle;
 \fill[rounded corners=2pt,fill=subsubsection@title@color] (numsec.north west) -- ($(numsec.north east)+(1mm,0mm)$) -- (numsec.south east) -- ($(numsec.south west)+(-1mm,0)$) -- cycle;
 \node[white] at (numsec) {\subsubsectiontitle@font\thesubsubsection};
 \end{tikzpicture}

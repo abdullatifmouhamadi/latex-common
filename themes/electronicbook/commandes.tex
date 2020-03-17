@@ -374,8 +374,8 @@
 	\refstepcounter{activity}
 	\vspace*{\spacebeforeact}
 	\begin{tikzpicture}
-	\fill[shadow@color] (0.1,-.15) circle[x radius=1.5em,y radius=0.66em,rotate=10];
-	\fill[activitytitle@color,rotate=30] (0,0) circle[x radius=1.5em,y radius=1em];
+	\fill[shadow@color] (0.02,-.02) circle[x radius=1.5em,y radius=1.0em,rotate=0];
+	\fill[activitytitle@color,rotate=0] (0,0) circle[x radius=1.5em,y radius=1.0em];
 	\node[text=activitynum@color] at (0,0) {\activity@font\theactivity};
 	\node[right,text=activitytitle@color] at (0.75,0) {\activity@font#1};
 	\end{tikzpicture}
@@ -406,11 +406,12 @@
 \newcommand{\exostart}[1][0]
 {%
 	\newpage
-	\pagecolor{exercices@bg@color}
+	%\pagecolor{exercices@bg@color}
+	\pagecolor{exercices@bg@color!32}
 	\begin{flushright}
 	\begin{tikzpicture}
 	\node[inner sep=1em] (titre) {\exercicetitle@font Exercices};
-	\fill[rounded corners=2pt,fill=shadow@color] ($(titre.north west)+(2pt,-2pt)$) -- ($(titre.north east)+(1mm,0mm)+(2pt,-2pt)$) -- ($(titre.south east)+(2pt,-2pt)$) -- ($(titre.south west)+(-1mm,0)+(2pt,-2pt)$) -- cycle;
+	\fill[rounded corners=2pt,fill=shadow@color] ($(titre.north west)+(1pt,-1pt)$) -- ($(titre.north east)+(1mm,0mm)+(1pt,-1pt)$) -- ($(titre.south east)+(1pt,-1pt)$) -- ($(titre.south west)+(-1mm,0)+(1pt,-1pt)$) -- cycle;
 	\fill[rounded corners=2pt,fill=exercicetitle@bg@color] (titre.north west) -- ($(titre.north east)+(1mm,0mm)$) -- (titre.south east) -- ($(titre.south west)+(-1mm,0)$) -- cycle;
 	\node[inner sep=1em,text=exercicetitle@color] at (titre) {\exercicetitle@font Exercices};
 	\end{tikzpicture}
@@ -477,11 +478,12 @@
 \newcommand{\corrstart}
 {%
 	\newpage
-	\pagecolor{corriges@bg@color}
+	%\pagecolor{corriges@bg@color} original
+	\pagecolor{corriges@bg@color!32}
 	\begin{flushright}
 	\begin{tikzpicture}
 	\node[inner sep=1em] (titre) {\corrigetitle@font Corrig\'es des exercices};
-	\fill[rounded corners=2pt,fill=shadow@color] ($(titre.north west)+(2pt,-2pt)$) -- ($(titre.north east)+(1mm,0mm)+(2pt,-2pt)$) -- ($(titre.south east)+(2pt,-2pt)$) -- ($(titre.south west)+(-1mm,0)+(2pt,-2pt)$) -- cycle;
+	\fill[rounded corners=2pt,fill=shadow@color] ($(titre.north west)+(1pt,-1pt)$) -- ($(titre.north east)+(1mm,0mm)+(1pt,-1pt)$) -- ($(titre.south east)+(1pt,-1pt)$) -- ($(titre.south west)+(-1mm,0)+(1pt,-1pt)$) -- cycle;
 	\fill[rounded corners=2pt,fill=corrigetitle@bg@color] (titre.north west) -- ($(titre.north east)+(1mm,0mm)$) -- (titre.south east) -- ($(titre.south west)+(-1mm,0)$) -- cycle;
 	\node[inner sep=1em,text=corrigetitle@color] at (titre) {\corrigetitle@font Corrig\'es des exercices};
 	\end{tikzpicture}
