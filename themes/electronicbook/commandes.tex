@@ -188,7 +188,7 @@
 \begin{tikzpicture}
 \node (texte) {\usebox{\rem@box}\vspace*{\spacebottomrem}};
 \fill[fill=shadow@color] ($(texte.south west)+(1pt,-1pt)$) -- ($(texte.north west)+(1pt,-1pt)$) -- ($(texte.north east)+(1pt,-1pt)$) -- ($(texte.south east)+(0,6.5pt)+(1pt,-2pt)$) .. controls ($(texte.south east)+(-2pt,2pt)+(1pt,-1pt)$) and ($(texte.south east)+(-3pt,1pt)+(1pt,-1pt)$) .. ($(texte.south east)+(-6.5pt,0)+(1pt,-1pt)$) -- cycle;
-\fill[fill=rem@bg@color] (texte.south west) -- (texte.north west) -- (texte.north east) -- ($(texte.south east)+(0,5pt)$) -- ($(texte.south east)+(-5pt,0)$) -- cycle;
+\fill[fill=rem@bg@color!25] (texte.south west) -- (texte.north west) -- (texte.north east) -- ($(texte.south east)+(0,5pt)$) -- ($(texte.south east)+(-5pt,0)$) -- cycle;
 \fill[fill=shadow@color!50!black] ($(texte.south east)+(0,5pt)$) .. controls ($(texte.south east)+(-2pt,2pt)$) and ($(texte.south east)+(-3pt,1pt)$) .. ($(texte.south east)+(-5pt,0)$) .. controls ($(texte.south east)+(-4.5pt,2.5pt)$) .. ($(texte.south east)+(-5pt,5pt)$) .. controls ($(texte.south east)+(-2.5pt,4.5pt)$) .. ($(texte.south east)+(0,5pt)$);
 \node at(texte) {\usebox{\rem@box}};
 \node[above right,fill=remtitle@bg@color,text=remtitle@color] at (texte.north west) {\remtitle@font \titletext\pluriel@rem \ifnum\thebreak@box>0 ~(suite)\fi};
@@ -266,7 +266,7 @@
 	\end{lrbox}
 	\vspace*{\spacebeforeprop}
 	\begin{tikzpicture}
-	\node[fill=prop@bg@color] (texte) {\usebox{\prop@box}};
+	\node[fill=prop@bg@color!25] (texte) {\usebox{\prop@box}};
 	\node[fill=proptitle@bg@color,text=proptitle@color,below left,draw=proptitle@bg@color,very thick,text width={\dimexpr\marginleft-2mm},align=center] at ($(texte.north west)+(1pt,0)$) {\proptitle@font \titletext\pluriel@prop \ifnum\thebreak@box>0\par(suite)\fi};
 	\end{tikzpicture}
 }
