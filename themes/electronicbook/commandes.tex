@@ -290,7 +290,7 @@
 	\end{lrbox}
 	\vspace*{\spacebeforethm}
 	\begin{tikzpicture}
-	\node[fill=thm@bg@color] (texte) {\usebox{\thm@box}};
+	\node[fill=thm@bg@color!25] (texte) {\usebox{\thm@box}};
 	\node[fill=thmtitle@bg@color,text=thmtitle@color,below left,draw=thmtitle@bg@color,very thick,text width={\dimexpr\marginleft-2mm},align=center] at ($(texte.north west)+(1pt,0)$) {\thmtitle@font \titletext\pluriel@prop \ifnum\thebreak@box>0\par(suite)\fi};
 	\end{tikzpicture}
 }
