@@ -216,7 +216,7 @@
 \begin{tikzpicture}
 \node (texte) {\usebox{\meth@box}\vspace*{\spacebottommeth}};
 \fill[fill=shadow@color] ($(texte.south west)+(1pt,-1pt)$) -- ($(texte.north west)+(1pt,-1pt)$) -- ($(texte.north east)+(1pt,-1pt)$) -- ($(texte.south east)+(0,6.5pt)+(1pt,-2pt)$) .. controls ($(texte.south east)+(-2pt,2pt)+(1pt,-1pt)$) and ($(texte.south east)+(-3pt,1pt)+(1pt,-1pt)$) .. ($(texte.south east)+(-6.5pt,0)+(1pt,-1pt)$) -- cycle;
-\fill[fill=meth@bg@color] (texte.south west) -- (texte.north west) -- (texte.north east) -- ($(texte.south east)+(0,5pt)$) -- ($(texte.south east)+(-5pt,0)$) -- cycle;
+\fill[fill=meth@bg@color!25] (texte.south west) -- (texte.north west) -- (texte.north east) -- ($(texte.south east)+(0,5pt)$) -- ($(texte.south east)+(-5pt,0)$) -- cycle;
 \fill[fill=shadow@color!50!black] ($(texte.south east)+(0,5pt)$) .. controls ($(texte.south east)+(-2pt,2pt)$) and ($(texte.south east)+(-3pt,1pt)$) .. ($(texte.south east)+(-5pt,0)$) .. controls ($(texte.south east)+(-4.5pt,2.5pt)$) .. ($(texte.south east)+(-5pt,5pt)$) .. controls ($(texte.south east)+(-2.5pt,4.5pt)$) .. ($(texte.south east)+(0,5pt)$);
 \node at(texte) {\usebox{\meth@box}};
 \node[above right,fill=methtitle@bg@color,text=methtitle@color] at (texte.north west) {\methtitle@font \titletext\pluriel@meth \ifnum\thebreak@box>0 ~(suite)\fi};
