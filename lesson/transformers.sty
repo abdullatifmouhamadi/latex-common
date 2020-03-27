@@ -1,0 +1,201 @@
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{transformers}[2019/08/22 Extension personnelle, V1.0]
+
+% https://tex.stackexchange.com/questions/431334/transformer-in-circuitikz
+
+
+
+
+
+\pgfdeclareshape{archtransformer}{%
+
+    \savedmacro{\ctikzclass}{\edef\ctikzclass{inductors}}
+    \saveddimen{\scaledRlen}{\pgfmathsetlength{\pgf@x}{\ctikzvalof{\ctikzclass/scale}\pgf@circ@Rlen}}
+    % shapename
+    \savedmacro{\thisshape}{\def\thisshape{\tikz@fig@name}}
+    \anchor{center}{
+        \northwest
+        \pgf@x=0pt
+        \pgf@y=0pt
+    }
+    \savedmacro{\stretto}{\def\stretto{\ctikzvalof{quadpoles/transformer/inner}}}
+    \savedanchor\northwest{%
+        \pgfmathsetlength{\pgf@circ@scaled@Rlen}{\ctikzvalof{\ctikzclass/scale}\pgf@circ@Rlen}
+        \pgf@y=\ctikzvalof{quadpoles/transformer/height}\pgf@circ@scaled@Rlen
+        \pgf@y=.5\pgf@y
+        \pgf@x=.5\pgf@circ@scaled@Rlen
+        \pgf@x=-\ctikzvalof{quadpoles/transformer/width}\pgf@x
+    }
+    %% we define the upper right (positive coord) dot (which is B1)
+    \savedanchor{\innerdot}{%
+        \pgfmathsetlength{\pgf@circ@scaled@Rlen}{\ctikzvalof{\ctikzclass/scale}\pgf@circ@Rlen}
+        \pgf@xa=.5\pgf@circ@scaled@Rlen
+        \pgf@xa=-\ctikzvalof{quadpoles/transformer/width}\pgf@xa
+        % by default use the cute inductor size
+        \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa-\ctikzvalof{bipoles/cuteinductor/height}*\pgf@circ@scaled@Rlen/2}
+        % check if it's american
+        \edef\pgf@circ@temp{\ctikzvalof{inductor}}
+        \edef\pgf@temp{american}
+        \ifx\pgf@circ@temp\pgf@temp
+            \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa-\ctikzvalof{bipoles/americaninductor/height}*\pgf@circ@scaled@Rlen/2}
+        \fi
+        % check if it's european
+        \edef\pgf@temp{european}
+        \ifx\pgf@circ@temp\pgf@temp
+            \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa-\ctikzvalof{bipoles/fullgeneric/height}*\pgf@circ@scaled@Rlen/2}
+        \fi
+        \pgfmathsetlength\pgf@y{0.5*\pgf@circ@scaled@Rlen}
+    }
+    \savedanchor{\outerdot}{%
+        \pgfmathsetlength{\pgf@circ@scaled@Rlen}{\ctikzvalof{\ctikzclass/scale}\pgf@circ@Rlen}
+        \pgf@xa=.5\pgf@circ@scaled@Rlen
+        \pgf@xa=-\ctikzvalof{quadpoles/transformer/width}\pgf@xa
+        % by default use the cute inductor size
+        \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa+\ctikzvalof{bipoles/cuteinductor/height}*\pgf@circ@scaled@Rlen/2}
+        % check if it's american
+        \edef\pgf@circ@temp{\ctikzvalof{inductor}}
+        \edef\pgf@temp{american}
+        \ifx\pgf@circ@temp\pgf@temp
+            \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa+\ctikzvalof{bipoles/americaninductor/height}*\pgf@circ@scaled@Rlen/2}
+        \fi
+        % check if it's european
+        \edef\pgf@temp{european}
+        \ifx\pgf@circ@temp\pgf@temp
+            \pgfmathsetlength\pgf@x{-\stretto*\pgf@xa+\ctikzvalof{bipoles/fullgeneric/height}*\pgf@circ@scaled@Rlen/2}
+        \fi
+        \pgfmathsetlength\pgf@y{0.5*\pgf@circ@scaled@Rlen}
+    }
+    \anchor{A2}{
+        \northwest
+        \pgf@y=-\pgf@y
+    }
+    \anchor{B1}{
+        \northwest
+        \pgf@x=-\pgf@x
+    }
+    \anchor{A1}{
+        \northwest
+    }
+    \anchor{B2}{
+        \northwest
+        \pgf@x=-\pgf@x
+        \pgf@y=-\pgf@y
+    }
+    %% dot's anchors
+    \anchor{inner dot A1}{\innerdot\pgf@x=-\pgf@x}
+    \anchor{outer dot A1}{\outerdot\pgf@x=-\pgf@x}
+    \anchor{inner dot A2}{\innerdot\pgf@x=-\pgf@x\pgf@y=-\pgf@y}
+    \anchor{outer dot A2}{\outerdot\pgf@x=-\pgf@x\pgf@y=-\pgf@y}
+    \anchor{inner dot B1}{\innerdot}
+    \anchor{outer dot B1}{\outerdot}
+    \anchor{inner dot B2}{\innerdot\pgf@y=-\pgf@y}
+    \anchor{outer dot B2}{\outerdot\pgf@y=-\pgf@y}
+    % geographical
+    \anchor{north}{
+        \northwest
+        \pgf@x=0pt
+    }
+    \anchor{south}{
+        \northwest
+        \pgf@x=0pt
+        \pgf@y=-\pgf@y
+    }
+    \anchor{west}{
+        \northwest
+        \pgf@y=0pt
+    }
+    \anchor{east}{
+        \northwest
+        \pgf@y=0pt
+        \pgf@x=-\pgf@x
+    }
+    \anchor{south west}{
+        \northwest
+        \pgf@y=-\pgf@y
+    }
+    \anchor{north east}{
+        \northwest
+        \pgf@x=-\pgf@x
+    }
+    \anchor{north west}{
+        \northwest
+    }
+    \anchor{south east}{
+        \northwest
+        \pgf@x=-\pgf@x
+        \pgf@y=-\pgf@y
+    }
+    \anchor{base}{
+        \northwest
+        \pgf@x=0pt
+    }
+
+    \backgroundpath{
+
+        \pgfsetcolor{\ctikzvalof{color}}
+
+        \northwest
+        \pgf@circ@res@up = \pgf@y
+        \pgf@circ@res@down = -\pgf@y
+        \pgf@circ@res@right = -\pgf@x
+        \pgf@circ@res@left = \pgf@x
+
+        % additionnal
+        \pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{\pgf@circ@res@up}}
+        \pgfpathlineto{\pgfpoint{0.8\pgf@circ@res@left}{\pgf@circ@res@up}}
+        \pgfpathlineto{\pgfpoint{0.6\pgf@circ@res@left}{0.4\pgf@circ@res@up}}
+        \pgfpatharc{-45}{315}{0.6\pgf@circ@res@down}
+        \pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{\pgf@circ@res@down}}
+        \pgfpathlineto{\pgfpoint{0.8\pgf@circ@res@left}{\pgf@circ@res@down}}
+        \pgfpathlineto{\pgfpoint{0.61\pgf@circ@res@left}{0.43\pgf@circ@res@down}}
+    
+    
+        \pgfpathmoveto{\pgfpoint{\pgf@circ@res@right}{\pgf@circ@res@up}}
+        \pgfpathlineto{\pgfpoint{0.8\pgf@circ@res@right}{\pgf@circ@res@up}}
+        \pgfpathlineto{\pgfpoint{0.6\pgf@circ@res@right}{0.4\pgf@circ@res@up}}
+        \pgfpatharc{225}{-135}{0.6\pgf@circ@res@down}
+        \pgfpathmoveto{\pgfpoint{\pgf@circ@res@right}{\pgf@circ@res@down}}
+        \pgfpathlineto{\pgfpoint{0.8\pgf@circ@res@right}{\pgf@circ@res@down}}
+        \pgfpathlineto{\pgfpoint{0.61\pgf@circ@res@right}{0.43\pgf@circ@res@down}}
+        \pgfusepath{draw}
+    
+
+        %\pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{0.6\pgf@circ@res@down}}
+        %\pgfpathlineto{\pgfpoint{\pgf@circ@res@left}{0.6\pgf@circ@res@up}}
+        %\pgfsetarrowsend{latex}
+        %\pgfusepath{draw}
+    
+        %\pgfpathmoveto{\pgfpoint{\pgf@circ@res@right}{0.6\pgf@circ@res@down}}
+        %\pgfpathlineto{\pgfpoint{\pgf@circ@res@right}{0.6\pgf@circ@res@up}}
+        %\pgfsetarrowsend{latex}
+        %\pgfusepath{draw}
+    
+        %\pgfpathmoveto{\pgfpoint{0.8\pgf@circ@res@right}{\pgf@circ@res@up}}
+        %\pgfpathlineto{\pgfpoint{\pgf@circ@res@right}{\pgf@circ@res@up}}
+        %\pgfsetarrowsend{latex}
+        %\pgfusepath{draw}
+    
+        %\pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{\pgf@circ@res@up}}
+        %\pgfpathlineto{\pgfpoint{0.8\pgf@circ@res@left}{\pgf@circ@res@up}}
+        %\pgfsetarrowsend{latex}
+        %\pgfusepath{draw}
+    }
+}
+
+
+
+\ctikzset{quadpoles/transformer/width/.initial=1.5}
+\ctikzset{quadpoles/transformer/height/.initial=1}
+
+
+
+
+
+
+
+
+
+
+
