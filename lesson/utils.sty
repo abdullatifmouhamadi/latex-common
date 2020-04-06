@@ -80,3 +80,23 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newcommand{\TEACHERBLOC}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMAGE FRAME 
+%\usepackage{efbox,graphicx}
+%\efboxsetup{linecolor=green,linewidth=2pt}
+% use \efbox{
+
+\newcommand{\imageBox}[1]{
+	\efbox[linecolor=gray, linewidth=1pt,margin=4pt]{#1}
+}
+\newcommand{\eqBox}[1]{
+	\efbox[backgroundcolor=red!8, linecolor=gray!50, linewidth=1pt]{#1}
+}
+%_______________________________________________________________
+
+
+
+
