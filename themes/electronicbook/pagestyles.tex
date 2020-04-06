@@ -97,7 +97,8 @@
 		%\draw[fill=easi@light@blue, rounded corners=12pt] (4.3,0) rectangle (.97\paperwidth,2.5cm);
 		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@light@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~\chaptername};
 		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@light@blue, minimum width=.76\paperwidth] {\color{white}\chapterlabel#1};
-		\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@default@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~#1};
+		%\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@default@blue, minimum width=.76\paperwidth] {\color{white}\thechapter~-~#1};
+		\node[anchor=west,xshift=4.3cm,yshift=1.25cm, rectangle, rounded corners=12pt,inner sep=30pt, fill=easi@default@blue, minimum width=.76\paperwidth] {\color{white} #1};
 		\end{tikzpicture}
 		};
 	\end{tikzpicture}
