@@ -58,6 +58,7 @@
 
 
 
+\usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -216,5 +217,19 @@
 \usepackage{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
   %{\normalfont\bfseries}{}{0pt}{\Huge}
+
+
+
+
+\definecolor{etude@color}		{RGB}{133, 20, 75}
+
+\newenvironment{etude}
+{
+  \itemThemeBasic{etude@color}{\fontfamily{ugq}\large\selectfont}
+}
+{
+~
+}
+
 
 

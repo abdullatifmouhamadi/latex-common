@@ -100,3 +100,20 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Style des itemize
+
+\newcommand{\itemThemeBasic}[2] % #1 = couleur ; #2 = fonte
+{
+	\setlist[itemize,1]{label={\color{#1}\textbullet}}
+	\setlist[itemize,2]{label={\color{#1}$\rightarrow$}}
+	\setlist[enumerate,1]
+	{%
+		label=\fcolorbox{#1}
+		{#1!20}
+		{\color{#1}#2\normalsize\arabic*}
+	}
+	\setlist[enumerate,2]{label=\textcolor{#1}{#2\normalsize\alph*.}}
+}
+
+%_______________________________________________________________
+
