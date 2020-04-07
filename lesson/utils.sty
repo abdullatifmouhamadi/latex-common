@@ -2,7 +2,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{utils}[2019/08/22 Extension personnelle, V1.0]
-
+\RequirePackage{efbox}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROFESSOR/STUDENT
@@ -95,6 +95,28 @@
 \newcommand{\eqBox}[1]{
 	\efbox[backgroundcolor=red!8, linecolor=gray!50, linewidth=1pt]{#1}
 }
+
+\newcommand{\imageCentering}[1]{%
+    \begin{center}
+        \imageBox{#1}
+    \end{center}
+}
+\newcommand{\cadreImage}[1]{
+  \begin{center}
+    \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {#1};
+        \draw [white, rounded corners=0.3cm, line width=.3cm] 
+            (current bounding box.north west) -- 
+            (current bounding box.north east) --
+            (current bounding box.south east) --
+            (current bounding box.south west) -- cycle
+            ;
+    \end{tikzpicture}
+  \end{center}
+}
+
+
+
 %_______________________________________________________________
 
 
