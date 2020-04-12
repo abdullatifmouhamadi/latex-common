@@ -1,0 +1,72 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% titlesec
+% https://tex.stackexchange.com/questions/439166/beautiful-section-styles-with-polyglossia?noredirect=1&lq=1
+%\newbox\TitleUnderlineTestBox
+%\newcommand\TitleUnderline{\bgroup\markoverwith{%
+%  \textcolor{titleblue}{\rule[-1.3ex]{2pt}{1.0pt}}}\ULon}
+
+
+\newcommand\TitleUnderline{\bgroup\markoverwith{%
+  {\rule[-1.3ex]{2pt}{1.0pt}}}\ULon}
+\newcommand*\SectionNumberBox[2]
+  {%
+    \colorbox{#2}
+      {%
+        \makebox[2.5em][c]
+          {%
+            \color{white}%
+            \strut
+            \csname the#1\endcsname
+          }%
+      }%
+    \TitleUnderline{\ \ \ }%
+  }
+
+\newcommand*\chapterlabel{}
+\titleformat{\chapter}
+  {%
+    %\thispagestyle{chapterstart}
+    \pagecolor{white}
+    \bfseries\Huge\raggedleft
+    \color{dossier@header@colorB}
+  }{~}
+  {0pt}
+  {\formatChapter}
+%\titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+
+\titleformat{\section}
+  {\Large\bfseries\sffamily\color{general@best@teal}}
+  {\SectionNumberBox{section}{general@best@teal}}
+  {0pt}
+  {\formatSection}
+\titleformat{\subsection}
+  {\large\bfseries\sffamily\color{general@best@orange}}
+  {\SectionNumberBox{subsection}{general@best@orange}}
+  {0pt}
+  {\formatSubsection}
+
+
+  %https://tex.stackexchange.com/questions/160320/customizing-chapter-style-with-tikz
+  %http://www.texample.net/tikz/examples/fancy-chapter-headings/
+  \newcommand{\formatChapter}[1]{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[yshift=-3cm] at (current page.north west)
+        {\begin{tikzpicture}[remember picture, overlay]
+          \draw[fill=dossier@header@colorB] (0,0) rectangle
+            (\paperwidth,3cm);
+          \node[anchor=east,xshift=.9\paperwidth,rectangle,
+                rounded corners=2pt,inner sep=11pt,
+                fill=dossier@header@colorB!80]
+                {\color{white}\chapterlabel#1};
+        \end{tikzpicture}
+        };
+    \end{tikzpicture}
+  }
+  \newcommand{\formatSection}[1]{%
+    \TitleUnderline{#1}
+  }
+  \newcommand{\formatSubsection}[1]{%
+    \TitleUnderline{#1}
+  }
+%_______________________________________________________________________
