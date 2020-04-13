@@ -1,0 +1,166 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% titlesec
+% https://tex.stackexchange.com/questions/439166/beautiful-section-styles-with-polyglossia?noredirect=1&lq=1
+%\newbox\TitleUnderlineTestBox
+%\newcommand\TitleUnderline{\bgroup\markoverwith{%
+%  \textcolor{titleblue}{\rule[-1.3ex]{2pt}{1.0pt}}}\ULon}
+
+
+\newcommand\TitleUnderline{\bgroup\markoverwith{%
+  {\rule[-1.3ex]{2pt}{1.0pt}}}\ULon}
+\newcommand*\SectionNumberBox[2]
+  {%
+    \colorbox{#2}
+      {%
+        \makebox[2.5em][c]
+          {%
+            \color{white}%
+            \strut
+            \csname the#1\endcsname
+          }%
+      }%
+    \TitleUnderline{\ \ \ }%
+  }
+
+\newcommand*\chapterlabel{}
+\titleformat{\chapter}
+  {%
+    %\thispagestyle{chapterstart}
+    \pagecolor{white}
+    \bfseries\Huge\raggedleft
+    \color{general@best@maroon}
+  }{~}
+  {0pt}
+  {\formatChapter}
+%\titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+
+\titleformat{\section}
+  {\Large\bfseries\sffamily\color{general@best@navy}}
+  {\SectionNumberBox{section}{general@best@navy}}
+  {0pt}
+  {\formatSection}
+\titleformat{\subsection}
+  {\large\bfseries\sffamily\color{general@best@red}}
+  {\SectionNumberBox{subsection}{general@best@red}}
+  {0pt}
+  {\formatSubsection}
+
+
+  %https://tex.stackexchange.com/questions/160320/customizing-chapter-style-with-tikz
+  %http://www.texample.net/tikz/examples/fancy-chapter-headings/
+  \newcommand{\formatChapter}[1]{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[yshift=-3cm] at (current page.north west)
+        {\begin{tikzpicture}[remember picture, overlay]
+          \draw[fill=general@best@maroon] (0,0) rectangle
+            (\paperwidth,3cm);
+          \node[anchor=east,xshift=.9\paperwidth,rectangle,
+                rounded corners=2pt,inner sep=11pt,
+                fill=general@best@maroon!80]
+                {\color{white}\chapterlabel#1};
+        \end{tikzpicture}
+        };
+    \end{tikzpicture}
+  }
+  \newcommand{\formatSection}[1]{%
+    \TitleUnderline{#1}
+  }
+  \newcommand{\formatSubsection}[1]{%
+    \TitleUnderline{#1}
+  }
+%_______________________________________________________________________
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sections
+
+
+%\newcommand{\settoccolor}[1]{\color{#1}\def\@linkcolor{#1}}
+
+
+
+\renewcommand{\mtifont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSSfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSSSfont}{\fontfamily{ugq}\selectfont}
+
+
+
+
+
+
+%------------------------------------------------------------------------------ minitoc
+
+% http://forum.mathematex.net/latex-f6/tocloft-minitoc-et-couleur-t9192.html
+
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{Chapitre \thechapter\ -- #1}{}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ -- #1}}
+
+\renewcommand{\thepart}{%
+  \ifcase\value{part}
+  \or Premi\`ere\or Deuxi\`eme\or Troisi\`eme\or Quatri\`eme
+  \or Cinqui\`eme\or Sixi\`eme\or Septi\`eme\or Huiti\`eme
+  \or Neuvi\`eme\or Dixi\`eme\or Onzi\`eme\or Douzi\`eme
+  \or Treizi\`eme\or Quatorzi\`eme\or Quinzi\`eme\or Seizi\`eme
+  \or Dix-septi\`eme\or Dix-huiti\`eme\or Dix-neuvi\`eme
+  \or Vingti\`eme
+  \fi\space partie
+}
+
+\newcommand{\parttoccolor}{purple}
+\newcommand{\chaptertoccolor}{purple}
+\newcommand{\sectiontoccolor}{general@best@navy}
+\newcommand{\subsectiontoccolor}{general@best@red}
+
+% commande pour gérer la couleur dans la toc avec gestion d'hyperref
+\makeatletter
+\newcommand{\settoccolor}[1]{\color{#1}\def\@linkcolor{#1}}
+\makeatother
+% parts
+\renewcommand{\cftpartfont}{\bfseries\large\settoccolor{\parttoccolor}}
+\renewcommand{\cftpartafterpnum}{\settoccolor{\parttoccolor}\strut\par\nobreak\vspace{1pt}\hrule}
+\let\cftpartpagefont\cftpartfont
+% chapters
+\renewcommand{\cftchappresnum}{Chapitre~}
+\renewcommand{\cftchapleader}{\settoccolor{\chaptertoccolor}\leavevmode\cleaders\hbox to 1em {\hfil.\hfil}\hfill}
+\renewcommand{\cftchapfont}{\settoccolor{\chaptertoccolor}\bfseries}
+\let\cftchappagefont\cftchapfont
+\settowidth{\cftchapnumwidth}{\cftchapfont Chapitre~XXX}
+% sections
+\renewcommand{\cftsecfont}{\settoccolor{\sectiontoccolor}}
+\let\cftsecpagefont\cftsecfont
+\renewcommand{\cftsecleader}{\settoccolor{\sectiontoccolor}\leavevmode\cleaders\hbox to 0.8em {\hfil.\hfil}\hfill}
+\settowidth{\cftsecnumwidth}{\cftsecfont XXX.99}
+% subsections
+\renewcommand{\cftsubsecfont}{\settoccolor{\subsectiontoccolor}}
+\let\cftsubsecpagefont\cftsubsecfont
+\renewcommand{\cftsubsecleader}{\settoccolor{\subsectiontoccolor}\leavevmode\cleaders\hbox to 0.8em {\hfil.\hfil}\hfill}
+\settowidth{\cftsecnumwidth}{\cftsubsecfont XXX.99}
+
+
+
+
+
+%
+\makeatletter
+\def\contentsline#1#2#3#4{%
+  \ifx\\#4\\%
+    \csname l@#1\endcsname{#2}{#3}%
+  \else
+      \csname l@#1\endcsname{\hyper@linkstart{link}{#4}{#2}\hyper@linkend}{%
+        \hyper@linkstart{link}{#4}{#3}\hyper@linkend
+      }%
+  \fi
+}
+\makeatother
+
+
+
+%_______________________________________________________________________
+
