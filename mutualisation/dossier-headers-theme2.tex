@@ -28,7 +28,7 @@
     %\thispagestyle{chapterstart}
     \pagecolor{white}
     \bfseries\Huge\raggedleft
-    \color{dossier@header@colorB}
+    \color{general@best@olive}
   }{~}
   {0pt}
   {\formatChapter}
@@ -36,8 +36,8 @@
 
 
 \titleformat{\section}
-  {\Large\bfseries\sffamily\color{general@best@teal}}
-  {\SectionNumberBox{section}{general@best@teal}}
+  {\Large\bfseries\sffamily\color{general@best@green}}
+  {\SectionNumberBox{section}{general@best@green}}
   {0pt}
   {\formatSection}
 \titleformat{\subsection}
@@ -53,11 +53,11 @@
     \begin{tikzpicture}[remember picture,overlay]
       \node[yshift=-3cm] at (current page.north west)
         {\begin{tikzpicture}[remember picture, overlay]
-          \draw[fill=dossier@header@colorB] (0,0) rectangle
+          \draw[fill=general@best@olive] (0,0) rectangle
             (\paperwidth,3cm);
           \node[anchor=east,xshift=.9\paperwidth,rectangle,
                 rounded corners=2pt,inner sep=11pt,
-                fill=dossier@header@colorB!80]
+                fill=general@best@olive!80]
                 {\color{white}\chapterlabel#1};
         \end{tikzpicture}
         };
@@ -113,9 +113,9 @@
   \fi\space partie
 }
 
-\newcommand{\parttoccolor}{dossier@header@colorB}
-\newcommand{\chaptertoccolor}{dossier@header@colorB}
-\newcommand{\sectiontoccolor}{general@best@teal}
+\newcommand{\parttoccolor}{general@best@olive}
+\newcommand{\chaptertoccolor}{general@best@olive}
+\newcommand{\sectiontoccolor}{general@best@green}
 \newcommand{\subsectiontoccolor}{general@best@orange}
 
 % commande pour gérer la couleur dans la toc avec gestion d'hyperref
