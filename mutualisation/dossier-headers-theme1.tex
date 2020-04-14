@@ -100,7 +100,7 @@
 
 
 \renewcommand{\chaptermark}[1]{%
-\markboth{Chapitre \thechapter\ -- #1}{}}
+\markboth{Module \thechapter\ -- #1}{}}
 \renewcommand{\sectionmark}[1]{%
 \markright{\thesection\ -- #1}}
 
@@ -131,11 +131,11 @@
 \renewcommand{\cftpartafterpnum}{\settoccolor{\parttoccolor}\strut\par\nobreak\vspace{1pt}\hrule}
 \let\cftpartpagefont\cftpartfont
 % chapters
-\renewcommand{\cftchappresnum}{Chapitre~}
+\renewcommand{\cftchappresnum}{Module~}
 \renewcommand{\cftchapleader}{\settoccolor{\chaptertoccolor}\leavevmode\cleaders\hbox to 1em {\hfil.\hfil}\hfill}
 \renewcommand{\cftchapfont}{\settoccolor{\chaptertoccolor}\bfseries}
 \let\cftchappagefont\cftchapfont
-\settowidth{\cftchapnumwidth}{\cftchapfont Chapitre~XXX}
+\settowidth{\cftchapnumwidth}{\cftchapfont Module~XXX}
 % sections
 \renewcommand{\cftsecfont}{\settoccolor{\sectiontoccolor}}
 \let\cftsecpagefont\cftsecfont
