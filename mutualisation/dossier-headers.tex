@@ -20,6 +20,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS/FOOTERS
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -143,12 +146,26 @@
 \usepackage{hyperref}%
 \usepackage{systeme,mathtools}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CIRCUITS LOGIQUE
 \usetikzlibrary{babel} %%% <--- Don't forget
-\usepackage[siunitx]{circuitikz}
+%\usepackage[siunitx, straightvoltages]{circuitikz}
+\usepackage[european,straightvoltages]{circuitikz}
 \usetikzlibrary{circuits.logic.IEC}
 \usetikzlibrary{shapes.gates.logic.IEC}
 \usetikzlibrary{circuits.logic.US,circuits.logic.IEC, positioning}
 \usetikzlibrary{arrows, shapes.gates.logic.US, calc}
+\usepackage{pgfplots}
+\usetikzlibrary{angles,quotes}
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows, positioning}
+
+
+
+%%% params
+\ctikzset{v/.append style={/tikz/european voltages}}
+%_______________________________________________________________
 
 
 
@@ -233,3 +250,7 @@
 
 % https://tex.stackexchange.com/questions/336617/command-clofdepth-already-defined-when-using-packages-subfigure-and-tocloft
 \usepackage[subfigure]{tocloft}
+
+
+
+
