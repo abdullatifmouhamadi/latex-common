@@ -1,19 +1,19 @@
 
 %%%%%%%%%%% Environnement "essential"
+
+
 \newsavebox{\ess@box}
 \newenvironment{essential}[1][]
 {%
-	\def\textBGColor{orange}
-	\def\titleBGColor{purple}
-	\def\titleColor{blue}
-	%\setcounter{break@box}{0}
-	%\setcounter{type@box}{1}
-	%\typebox{ess}
+	\def\textBGColor{general@best@maroon}
+	\def\rectBGColor{general@best@maroon}
+	\def\titleColor{white}
+
 	\def\titletext{$\boldsymbol{\heartsuit}$}
-	%\ifx#1\@empty\xdef\pluriel@def{}\else\xdef\pluriel@def{#1}\fi
-	%\itemclass{deftitle@bg@color}{\deftitle@font}
+	%\def\titletext{$\boldsymbol{\bigstar}$}
+
 	\begin{lrbox}{\ess@box}
-	\begin{minipage}{\dimexpr\linewidth-\marginleft+10mm}
+	\begin{minipage}{\dimexpr\linewidth-\marginleft+15mm-4mm}
 }
 {%
 	\end{minipage}
@@ -21,7 +21,7 @@
 	%\vspace*{\spacebeforedef}
 	\begin{tikzpicture}
 	\node[fill=gray!8] (texte) {\usebox{\ess@box}};
-	\node[fill=\textBGColor,text=\titleColor,below left,draw=\titleBGColor,very thick,text width={\dimexpr\marginleft-15mm},align=center] at ($(texte.north west)+(1pt,0)$) { \titletext };
+	\node[fill=\textBGColor,text=\titleColor,below left,draw=\rectBGColor,very thick,text width={\dimexpr\marginleft-20mm+2mm},align=center] at ($(texte.north west)+(1pt,0)$) { \tiny \titletext };
 	\end{tikzpicture}
 }
 
