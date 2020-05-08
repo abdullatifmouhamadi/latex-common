@@ -2,9 +2,9 @@
 \def\fileversion{1.4}
 \def\filedate{2019/05/26}
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{electronicbook}[%
+\ProvidesClass{dossiers}[%
   \filedate\space v\fileversion\space
-  electronicbook document class. Mouhamadi ABDULLATIF]
+  dossiers document class. Mouhamadi ABDULLATIF]
 %
 % MAJ du 2013/06/12 : rectification de la déclaration de l'option "inputenc"
 % MAJ du 2013/08/18 : rectification de la déclaration de l'option utf8 (il manquait le "8" dans "DeclareOption"
@@ -12,6 +12,7 @@
 % MAJ du 2016/09/07 : corrrection du bug concernant la disposition des exos/corrigés + création des commandes \DefineNewBoxLikeDef et \DefineNewBoxLikeRem
 % MAJ du 2019/05/24 : ajout de la commande \BreakCorr pour couper le corrigé d'un exercice
 %
+
 \newif\if@ams
 \newif\if@openany
 \newif\if@dixpt
@@ -61,7 +62,7 @@
 	\fi
 \fi
 
-\LoadClass[\optionsbook]{book}
+\LoadClass[\optionsbook]{report}
 %
 %%%%%%%%%%%%%%%%%
 %%% Packages  %%%
@@ -70,7 +71,7 @@
 \RequirePackage[\inputoption]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{cellspace}
-\RequirePackage[cmyk,table]{xcolor} 
+%\RequirePackage[cmyk,table]{xcolor} 
 %\RequirePackage{kpfonts} % mouha
 \RequirePackage{titlesec}
 %\RequirePackage[explicit]{titlesec} % mouha
@@ -92,7 +93,7 @@
 \RequirePackage{multido}
 \RequirePackage{multicol}
 \RequirePackage{fp}
-\input{common/themes/electronicbook/colors}
+%\input{common/themes/electronicbook/colors}
 \RequirePackage[colorlinks=true,linkcolor=corref@color]{hyperref}
 \if@ams
 	\RequirePackage{amsmath,amsfonts,amssymb}
@@ -101,10 +102,10 @@
 \frenchbsetup{StandardLists=true}
 \RequirePackage[autolanguage]{numprint} 
 %
-\input{common/themes/electronicbook/lengths}
-\input{common/themes/electronicbook/fonts}
-\input{common/themes/electronicbook/pagestyles}
-\input{common/themes/electronicbook/sectionstyles}
-\input{common/themes/electronicbook/commandes}
+\input{common/themes/dossiers/lengths}
+%\input{common/themes/electronicbook/fonts}
+%\input{common/themes/electronicbook/pagestyles}
+%\input{common/themes/electronicbook/sectionstyles}
+%\input{common/themes/dossiers/commandes}
 \input{common/themes/common/commandes}
 \endinput
