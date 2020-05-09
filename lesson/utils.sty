@@ -101,6 +101,12 @@
         \imageBox{#1}
     \end{center}
 }
+\newcommand{\imageCenteringL}[2]{%
+    \begin{center}
+        \efbox[linecolor=gray, linewidth=1pt,margin=4pt]{ \makecell{ #1\\ \normalsize\textit{#2} } }
+    \end{center}
+}
+
 \newcommand{\cadreImage}[1]{
   \begin{center}
     \begin{tikzpicture}
