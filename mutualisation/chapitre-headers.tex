@@ -1,0 +1,164 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEFAUTS
+\usepackage{kpfonts}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\definecolor{bleu}{cmyk}{0.59,0.11,0,0.59}
+\definecolor{vert}{cmyk}{0.78,0,0.74,0.45}
+\lstset{
+	numbers=left, 
+	numberstyle=\tiny, 
+	stepnumber=1, 
+	numbersep=3pt, 
+	language=[LaTeX]TeX, 
+	backgroundcolor=\color{bleu!20},
+	frame=shadowbox,
+	rulesepcolor=\color{bleu},
+	rulecolor=\color{bleu},
+	framexleftmargin=10pt,
+	keywordstyle=\color{vert}\bfseries,
+	basicstyle=\ttfamily,
+    columns=flexible,
+    keepspaces=true,
+	upquote=true,
+	escapeinside={\%*}{*)},
+	extendedchars=false, % listing extended chars
+	inputencoding=utf8,
+    commentstyle=\color{gray},
+    morekeywords={redefineColor,dfrac,setlength,cellspacetoplimit, cellspacebottomlimit,firstline,text,intro,introauthor,chapter, itemclass,exostart,corrstart,AfficheCorriges,columnbreak,titlepic, nbcolindex,indexname,printindex,makeindex,activites, DefineNewBoxLikeRem,BreakCorr}
+}
+\usepackage{lipsum}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MINI-SOMMAIRES 
+% print subsubsection
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+% fin print subsubsection
+\usepackage{minitoc}
+\setcounter{minitocdepth}{3}
+%\setcounter{minitocdepth}{2}
+\setlength{\mtcindent}{24pt}
+%\renewcommand{\mtcfont}{\small\rm}
+%\renewcommand{\mtcSfont}{\small\bf}
+
+
+%\mtcsetfont{minitoc}{section}{\small\rmfamily\upshape\bfseries}
+%\mtcsetfont{minitoc}{subsection}{\small\rmfamily\upshape\bfseries}
+%\mtcsetfont{minitoc}{subsubsection}{\small\rmfamily\upshape\bfseries}
+
+\renewcommand{\mtifont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSSfont}{\fontfamily{ugq}\selectfont}
+\renewcommand{\mtcSSSfont}{\fontfamily{ugq}\selectfont}
+
+\mtcselectlanguage{french}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POLICE - ECRITURE
+\usepackage{lmodern}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AUTRES
+\usepackage{multicol}
+%_______________________________________________________________
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TIMING
+\usepackage{tikz-timing}
+\usetikztiminglibrary[new={char=Q,reset char=R}]{counters}
+\usetikztiminglibrary{nicetabs} 
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CIRCUITS LOGIQUE
+\usetikzlibrary{babel} %%% <--- Don't forget
+%\usepackage[siunitx, straightvoltages]{circuitikz}
+\usepackage[european,straightvoltages]{circuitikz}
+\usetikzlibrary{circuits.logic.IEC}
+\usetikzlibrary{shapes.gates.logic.IEC}
+\usetikzlibrary{circuits.logic.US,circuits.logic.IEC, positioning}
+\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
+\usepackage{pgfplots}
+\usetikzlibrary{angles,quotes}
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows, positioning}
+
+
+
+%%% params
+\ctikzset{v/.append style={/tikz/european voltages}}
+
+% http://texample.net/tikz/examples/power-electronics-rectifier/
+
+
+\usetikzlibrary{chains}
+
+%\usepackage[usenames,dvipsnames]{color}
+%\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+\usetikzlibrary{calc}
+\ctikzset{bipoles/thickness=1}
+\ctikzset{bipoles/length=0.8cm}
+\ctikzset{bipoles/diode/height=.575}
+\ctikzset{bipoles/diode/width=.5}
+\ctikzset{tripoles/thyristor/height=.8}
+\ctikzset{tripoles/thyristor/width=1}
+\ctikzset{bipoles/vsourceam/height/.initial=.7}
+\ctikzset{bipoles/vsourceam/width/.initial=.7}
+%\tikzstyle{every node}=[font=\small]
+%\tikzstyle{every path}=[line width=0.8pt,line cap=round,line join=round]
+
+
+\definecolor{draw@color}{HTML}{0074D9}
+
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BLOCS 
+\usetikzlibrary{backgrounds}
+\tikzset{
+  partialbox/.style={draw,rounded corners,fill=white,text=purple,
+  minimum height=30pt,align=left},
+  el/.style={text=red,font=\sffamily\bfseries,align=center},
+  ml/.style={font=\tiny,text=green!70!black,align=left,
+    inner sep=0pt,outer sep=0.5pt,minimum height=0pt,}
+}
+%_______________________________________________________________
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ARRAY 
+\usepackage{array,multirow,makecell}
+\usepackage{hhline}
+\renewcommand{\arraystretch}{1.5}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATHS 
+\usepackage{relsize}
+\usepackage{physics}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMAGE FRAME 
+\usepackage{efbox,graphicx}
+%_______________________________________________________________
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERSONNAL
+\usepackage{common/lesson/utils}
+\usepackage{common/lesson/pretty}
+\usepackage{common/mutualisation/utils}
+\usepackage{common/lesson/tables}
+%\usepackage{common/lesson/flipflop}
+\usepackage{common/lesson/transformers}
+%\usepackage{common/lesson/utils}
+%_______________________________________________________________
