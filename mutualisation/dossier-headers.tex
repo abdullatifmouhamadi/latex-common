@@ -351,7 +351,7 @@
 
 % https://tex.stackexchange.com/questions/178904/use-datatool-to-read-a-row-from-a-csv-file-then-use-the-variables-in-the-docume
 \usepackage{datatool}
-%\DTLsetdelimiter{";"} ; ne marche pas je sais pas pourquoi
-
-
+%\DTLsetdelimiter{|} 
+\DTLsetseparator{|} % works
 \usepackage{graphbox} %loads graphicx package
+
