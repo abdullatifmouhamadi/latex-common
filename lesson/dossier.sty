@@ -8,19 +8,25 @@
 
 
 %----------------------------------------------------------------------------- call for validation
-\newcommand{\callForCompetencesBox}[1]{%
-\begin{tabular}{ |c|c|c|c|c|c|c|c| }
-    \hline
-    \rowcolor{gray!32}\multicolumn{8}{|l|}{ \textbf{Cadre réservé au formateur} }\\
-    %\hline
-    \rowcolor{gray!16}
-    \multicolumn{2}{|L{.23\textwidth}}{$\Box$ Non acquis } & 
-    \multicolumn{2}{L{.24\textwidth}}{$\Box$ En cours d'acquisition} & 
-    \multicolumn{2}{L{.22\textwidth}}{$\Box$ Acquis} & 
-    \multicolumn{2}{L{.22\textwidth}|}{$\Box$ Acquis +}\\
-    %\rowcolor{gray!32} \textbf{Cadre réservé au formateur} & ~ \\
-    %\rowcolor{gray!32} \makecell[l]{ $\Box$ Non acquis} & \makecell[l]{ $\Box$ En cours d'acquisition}  \\
-    \hline
-\end{tabular}
+\newcounter{evaluationCompetences}
+\newcommand{\formateurEvaluationCompetences}[1]{%
+    \stepcounter{evaluationCompetences}
+
+    \textit{\textbf{\color{red}$\blacksquare$~Appeller le formateur.}}\\
+    \begin{tabular}{ |c|c|c|c|c|c|c|c| }
+        \hline
+        \rowcolor{gray!16}\multicolumn{2}{|l}{ \bfseries Evaluation \theevaluationCompetences } &
+        \multicolumn{2}{c}{ \bfseries #1} &
+        \multicolumn{4}{c|}{ \color{red}\bfseries\textit{Cadre réservé au formateur} }\\
+        %\hline
+        \rowcolor{gray!8}
+        \multicolumn{2}{|L{.23\textwidth}}{$\Box$ Non traité } & 
+        \multicolumn{2}{L{.22\textwidth}}{$\Box$ Non acquis} & 
+        \multicolumn{2}{L{.25\textwidth}}{$\Box$ En cours d'acquisition} & 
+        \multicolumn{2}{L{.22\textwidth}|}{$\Box$ Acquis}\\
+        %\rowcolor{gray!32} \textbf{Cadre réservé au formateur} & ~ \\
+        %\rowcolor{gray!32} \makecell[l]{ $\Box$ Non acquis} & \makecell[l]{ $\Box$ En cours d'acquisition}  \\
+        \hline
+    \end{tabular}
 }
 
