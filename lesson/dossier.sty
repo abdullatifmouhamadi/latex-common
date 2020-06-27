@@ -26,9 +26,6 @@
 
 
 
-
-
-
 %----------------------------------------------------------------------------- call for validation
 %-----------------------------------------------------------------------------
 \newcounter{evaluationCompetences}
@@ -62,10 +59,14 @@
     
     \def\exa{Le dossier de fabrication produit est conforme aux contraintes. equipe}
     \writeExpandedFileStream{\output@stream@evaluationCompetences}{
-        \theevaluationCompetences|#1|\exa|a|b|c|d|
+        \theevaluationCompetences|#1|c|a|b|c|d|
     }
+
 }
 
+\newcommand{\foo}[1]{%
+    \bfseries #1
+}
 \newcommand{\formateurEvaluationCompetencesGrid}{%
     \closeFileStream{\output@stream@evaluationCompetences}
 
@@ -83,7 +84,7 @@
             \DTLforeach*{grille}{%
             \evaluation=evaluation, \competence=competence, \savoirfaire=savoirfaire, \attendus=attendus}{%
             \\\hline\DTLifoddrow{\rowcolor{orange!8}}{\rowcolor{yellow!8}}%
-            \evaluation & \competence &\savoirfaire & \attendus & $\Box~\Box~\Box~\Box$}%
+            \evaluation & \foo{\competence} &\savoirfaire & \attendus & $\Box~\Box~\Box~\Box$}%
             \\ \hline
         \end{longtable}
     \end{center}
