@@ -25,13 +25,20 @@
 
 
 
+
+
+
+
 %----------------------------------------------------------------------------- call for validation
 %-----------------------------------------------------------------------------
 \newcounter{evaluationCompetences}
 \newwrite{\output@stream@evaluationCompetences}
-\openFileStream{\output@stream@evaluationCompetences}{tmp/evaluationCompetences/grilleEvaluation.tex}
-
-\newcommand{\formateurEvaluationCompetences}[1]{%
+\def\outputFile{tmp/evaluationCompetences/grilleEvaluation.csv}
+\openFileStream{\output@stream@evaluationCompetences}{\outputFile}
+\writeUnexpandedFileStream{\output@stream@evaluationCompetences}{
+    evaluation|competence|savoirfaire|attendus|a|b|c|d
+}
+\newcommand{\formateurEvaluationCompetences}[2]{%
     \stepcounter{evaluationCompetences}
 
     \textit{\textbf{\color{red}$\blacksquare$~Appeller le formateur.}}\\
@@ -51,16 +58,39 @@
         \hline
     \end{tabular}
 
-    \writeUnexpandedFileStream{\output@stream@evaluationCompetences}{
-        \theevaluationCompetences - Salut correction #1\\
+
+    
+    \def\exa{Le dossier de fabrication produit est conforme aux contraintes. equipe}
+    \writeExpandedFileStream{\output@stream@evaluationCompetences}{
+        \theevaluationCompetences|#1|\exa|a|b|c|d|
     }
 }
 
 \newcommand{\formateurEvaluationCompetencesGrid}{%
     \closeFileStream{\output@stream@evaluationCompetences}
-    \begin{tabular}{|L{.4\textwidth}|}
-    \input{tmp/evaluationCompetences/grilleEvaluation.tex}
-    \end{tabular}
+
+    \DTLloaddb{grille}{\outputFile}
+
+    \begin{center}
+        \begin{longtable}{ |C{.02\textwidth}  |C{.15\textwidth}|L{.320\textwidth}|L{.285\textwidth} |C{.10\textwidth} |}
+            \hline
+            \rowcolor{gray!16}
+            \bfseries E &
+            \bfseries Compétence &
+            \bfseries Savoir-faire &
+            \bfseries Résultats attendus &
+            \bfseries Note
+            \DTLforeach*{grille}{%
+            \evaluation=evaluation, \competence=competence, \savoirfaire=savoirfaire, \attendus=attendus}{%
+            \\\hline\DTLifoddrow{\rowcolor{orange!8}}{\rowcolor{yellow!8}}%
+            \evaluation & \competence &\savoirfaire & \attendus & $\Box~\Box~\Box~\Box$}%
+            \\ \hline
+        \end{longtable}
+    \end{center}
+
+   % \begin{tabular}{|L{.4\textwidth}|}
+    %\input{\outputFile}
+    %\end{tabular}
 }
 % https://tex.stackexchange.com/questions/23253/how-to-append-data-to-a-temporary-file
 
