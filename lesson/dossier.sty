@@ -4,11 +4,33 @@
 
 \ProvidesPackage{dossier}[2020/01/01 Extension personnelle, V1.0]
 
+% common
+\newcommand{\openFileStream}[2]
+{% ouvre le flux de fichier
+  \immediate\openout#1 #2%
+}
+\newcommand{\closeFileStream}[1]
+{% ferme le flux de fichier
+  \immediate\closeout#1%
+}
+\newcommand{\writeExpandedFileStream}[2]
+{% écrit un court texte dans le fichier
+  \immediate\write#1{\expanded{#2}}%
+}
+\newcommand{\writeUnexpandedFileStream}[2]
+{% écrit un court texte dans le fichier
+  \immediate\write#1{\unexpanded{#2}}%
+}
+
 
 
 
 %----------------------------------------------------------------------------- call for validation
+%-----------------------------------------------------------------------------
 \newcounter{evaluationCompetences}
+\newwrite{\output@stream@evaluationCompetences}
+\openFileStream{\output@stream@evaluationCompetences}{tmp/evaluationCompetences/grilleEvaluation.tex}
+
 \newcommand{\formateurEvaluationCompetences}[1]{%
     \stepcounter{evaluationCompetences}
 
@@ -28,5 +50,25 @@
         %\rowcolor{gray!32} \makecell[l]{ $\Box$ Non acquis} & \makecell[l]{ $\Box$ En cours d'acquisition}  \\
         \hline
     \end{tabular}
+
+    \writeUnexpandedFileStream{\output@stream@evaluationCompetences}{
+        \theevaluationCompetences - Salut correction #1\\
+    }
 }
+
+\newcommand{\formateurEvaluationCompetencesGrid}{%
+    \closeFileStream{\output@stream@evaluationCompetences}
+    \begin{tabular}{|L{.4\textwidth}|}
+    \input{tmp/evaluationCompetences/grilleEvaluation.tex}
+    \end{tabular}
+}
+% https://tex.stackexchange.com/questions/23253/how-to-append-data-to-a-temporary-file
+
+
+%----------------------------------------------------------------------------- fin call for validation
+
+
+
+
+
 
