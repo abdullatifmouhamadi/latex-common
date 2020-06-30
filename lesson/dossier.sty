@@ -4,26 +4,6 @@
 
 \ProvidesPackage{dossier}[2020/01/01 Extension personnelle, V1.0]
 
-% common
-\newcommand{\openFileStream}[2]
-{% ouvre le flux de fichier
-  \immediate\openout#1 #2%
-}
-\newcommand{\closeFileStream}[1]
-{% ferme le flux de fichier
-  \immediate\closeout#1%
-}
-\newcommand{\writeExpandedFileStream}[2]
-{% écrit un court texte dans le fichier
-  \immediate\write#1{\expanded{#2}}%
-}
-\newcommand{\writeUnexpandedFileStream}[2]
-{% écrit un court texte dans le fichier
-  \immediate\write#1{\unexpanded{#2}}%
-}
-
-
-
 
 
 
