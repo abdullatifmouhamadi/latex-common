@@ -1,0 +1,151 @@
+
+% git clone http://git.robertalessi.net/arabluatex
+
+\documentclass{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
+% method 2
+\usepackage{geometry}
+\geometry{hmargin=1.5cm,vmargin=2.0cm}
+%\geometry{hmargin=1.0cm,vmargin=1.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS/FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+
+%\fancyhead[LE,RO]{\textsl{}}
+%\fancyhead[LO,RE]{\textsl{}}
+
+\fancyhead[LE,RO]{\textsl{\rightmark}}
+\fancyhead[LO,RE]{\textsl{\leftmark}}
+%\fancyhead[LE,RO]{\textsl{}}
+\fancyfoot[C]{\thepage}
+
+
+%\fancyfoot[L]{CFAI Poitou-Charentes}
+%\fancyfoot[C]{Physique Appliquée}
+%\fancyfoot[R]{\thepage}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyfoot[L]{CFAI Poitou-Charentes}
+%\fancyfoot[C]{Electronique \& Communication}
+%\fancyfoot[R]{\thepage}
+\fancyfoot[R]{\today }
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMAGE FRAME 
+\usepackage{efbox,graphicx}
+%_______________________________________________________________
+
+\usepackage{enumitem}
+
+
+
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage[Lenny]{fncychap}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ARRAY 
+\usepackage{array,multirow,makecell}
+\renewcommand{\arraystretch}{1.2}
+
+\usepackage{hhline}
+\usepackage{makecell} % https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+
+
+\usepackage{booktabs}
+
+
+\usepackage{listings,multicol}
+\usepackage{color}
+
+\usepackage{xcolor, colortbl} %kleurtjes voor table
+
+% print subsubsection
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+% fin print subsubsection
+
+
+\usepackage{minitoc}
+\setcounter{minitocdepth}{3}
+%\setcounter{minitocdepth}{2}
+\setlength{\mtcindent}{24pt}
+\renewcommand{\mtcfont}{\small\rm}
+\renewcommand{\mtcSfont}{\small\bf}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERSONNAL
+%\usepackage{common/lesson/utils}
+%\usepackage{common/lesson/headers}
+\usepackage{common/lesson/tables}
+
+
+
+
+
+\usepackage[tuenc]{fontspec}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+\setotherlanguage{arabic}
+\setmainfont{Amiri}
+
+
+\usepackage{arabluatex,ulem}
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{csvsimple}
+
+
+% https://tex.stackexchange.com/questions/178904/use-datatool-to-read-a-row-from-a-csv-file-then-use-the-variables-in-the-docume
+\usepackage{datatool}
+%\DTLsetdelimiter{|} 
+\DTLsetseparator{|} % works
+\usepackage{graphbox} %loads graphicx package

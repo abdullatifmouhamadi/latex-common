@@ -1,0 +1,378 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{conducteur-seance}[2020/05/24 Extension personnelle, V1.0]
+\RequirePackage{common/core/filestream}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bloom
+
+\def \bloomReconnaitre{\textbf{reconnaître}~}
+\def \bloomSchematiser{\textbf{schématiser}~}
+\def \bloomCalculer{\textbf{calculer}~}
+\def \bloomDemontrer{\textbf{démontrer}~}
+\def \bloomNommer{\textbf{nommer}~}
+\def \bloomDecrir{\textbf{décrir}~}
+\def \bloomConstruire{\textbf{construire}~}
+\def \bloomUtiliser{\textbf{utiliser}~}
+\def \bloomEcrire{\textbf{écrire}~}
+\def \bloomAnalyser{\textbf{analyser}~}
+\def \bloomDifferencier{\textbf{différencier}~}
+\def \bloomAssembler{\textbf{assembler}~}
+\def \bloomDefinir{\textbf{définir}~}
+\def \bloomCollecter{\textbf{collecter}~}
+\def \bloomInterpreter{\textbf{interpréter}~}
+\def \bloomExperimenter{ \textbf{expérimenter} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sequenceBlock
+
+\newcommand{\specificiteBlock}[1]{%
+    \begin{tabular}{L{.55\linewidth} L{.4\linewidth}}
+        \toprule
+        \textbf{spécificité} & \textbf{réponse}\\
+        \midrule
+            #1
+        \bottomrule
+    \end{tabular}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sequenceTitlesBlock
+
+\newcommand{\sequenceTitlesBlock}[1]{%
+    \begin{tabular}{R{.025\linewidth} L{.4\linewidth} L{.50\linewidth}}
+        \toprule
+        \textbf{\#} & \textbf{titre de la séquence} & \textbf{A la fin de la séquence de formation, l'apprenant sera capable de :}\\
+        \midrule
+            #1
+        \bottomrule
+    \end{tabular}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sequenceBlock
+
+\def \CAWIDTH{0.15\linewidth}
+\def \CBWIDTH{0.12\linewidth}
+\def \CCWIDTH{0.06\linewidth}
+\def \CDWIDTH{0.29\linewidth}
+\def \CEWIDTH{0.29\linewidth}
+
+\def \CSEQWIDTH{0.62\linewidth}
+\def \CTOTALWIDTH{0.91\linewidth} % total
+
+
+
+\newcommand{\sequenceBlock}[4]{%
+\large
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        \multicolumn{8}{|l|}{ \makecell[{{p{\CSEQWIDTH}}}]{\textbf{Séquence :} #1}} &
+        \multicolumn{2}{r|}{ \textbf{Durée :} #2 }\\
+        \hline
+        \multicolumn{10}{|l|}{ \makecell[{{p{\CTOTALWIDTH}}}]{\textbf{Objectif :} #3 } } \\
+        \hline
+        \multicolumn{2}{|C{\CAWIDTH}|}{ \textbf{Activités pédagogique}  } & 
+        \multicolumn{2}{C{\CBWIDTH}|}{ \textbf{Outils} } & 
+        \multicolumn{2}{C{\CCWIDTH}|}{ \textbf{Durée} }& 
+        \multicolumn{2}{C{\CDWIDTH}|}{ \textbf{Ce qu’il faut retenir} } &
+        \multicolumn{2}{C{\CEWIDTH}|}{ \textbf{Risques} } \\
+        \hline
+        #4
+    \end{tabular}
+\end{center}
+}
+
+\newcommand{\sequenceBlockRow}[5]{
+    \multicolumn{2}{|L{\CAWIDTH}|}{ #1 } & 
+    \multicolumn{2}{L{\CBWIDTH}|}{ #2 } & 
+    \multicolumn{2}{C{\CCWIDTH}|}{#3}& 
+    \multicolumn{2}{L{\CDWIDTH}|}{ #4 } &
+    \multicolumn{2}{L{\CEWIDTH}|}{ #5 } \\
+    \hline
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin sequenceBlock
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sequenceBlockModelB 
+
+
+\newcommand{\sequenceBlockModelB}[4]{%
+\large
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #1}} \\
+        \hline
+        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #2 } } \\
+        \hline
+        \multicolumn{2}{|L{0.44\textwidth}|}{ \textbf{Déroulé (activités)}  } & 
+        \multicolumn{2}{L{0.4\textwidth}|}{ \textbf{Outil utilisé} } & 
+        \multicolumn{2}{C{0.08\textwidth}|}{ \textbf{Durée} }\\
+        \hline
+        #3
+        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #4 }} \\
+        \hline
+    \end{tabular}
+\end{center}
+}
+
+
+\newcommand{\sequenceBlockRowModelB}[3]{
+    \multicolumn{2}{|L{0.44\textwidth}|}{ #1 } & 
+    \multicolumn{2}{L{0.4\textwidth}|}{ #2 } & 
+    \multicolumn{2}{C{0.08\textwidth}|}{#3} \\
+    \hline
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin equenceBlockModelB 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pedagogicBlock
+
+
+\def \pedagogicLineA {
+  \sequenceBlockRow
+  {Vos représentations (brainstorming)}
+  {Padlet (fonction d’ajout de carte)}
+  {10min}
+  {Demander aux apprenants de noter sur le padlet une définition du digital learning, selon ce qu’ils connaissent et ce que le digital représente pour eux. Il n’y a pas de mauvaises réponses}
+  {Mauvaise connexion internet. Pas d’ordinateur ou de smartphone pour se connecter sur le padlet. Problème avec l’utilisation de padlet.}
+}
+
+\def \pedagogicLineB {
+  \sequenceBlockRow
+  {Construction de la définition (travail collaboratif)}
+  {Padlet (fonction d’ajout de carte)}
+  {5min}
+  {Demander aux apprenants de parcouritoutes les définitions et de voter poucelles qu’ils trouvent les plupertinentes.}
+  {Mauvaise connexion internet. Pas d’ordinateur ou de smartphone pour se connecter sur le padlet. Problème avec l’utilisation de padlet.}
+}
+
+\def \pedagogicLineC {
+  \sequenceBlockRow
+  {Synthèse de la définition}
+  {A l’oral, sélectionner et départager la meilleure définition selon les apprenants.}
+  {10min}
+  {Demander aux apprenants d’identifieles meilleures définitions, pour n’ecréer qu’une seule Le formateur peut nommer usecrétaire qui sera en charge drédiger la définition du groupecomplétée par les apports du formateule cas échéant.}
+  {Mauvaise connexion internet. Pas d’ordinateur ou de smartphone pour se connecter sur le padlet. Problème avec l’utilisation de padlet.}
+}
+
+\def \pedagogicLineD {
+  \sequenceBlockRow
+  {Recherche d’exemples et partage}
+  {Recherche internet et padlet (fonction partage de lien, d’image, création de carte)}
+  {10min}
+  {Demander aux apprenants d’identifieles meilleures définitions, pour n’ecréer qu’une seule Le formateur peut nommer usecrétaire qui sera en charge drédiger la définition du groupecomplétée par les apports du formateule cas échéant.}
+  {Mauvaise connexion internet. Pas d’ordinateur ou de smartphone pour se connecter sur le padlet. Problème avec l’utilisation de padlet.}
+}
+
+
+\def \pedagogicLineE {
+  \sequenceBlockRow
+  {Recherche d’exemples et partage}
+  {Recherche internet et padlet (fonction partage de lien, d’image, création de carte)}
+  {10min}
+  {Demander aux apprenants d’identifieles meilleures définitions, pour n’ecréer qu’une seule Le formateur peut nommer usecrétaire qui sera en charge drédiger la définition du groupecomplétée par les apports du formateule cas échéant.}
+  {Mauvaise connexion internet. Pas d’ordinateur ou de smartphone pour se connecter sur le padlet. Problème avec l’utilisation de padlet.}
+}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% materialBlock
+
+
+\newcommand{\materialBlock}[1]{%
+    \normalsize
+    \begin{center}
+        \begin{longtable}{ | C{.12\textwidth} | L{.22\textwidth}| C{.05\textwidth} | L{.510\textwidth} | }
+            \hline 
+            \rowcolor{gray!16}\textbf{Image} & \textbf{Référence} & \textbf{Qté.} & \textbf{Fonction} \\
+            \hline
+            #1
+        \end{longtable}
+    \end{center}
+}
+
+
+\newcommand{\materialBlockRow}[2]{
+  \DTLassignfirstmatch{materials}{key}{#2}{\reference=reference, \image=image, \name=name, \fonction=fonction, \quantite=quantite}
+  \makecell[c]{\ImageIconNormal{modules-blended-learning/#1/pedagogie/materials/figures/\image}} & \reference & \quantite & \fonction \\
+  \hline
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin materialBlock 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% taxonomieBlock
+
+
+\newcommand{\taxonomieBlock}[1]{%
+    \normalsize
+    \begin{center}
+        \begin{longtable}{ | C{.07\textwidth} | L{.765\textwidth} | C{.035\textwidth} |C{.035\textwidth} | }
+            \hline 
+            \rowcolor{gray!16}\textbf{Ref.} & \textbf{Savoirs et niveaux taxonomiques} & \textbf{EC} & \textbf{IR} \\
+            \hline
+            #1
+        \end{longtable}
+    \end{center}
+}
+
+
+\newcommand{\taxonomieBlockRow}[2]{
+  \DTLassignfirstmatch{taxonomies}{key}{#2}{\key=key, \taxonomie=taxonomie, \IR=IR, \EC=EC}
+   \key & \taxonomie & \bfseries \EC & \IR \\
+  \hline
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin taxonomieBlock 
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% suiviPedagogiqueBlock
+
+\newcommand{\suiviPedagogiqueBlock}[1]{%
+    \normalsize
+    \csvreader[head to column names, respect sharp, 
+        %separator=semicolon,
+        longtable=C{.02\textwidth} L{.30\textwidth} L{.34\textwidth} C{.04\textwidth} C{.08\textwidth} C{.08\textwidth},
+        %before table=\rowcolors{2}{red!25}{yellow!50},
+        table head=\hline\rowcolor{gray!16}
+        \bfseries \# & 
+        \bfseries module & 
+        \bfseries séquence & 
+        \bfseries tax. & 
+        \bfseries thé. & 
+        \bfseries prat.,
+        late after head=\\\hline\rowcolor{yellow!8},
+        late after line=\csvifoddrow{\\\rowcolor{yellow!8}}{\\\rowcolor{red!8}},
+        table foot=\bottomrule]{#1}{1=\id, 2=\module, 3=\sequence, 4=\taxonomie, 5=\theorie, 6=\pratique }
+        {\id & \module & \sequence & \taxonomie & \theorie & \pratique}
+}
+
+
+\newcommand{\suiviPedagogiqueBlockArabic}[1]{%
+    \normalsize
+    \csvreader[head to column names, respect sharp, 
+        %separator=semicolon,
+        longtable=C{.02\textwidth} L{.30\textwidth} L{.34\textwidth} C{.04\textwidth} C{.08\textwidth} C{.08\textwidth},
+        %before table=\rowcolors{2}{red!25}{yellow!50},
+        table head=\hline\rowcolor{gray!16}
+        \bfseries \# & 
+        \bfseries module & 
+        \bfseries séquence & 
+        \bfseries tax. & 
+        \bfseries thé. & 
+        \bfseries prat.,
+        late after head=\\\hline\rowcolor{yellow!8},
+        late after line=\csvifoddrow{\\\rowcolor{yellow!8}}{\\\rowcolor{red!8}},
+        table foot=\bottomrule]{#1}{1=\id, 2=\module, 3=\sequence, 4=\taxonomie, 5=\theorie, 6=\pratique }
+        {\id & \begin{Arabic}\module\end{Arabic} & \begin{Arabic}\sequence\end{Arabic} & \taxonomie & \theorie & \pratique}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% fin suiviPedagogiqueBlock 
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------- call for validation
+%-----------------------------------------------------------------------------
+\newcounter{evaluationCompetences}
+\newwrite{\output@stream@evaluationCompetences}
+\def\outputFile{tmp/evaluationCompetences/grilleEvaluation.csv}
+\openFileStream{\output@stream@evaluationCompetences}{\outputFile}
+\writeUnexpandedFileStream{\output@stream@evaluationCompetences}{
+    evaluation|reference
+}
+\newcommand{\formateurEvaluationCompetences}[2]{%
+    \stepcounter{evaluationCompetences}
+
+    \xDTLassignfirstmatch{referentiel}{id}{#1}{\id=id, \ckey=ckey,\skey=skey, \savoirfaire=savoirfaire, \attendus=attendus}
+
+    \textit{\textbf{\color{red}$\blacksquare$~Appeller le formateur.}}\\
+    \begin{tabular}{ |c|c|c|c|c|c|c|c| }
+        \hline
+        \rowcolor{gray!16}\multicolumn{2}{|l}{ \bfseries Evaluation \theevaluationCompetences } &
+        \multicolumn{2}{c}{ \bfseries \ckey~/~\skey} &
+        \multicolumn{4}{c|}{ \color{red}\bfseries\textit{Cadre réservé au formateur} }\\
+        %\hline
+        \rowcolor{gray!8}
+        \multicolumn{2}{|L{.23\textwidth}}{$\Box$ Non traité } & 
+        \multicolumn{2}{L{.22\textwidth}}{$\Box$ Non acquis} & 
+        \multicolumn{2}{L{.25\textwidth}}{$\Box$ En cours d'acquisition} & 
+        \multicolumn{2}{L{.22\textwidth}|}{$\Box$ Acquis}\\
+        %\rowcolor{gray!32} \textbf{Cadre réservé au formateur} & ~ \\
+        %\rowcolor{gray!32} \makecell[l]{ $\Box$ Non acquis} & \makecell[l]{ $\Box$ En cours d'acquisition}  \\
+        \hline
+    \end{tabular}
+
+    \writeExpandedFileStream{\output@stream@evaluationCompetences}{
+        \theevaluationCompetences|#1
+    }
+%    ~\\~
+}
+
+
+% expension de xDTLassignfirstmatch
+% https://www.dickimaw-books.com/latex/admin/html/dtlassign.shtml
+\newcommand{\formateurEvaluationCompetencesGrid}{%
+    \closeFileStream{\output@stream@evaluationCompetences}
+
+    \DTLloaddb{grille}{\outputFile}
+
+    \begin{center}
+        \begin{longtable}{ |C{.02\textwidth}  |C{.15\textwidth}|L{.225\textwidth}|L{.380\textwidth} |C{.10\textwidth} |}
+            \hline
+            \rowcolor{gray!16}
+            \bfseries E &
+            \bfseries Compétence &
+            \bfseries Savoir-faire &
+            \bfseries Résultats attendus &
+            \bfseries Note
+            \DTLforeach{grille}{\evaluation=evaluation, \reference=reference}{%
+            \xDTLassignfirstmatch{referentiel}{id}{\reference}{\id=id,\ckey=ckey,\skey=skey, \savoirfaire=savoirfaire, \attendus=attendus}
+            \\\hline\DTLifoddrow{\rowcolor{orange!8}}{\rowcolor{yellow!8}}%
+            \evaluation & \ckey~/~\skey &\savoirfaire & \attendus & $\Box~\Box~\Box~\Box$}%
+            \\ \hline
+        \end{longtable}
+    \end{center}
+
+   % \begin{tabular}{|L{.4\textwidth}|}
+    %\input{\outputFile}
+    %\end{tabular}
+}
+% https://tex.stackexchange.com/questions/23253/how-to-append-data-to-a-temporary-file
+
+
+%----------------------------------------------------------------------------- fin call for validation
+
+
+
+
+
+
+
