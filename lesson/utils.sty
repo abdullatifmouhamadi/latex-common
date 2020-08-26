@@ -80,7 +80,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \newcommand{\TEACHERBLOC}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+
+
 \newcommand{\fillDots}[1]{\foreach \x in {1,...,#1} {$\dots$}}
+\newcommand{\TEACHERBLOCD}[2]{\TEACHERBLOC{#1}{\fillDots{#2}}}
 
 
 
