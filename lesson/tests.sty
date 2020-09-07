@@ -9,23 +9,23 @@
 
 
 
-\newcommand{\LWidth}{0.24}
-\newcommand{\CWidth}{0.37}
-\newcommand{\RWidth}{0.30}
+\newcommand{\testHeaderLWidth}{0.24}
+\newcommand{\testHeaderCWidth}{0.37}
+\newcommand{\testHeaderRWidth}{0.30}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS
-\newcommand\sectionTitle[1]{
-    \begin{minipage}[]{\LWidth\textwidth}
+\newcommand\testHeaderSectionTitle[1]{
+    \begin{minipage}[]{\testHeaderLWidth\textwidth}
         \centering
         %\vspace{.1cm}
          \textbf{BTS Systèmes Numériques}\\
          \footnotesize Option B Électronique \& Communication%\\2019
     \end{minipage}
 }
-\newcommand\sectionTitleBAC[1]{
-    \begin{minipage}[]{\LWidth\textwidth}
+\newcommand\testHeaderSectionTitleBAC[1]{
+    \begin{minipage}[]{\testHeaderLWidth\textwidth}
         \centering
         %\vspace{.1cm}
          \textbf{BAC Systèmes Numériques}\\
@@ -36,7 +36,7 @@
 
 
 \newcommand\projectAim[1]{
-    \begin{minipage}[b]{\LWidth\textwidth}
+    \begin{minipage}[b]{\testHeaderLWidth\textwidth}
         \vspace{.1cm}
         \centering
         \textbf{Évaluation du projet} \\
@@ -46,8 +46,8 @@
     \end{minipage}
 }
 
-\newcommand\generalTitle[1]{
-    \begin{minipage}[b]{\CWidth\textwidth}
+\newcommand\testHeaderGeneralTitle[1]{
+    \begin{minipage}[b]{\testHeaderCWidth\textwidth}
         \centering
         %\vspace{.1cm}
         %\textbf{Épreuve professionnelle de synthèses}\\
@@ -60,8 +60,8 @@
         %\vspace{.1cm}
     \end{minipage}
 }
-\newcommand\projectTitle[1]{
-    \begin{minipage}[b]{\CWidth\textwidth}
+\newcommand\testHeaderProjectTitle[1]{
+    \begin{minipage}[b]{\testHeaderCWidth\textwidth}
         \centering
         \vspace{.1cm}
         \textbf{TITRE}\\
@@ -72,7 +72,7 @@
 }
 
 \newcommand\identityTitle[1]{
-    \begin{minipage}[b]{\RWidth\textwidth}
+    \begin{minipage}[b]{\testHeaderRWidth\textwidth}
         \vspace{.1cm}
         \textit{Nom :} \dotfill \\
         \textit{Prénom :} \dotfill \\
@@ -82,7 +82,7 @@
 }
 
 \newcommand\evaluationJury[1]{
-    \begin{minipage}[b]{\RWidth\textwidth}
+    \begin{minipage}[b]{\testHeaderRWidth\textwidth}
         \vspace{.1cm}
         \begin{center}
          \textbf{Commission d’évaluation}
@@ -97,7 +97,7 @@
 }
 
 \newcommand\noteJury[1]{
-    \begin{minipage}[b]{\RWidth\textwidth}
+    \begin{minipage}[b]{\testHeaderRWidth\textwidth}
         \vspace{.1cm}
          \textbf{Note : } \\
         %\vspace{.1cm}
@@ -121,9 +121,9 @@
             %\hline
             %\multicolumn{6}{|c|}{January 2010 Results} \\
             \hline
-            \multicolumn{1}{|l|}{ \sectionTitle } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
+            \multicolumn{1}{|l|}{ \testHeaderSectionTitle } & \multicolumn{2}{c|}{\testHeaderGeneralTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
             \cline{2-5}
-            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\projectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\testHeaderProjectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
             \cline{1-1}\cline{4-5}
             %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\noteJury} \\
             \hline
@@ -138,9 +138,9 @@
             %\hline
             %\multicolumn{6}{|c|}{January 2010 Results} \\
             \hline
-            \multicolumn{1}{|l|}{ \sectionTitleBAC } & \multicolumn{2}{c|}{\generalTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
+            \multicolumn{1}{|l|}{ \testHeaderSectionTitleBAC } & \multicolumn{2}{c|}{\testHeaderGeneralTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
             \cline{2-5}
-            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\projectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\testHeaderProjectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
             \cline{1-1}\cline{4-5}
             %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\noteJury} \\
             \hline
