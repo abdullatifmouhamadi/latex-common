@@ -104,13 +104,18 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{french}
 \setotherlanguage{arabic}
-\setmainfont{Amiri}
+%\setmainfont{Amiri}
 
 
 \usepackage{arabluatex,ulem}
-\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.25]{Amiri}
+%\newfontfamily\arabicfont[Script=Arabic]{Lateef}
+%\newfontfamily\arabicfont[Script=Arabic]{Noto Naskh Arabic}
+
+%\newfontfamily\arabicfont[Script=Arabic, Scale=1.5]{Scheherazade}
 
 
+\newcommand{\prth}[1]{\textfrench{)}#1\textfrench{(}}
 
 
 
