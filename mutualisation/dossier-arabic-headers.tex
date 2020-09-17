@@ -16,13 +16,16 @@
 
 
 
+
+%\pagenumbering{arabic}
+
 %\fancyhead[LE,RO]{\textsl{}}
 %\fancyhead[LO,RE]{\textsl{}}
 
-%\fancyhead[LE,RO]{\textsl{\rightmark}}
-%\fancyhead[LO,RE]{\textsl{\leftmark}}
+\fancyhead[LE,RO]{\textsl{\nouppercase{\rightmark}}}
+\fancyhead[LO,RE]{\textsl{\nouppercase{\leftmark}}}
 %\fancyhead[LE,RO]{\textsl{}}
-\fancyfoot[C]{\thepage}
+%\fancyfoot[C]{\thepage}
 
 
 %\fancyfoot[L]{CFAI Poitou-Charentes}
@@ -125,6 +128,14 @@
 
 
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 
 
@@ -198,3 +209,8 @@
     \efbox[linecolor=black, linewidth=1pt,margin=8pt]{Promotion 2020-2022}
 \end{center}
 }
+
+
+
+
+
