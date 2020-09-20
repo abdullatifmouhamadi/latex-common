@@ -274,7 +274,7 @@
     \normalsize
     \csvreader[head to column names, respect sharp, 
         %separator=semicolon,
-        longtable=C{.06\textwidth} R{.26\textwidth} R{.34\textwidth} C{.04\textwidth} C{.08\textwidth} C{.08\textwidth},
+        longtable=|C{.06\textwidth} |R{.26\textwidth} |R{.34\textwidth} |C{.04\textwidth} |C{.08\textwidth} |C{.08\textwidth}|,
         %before table=\rowcolors{2}{red!25}{yellow!50},
         table head=\hline\rowcolor{gray!16}
         \bfseries \# & 
@@ -286,7 +286,27 @@
         late after head=\\\hline\rowcolor{yellow!8},
         late after line=\csvifoddrow{\\\rowcolor{yellow!8}}{\\\rowcolor{red!8}},
         table foot=\bottomrule]{#1}{1=\id, 2=\module, 3=\sequence, 4=\taxonomie, 5=\theorie, 6=\pratique }
-        {\id & \module & \sequence & \taxonomie & \theorie & \pratique}
+        {\id & \bfseries\module & \sequence & \taxonomie & \theorie & \pratique}
+}
+
+
+\newcommand{\suiviPedagogiqueBlockArabicB}[1]{%
+    \normalsize
+    \csvreader[head to column names, respect sharp, 
+        %separator=semicolon,
+        longtable=|C{.06\textwidth} | L{.16\textwidth} | L{.44\textwidth} | C{.04\textwidth} | C{.08\textwidth} | C{.08\textwidth}|,
+        %before table=\rowcolors{2}{red!25}{yellow!50},
+        table head=\hline\rowcolor{gray!16}
+        \bfseries \# & 
+        \bfseries module & 
+        \bfseries séquence & 
+        \bfseries tax. & 
+        \bfseries thé. & 
+        \bfseries prat.,
+        late after head=\\\hline\rowcolor{yellow!8},
+        late after line=\csvifoddrow{\\\rowcolor{yellow!8}}{\\\rowcolor{red!8}},
+        table foot=\bottomrule]{#1}{1=\id, 2=\module, 3=\sequence, 4=\taxonomie, 5=\theorie, 6=\pratique }
+        {\id & \bfseries\module & \sequence & \taxonomie & \theorie & \pratique}
 }
 
 
