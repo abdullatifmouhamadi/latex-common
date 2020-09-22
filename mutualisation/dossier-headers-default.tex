@@ -1,0 +1,232 @@
+
+\documentclass{report}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
+% method 2
+\usepackage{geometry}
+\geometry{hmargin=1.0cm,vmargin=1.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TIMING
+\usepackage{tikz-timing}
+\usetikzlibrary{positioning,arrows.meta}
+\usetikztiminglibrary[new={char=Q,reset char=R}]{counters}
+\usetikztiminglibrary{nicetabs} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS/FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+
+\fancyhead[LE,RO]{\textsl{}}
+\fancyhead[LO,RE]{\textsl{}}
+
+%\fancyhead[LE,RO]{\textsl{\rightmark}}
+%\fancyhead[LO,RE]{\textsl{\leftmark}}
+%\fancyhead[LE,RO]{\textsl{}}
+\fancyfoot[C]{\thepage}
+
+
+%\fancyfoot[L]{CFAI Poitou-Charentes}
+%\fancyfoot[C]{Physique Appliquée}
+%\fancyfoot[R]{\thepage}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyfoot[L]{CFAI Poitou-Charentes}
+%\fancyfoot[C]{Electronique \& Communication}
+%\fancyfoot[R]{\thepage}
+\fancyfoot[R]{\today }
+%\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{aligned-overset}
+
+\usepackage{mathptmx}
+\usepackage{relsize}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{ifthen}
+
+\usepackage[Lenny]{fncychap}
+
+
+\usepackage{listings,multicol}
+\usepackage{color}
+
+% print subsubsection
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+% fin print subsubsection
+
+
+\usepackage{minitoc}
+\setcounter{minitocdepth}{3}
+%\setcounter{minitocdepth}{2}
+\setlength{\mtcindent}{24pt}
+\renewcommand{\mtcfont}{\small\rm}
+\renewcommand{\mtcSfont}{\small\bf}
+
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
+
+
+\usepackage{type1cm}
+\usepackage{lettrine}
+\usepackage{scrextend}
+\usepackage{blindtext}
+%\usepackage[svgnames, x11names]{xcolor}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,textcomp}
+
+\usepackage[french]{babel}
+\mtcselectlanguage{french}
+
+\usepackage{multido}
+\RequirePackage{framed}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{fancybox,xcolor}
+\usepackage{blindtext}
+\usepackage{xcolor, colortbl} %kleurtjes voor table
+
+\usepackage{hhline}
+\usepackage{makecell} % https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+
+
+
+\usepackage{answers}
+
+%\usepackage{mdframed}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{pstricks,pst-grad}
+
+% ntheorem
+\makeatletter
+\let\th@plain\relax
+\makeatother
+%\usepackage[thref]{ntheorem}
+%\usepackage[amsmath,thref]{ntheorem}
+\usepackage{empheq}
+\usepackage{thmtools}
+\usepackage{subfig}
+\usepackage{hyperref}%
+\usepackage{systeme,mathtools}
+
+\usetikzlibrary{babel} %%% <--- Don't forget
+\usepackage[siunitx]{circuitikz}
+\usetikzlibrary{circuits.logic.IEC}
+\usetikzlibrary{shapes.gates.logic.IEC}
+\usetikzlibrary{circuits.logic.US,circuits.logic.IEC, positioning}
+\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ARRAY 
+\usepackage{array,multirow,makecell}
+\renewcommand{\arraystretch}{1.2}
+%\setcellgapes{1pt}
+%\makegapedcells
+%\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+%\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+%\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERSONNAL
+\usepackage{common/lesson/headers}
+\usepackage{common/lesson/blocks}
+\usepackage{common/lesson/theorems}
+%\usepackage{common/lesson/tests}
+\usepackage{common/lesson/ccf}
+\usepackage{common/lesson/pretty}
+
+\usepackage{common/images/nodes}
+\usepackage{common/lesson/tables}
+
+\definecolor{Gray}{gray}{0.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% moi-même
+\renewcommand{\thesection}{\arabic{section}} % Remove chapter number to sections
+
+\usepackage{chngcntr}
+\usepackage{xhfill}
+
+
+% Circle
+\usepackage{pict2e,picture}
+\newsavebox\CBox
+\newlength\CLength
+\def\competence#1{\sbox\CBox{#1}%
+  \ifdim\wd\CBox>\ht\CBox \CLength=\wd\CBox\else\CLength=\ht\CBox\fi
+    \makebox[1.1\CLength]{\makebox(0,1.1\CLength){\put(0,0){\circle{1.0\CLength}}\put(0,0){\circle{0.9\CLength}}}%
+    \makebox(0,1.1\CLength){\put(-.3\wd\CBox,0){\tiny\textbf{#1}}}}}
+% End circle
+
+
+%----- Ensembles : entiers, reels, complexes -----
+\newcommand{\Nn}{\mathbb{N}} \newcommand{\N}{\mathbb{N}}
+\newcommand{\Zz}{\mathbb{Z}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Qq}{\mathbb{Q}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}} \newcommand{\R}{\mathbb{R}}
+%\newcommand{\Cc}{\mathbb{C}} \newcommand{\C}{\mathbb{C}}
+\newcommand{\Kk}{\mathbb{K}} \newcommand{\K}{\mathbb{K}}
+
+
+\newcommand{\sk}{\vspace{0.2 cm}}
+\newcommand{\A}[1]{{$\backslash${\tt #1}}}
+\newcommand{\nsp}{\mbox{\hspace{-1 cm}}}
+
+\title{\LARGE \textbf{BTS Systèmes Numériques} \\ \normalsize (Option \'Electronique \& Communication) \\ \Large CCF 2020-2022 \\ Sujet X}
+%\author{ABDULLATIF Mouhamadi}
+\author{CFAI Poitou-Charentes}
+\date{\today}
+
+
+
+%\def\PRINTMODE{PROFESSEUR}
+\def\PRINTMODE{ELEVE}
+
+
+\newcommand{\TEACHERBLOC}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% remove chapter
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+  %{\normalfont\bfseries}{}{0pt}{\Huge}
+
+
+\usepackage[final]{pdfpages}
+\usepackage{pdflscape}
