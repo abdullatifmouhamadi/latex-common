@@ -36,13 +36,7 @@
 \fancyfoot[C]{\thepage}
 
 
-%\fancyfoot[L]{CFAI Poitou-Charentes}
-%\fancyfoot[C]{Physique Appliquée}
-%\fancyfoot[R]{\thepage}
-%\renewcommand{\headrulewidth}{0.4pt}
-%\renewcommand{\footrulewidth}{0.4pt}
-
-\fancyfoot[L]{CFAI Poitou-Charentes}
+\fancyfoot[L]{MAOREDEV}
 %\fancyfoot[C]{Electronique \& Communication}
 %\fancyfoot[R]{\thepage}
 \fancyfoot[R]{\today }
@@ -230,3 +224,40 @@
 
 \usepackage[final]{pdfpages}
 \usepackage{pdflscape}
+
+
+
+
+
+
+\AtBeginDocument{
+    \renewcommand{\labelitemi}{\textbullet}
+    \renewcommand{\labelitemi}{$\circ$}
+    \renewcommand{\labelitemii}{$\circ$}
+    \renewcommand{\labelitemiii}{$\circ$}
+    \renewcommand{\labelitemiv}{$\circ$}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMAGE FRAME 
+\usepackage{efbox,graphicx}
+%_______________________________________________________________
+
+\usepackage{csvsimple}
+
+\usepackage{longtable}
+
+
+\newcommand{\moduleMainHeader}[1]{%
+\begin{center}
+
+    \LARGE \textbf{DOSSIER PÉDAGOGIQUE} \\
+
+    \textit{Ensemble d'éléments pour le suivi pédagogique} \\~
+
+    \efbox[linecolor=black, linewidth=1pt,margin=8pt]{Promotion 2020-2022}
+\end{center}
+}
+
+
