@@ -129,19 +129,34 @@
 
 
 \usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+%\hypersetup{
+%    colorlinks,
+%    citecolor=black,
+%    filecolor=black,
+%    linkcolor=black,
+%    urlcolor=black
+%}
+{\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue,
+    %pdfpagemode=FullScreen,
 }
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% remove chapter
+\usepackage{titlesec}
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
+  %{\normalfont\bfseries}{}{0pt}{\Huge}
 
-
-
+\mtcselectlanguage{french}
+% https://tex.stackexchange.com/questions/88238/remove-chapter-text-from-chapter-headings-and-have-chapter-number-on-the-same/88240
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter. #1}{}}
 
 
 
