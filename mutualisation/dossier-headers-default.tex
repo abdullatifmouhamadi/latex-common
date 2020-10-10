@@ -1,6 +1,6 @@
 
-\documentclass{report}
-
+%\documentclass{report}
+\documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
 % method 2
@@ -218,9 +218,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% remove chapter
 \usepackage{titlesec}
-\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
   %{\normalfont\bfseries}{}{0pt}{\Huge}
-
+\usepackage{ulem}
+\usepackage[subfigure]{tocloft}
 
 \usepackage[final]{pdfpages}
 \usepackage{pdflscape}
@@ -249,22 +250,16 @@
 \usepackage{longtable}
 
 
-\newcommand{\moduleMainHeader}[1]{%
-\begin{center}
-
-    \LARGE \textbf{DOSSIER PÉDAGOGIQUE} \\
-
-    \textit{Ensemble d'éléments pour le suivi pédagogique} \\~
-
-    \efbox[linecolor=black, linewidth=1pt,margin=8pt]{Promotion 2020-2022}
-\end{center}
-}
-
-
-
-\newcommand{\redt}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\redt}[1]{\textcolor{general@best@maroon}{\textbf{#1}}}
 
 %yay -S texlive-tikz-uml
 \usepackage{tikz-uml}
 %\usepackage{umlpackage}
 \usepackage{uml}
+
+
+
+
+
+
+
