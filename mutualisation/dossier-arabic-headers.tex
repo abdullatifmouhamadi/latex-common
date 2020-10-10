@@ -2,6 +2,7 @@
 % git clone http://git.robertalessi.net/arabluatex
 
 \documentclass{report}
+%\documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
 % method 2
@@ -15,9 +16,9 @@
 \pagestyle{fancy}
 
 \usepackage{amssymb}
-
-
+\usepackage{tikz}
 %\pagenumbering{arabic}
+
 
 %\fancyhead[LE,RO]{\textsl{}}
 %\fancyhead[LO,RE]{\textsl{}}
@@ -26,6 +27,7 @@
 \fancyhead[LO,RE]{\textsl{\nouppercase{\leftmark}}}
 %\fancyhead[LE,RO]{\textsl{}}
 %\fancyfoot[C]{\thepage}
+
 
 
 %\fancyfoot[L]{CFAI Poitou-Charentes}
@@ -96,6 +98,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERSONNAL
 %\usepackage{common/lesson/utils}
 %\usepackage{common/lesson/headers}
+\usepackage{common/lesson/pretty}
 \usepackage{common/lesson/tables}
 
 
@@ -129,21 +132,16 @@
 
 
 \usepackage{hyperref}
-%\hypersetup{
-%    colorlinks,
-%    citecolor=black,
-%    filecolor=black,
-%    linkcolor=black,
-%    urlcolor=black
-%}
-{\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=blue,      
-    urlcolor=blue,
-    citecolor=blue,
+%{\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+%    filecolor=blue,      
+%    urlcolor=blue,
+%    citecolor=blue,
     %pdfpagemode=FullScreen,
-}
+%}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
 
 
 
@@ -159,7 +157,7 @@
   \markboth{\thechapter. #1}{}}
 
 
-
+\usepackage{tocloft}
 %%%
 
 
