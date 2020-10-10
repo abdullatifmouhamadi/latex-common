@@ -20,6 +20,7 @@
 %\pagenumbering{arabic}
 
 
+
 %\fancyhead[LE,RO]{\textsl{}}
 %\fancyhead[LO,RE]{\textsl{}}
 
@@ -95,6 +96,10 @@
 \renewcommand{\mtcSfont}{\small\bf}
 
 
+
+\makeatletter
+\let\th@plain\relax
+\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERSONNAL
 %\usepackage{common/lesson/utils}
 %\usepackage{common/lesson/headers}
@@ -144,12 +149,13 @@
 \usepackage{hypcap}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% remove chapter
 \usepackage{titlesec}
 %\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
-\titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
+%\titleformat{\chapter}[display]{\normalfont}{}{0pt}{\Huge}
   %{\normalfont\bfseries}{}{0pt}{\Huge}
+\usepackage{ulem}
+\usepackage{tocloft}
 
 \mtcselectlanguage{french}
 % https://tex.stackexchange.com/questions/88238/remove-chapter-text-from-chapter-headings-and-have-chapter-number-on-the-same/88240
@@ -157,7 +163,7 @@
   \markboth{\thechapter. #1}{}}
 
 
-\usepackage{tocloft}
+
 %%%
 
 
