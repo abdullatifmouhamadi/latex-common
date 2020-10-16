@@ -1,0 +1,98 @@
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{projet}[2020/01/01 Extension personnelle, V1.0]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER
+\newcommand{\pcptLWidth}{0.245}
+\newcommand{\pcptCWidth}{0.43}
+\newcommand{\pcptRWidth}{0.245}
+
+\newcommand\pcptSectionTitle[1]{
+    \begin{minipage}[]{\pcptLWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+        ~\\~\\~
+         \textbf{\'Etablissement} \\
+         \normalsize CFAI Poitou-Charentes\\
+            120 Rue du Porteau \\86000 Poitiers
+    \end{minipage}
+}
+\newcommand\pcptGeneralTitle[1]{
+    \begin{minipage}[]{\pcptCWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+        ~\\~\\~
+        \Large \textbf{BTS Systèmes Numériques} \\
+        \normalsize Option B \'Electronique et Communication
+        %\textbf{#1}
+        %\vspace{.1cm}
+    \end{minipage}
+}
+\newcommand\pcptSessionTitle[1]{ % deprecated
+    \begin{minipage}[b]{\pcptRWidth\textwidth}
+        \vspace{.1cm}
+        \centering
+        \textbf{Session 2021} 
+        %\vspace{.1cm}
+    \end{minipage}
+}
+\newcommand\pcptEpreuveHeader[1]{ % deprecated
+    \begin{minipage}[b]{\pcptRWidth\textwidth}
+        \centering
+        \vspace{.1cm}
+        \textbf{\'Epreuve E6.2}
+        %\vspace{.1cm}
+    \end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROJET COMMISSION
+
+
+\newcommand{\projectCommissionPageTitle}[1]{
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \pcptSectionTitle } & \multicolumn{2}{c|}{\pcptGeneralTitle{}} & \multicolumn{2}{c|}{\pcptSessionTitle}\\
+            \cline{4-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{ ~ }& \multicolumn{2}{c|}{\pcptEpreuveHeader} \\
+            \cline{1-1}\cline{5-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\epreuveHeader} \\
+            \hline
+        \end{tabular}
+    \end{center}  
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROJET 
+
+\newcommand{\titreProjet}[1]{
+    \centering
+    \framebox[\textwidth][c]{
+        \textbf{\bfseries\Large#1}
+    }
+    \raggedright
+}
+
+
+\newcommand{\partenaireProjet}[3]{
+    \begin{tabular}{|C{.3115\textwidth}|C{.311\textwidth}|C{.311\textwidth}|}
+        \hline
+            \textit{Partenaire professionnel :}&
+            \textit{Étudiants chargés du projet :}&
+            \textit{Professeurs ou Tuteurs responsables :}\\
+            \makecell[l]{Thales Avionics}&\makecell[l]{Noms\hspace{2cm}Prénoms}&\makecell[l]{Noms\hspace{2cm}Prénoms}\\
+            \makecell[l]{#1}&
+            \makecell[l]{#2}&
+            \makecell[l]{#3}\\
+        \hline 
+    \end{tabular}
+}
+
+
