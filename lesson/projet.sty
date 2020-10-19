@@ -96,3 +96,119 @@
 }
 
 
+
+
+%%%%%%%%%%%%%%%
+
+\newcommand{\repriseProjet}[1]{
+    Reprise d'un projet : #1
+}
+
+
+\newcommand{\projetPartie}[2]{
+    \centerline{\rule{\textwidth}{0.4pt}}
+    \large \textbf{#1} :\\~
+
+    #2
+}
+
+
+
+\newcommand{\presentationProjet}[1]{
+    \projetPartie{Présentation générale du système supportant le projet}{#1}
+}
+\newcommand{\analyseProjet}[1]{
+    \projetPartie{Analyse de l’existant}{#1}
+}
+\newcommand{\besoinProjet}[1]{
+    \projetPartie{Expression du besoin}{#1}
+}
+\newcommand{\tachesProjet}[1]{
+    \projetPartie{Énoncé des tâches à réaliser par les étudiants}{#1}
+}
+
+
+\newcommand{\descritionProjet}[2]{
+    \projetPartie{Description structurelle du système}{
+        \begin{center}
+            \begin{tabular}{|C{.475\textwidth}|C{.475\textwidth}|}
+                \hline
+                \textbf{Principaux constituants :} & \textbf{Caractéristiques techniques :} \\\hline
+                    #1 & #2 \\
+                \hline
+            \end{tabular}
+        \end{center}
+    }
+}
+
+\newcommand{\inventaireProjet}[2]{
+    \projetPartie{Inventaire des matériels et outils logiciels à mettre en œuvre par le candidat}{
+        \begin{center}
+            \begin{tabular}{|C{.475\textwidth}|C{.475\textwidth}|}
+                \hline
+                \textbf{Désignation :} & \textbf{Caractéristiques techniques :} \\\hline
+                    #1 & #2 \\
+                \hline
+            \end{tabular}
+        \end{center}
+    }
+}
+
+
+\def\projectAnnexeNotes{
+    Joindre en annexe, les documents explicitant le projet : photos, 
+    fiches techniques descriptives, procédé(s) mis en œuvre, 
+    cahier des charges simplifié, schémas etc... 
+}
+
+
+
+\def\projectAvisCommission{
+
+    \framebox[\textwidth][c]{
+        \textbf{Avis de la commission}
+    }
+    \vspace{1cm}
+    
+    \begin{itemize}
+        \item[\scalebox{0.5}{$\blacksquare$}] Les concepts et les outils mis en œuvre par le candidat (1-2-3-4-5)… 
+            correspondent au niveau des exigences techniques attendu pour cette formation :
+            \vspace{0.5cm}
+            \begin{center}
+                \textbf{oui / à reprendre} pour le candidat (1-2-3-4-5)
+            \end{center}
+            \vspace{0.5cm}
+    
+        \item[\scalebox{0.5}{$\blacksquare$}] L'énoncé des tâches à réaliser par le candidat (1-2-3-4-5)… 
+            est suffisamment complet et précis :
+            \vspace{0.5cm}
+            \begin{center}
+                \textbf{oui / à reprendre} pour le candidat (1-2-3-4-5)
+            \end{center}
+            \vspace{0.5cm}
+    
+        \item[\scalebox{0.5}{$\blacksquare$}] Les compétences requises pour la réalisation ou les tâches confiées au candidat (1-2-3-4-5)  
+            sont en adéquation avec les savoirs et savoir-faire exigés par le référentiel : 
+            \vspace{0.5cm}
+            \begin{center}
+                \textbf{oui / à reprendre} pour le candidat (1-2-3-4-5)
+            \end{center}
+            \vspace{0.5cm}
+    
+        \item[\scalebox{0.5}{$\blacksquare$}] Le nombre d'étudiants est adapté aux tâches énumérées :
+            \vspace{0.5cm}
+            \begin{center}
+                \textbf{oui / trop / insuffisant}
+            \end{center}
+    \end{itemize}
+    
+    \vspace{1cm}
+    
+    \hspace{0.8cm}\textbf{Commentaires}
+    
+    \vspace{4cm}
+    
+    
+    \hspace{0.8cm}Date : \hspace{8cm} Le président de la commission
+    
+}
