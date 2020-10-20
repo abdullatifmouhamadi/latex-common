@@ -32,6 +32,14 @@
          %\footnotesize Option B Électronique \& Communication%\\2019
     \end{minipage}
 }
+\newcommand\testHeaderSectionTitleGeneric[1]{
+    \begin{minipage}[]{\testHeaderLWidth\textwidth}
+        \centering
+        %\vspace{.1cm}
+         \textbf{#1}\\
+         %\footnotesize Option B Électronique \& Communication%\\2019
+    \end{minipage}
+}
 
 
 
@@ -71,13 +79,19 @@
     \end{minipage}
 }
 
+
 \newcommand\identityTitle[1]{
     \begin{minipage}[b]{\testHeaderRWidth\textwidth}
-        \vspace{.1cm}
-        \textit{Nom :} \dotfill \\
-        \textit{Prénom :} \dotfill \\
-        \textit{Date :} \dotfill
         %\vspace{.1cm}
+        %\textit{Nom :} \dotfill \\
+        %\textit{Prénom :} \dotfill \\
+        %\textit{Date :} \dotfill
+        %\vspace{.1cm}
+        \begin{tabular}{L{.24\linewidth}L{.7\linewidth}}
+            Nom&: \dotfill\\
+            Prénom&: \dotfill\\
+            Date&: \dotfill\\
+        \end{tabular}
     \end{minipage}
 }
 
@@ -139,6 +153,25 @@
             %\multicolumn{6}{|c|}{January 2010 Results} \\
             \hline
             \multicolumn{1}{|l|}{ \testHeaderSectionTitleBAC } & \multicolumn{2}{c|}{\testHeaderGeneralTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
+            \cline{2-5}
+            \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\testHeaderProjectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
+            \cline{1-1}\cline{4-5}
+            %\multicolumn{1}{|c|}{\projectAim} &\multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\noteJury} \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+
+
+
+\newcommand\testHeaderGeneric[3]{
+    \begin{center}
+        \begin{tabular}{|l|c|c|c|c|c|}
+            %\hline
+            %\multicolumn{6}{|c|}{January 2010 Results} \\
+            \hline
+            \multicolumn{1}{|l|}{ \testHeaderSectionTitleGeneric{#3} } & \multicolumn{2}{c|}{\testHeaderGeneralTitle{#1}} & \multicolumn{2}{c|}{\identityTitle}\\
             \cline{2-5}
             \multicolumn{1}{|c|}{~ } &\multicolumn{2}{c|}{\testHeaderProjectTitle{#2}}& \multicolumn{2}{c|}{\noteJury} \\
             \cline{1-1}\cline{4-5}
