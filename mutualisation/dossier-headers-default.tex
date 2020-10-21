@@ -2,6 +2,11 @@
 %\documentclass{report}
 \documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
 
+
+\usepackage[object=vectorian]{pgfornament} %%  http://altermundus.com/pages/tkz/ornament/index.html
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
 % method 2
 \usepackage{geometry}
@@ -136,13 +141,6 @@
 \usepackage{hyperref}%
 \usepackage{systeme,mathtools}
 
-\usetikzlibrary{babel} %%% <--- Don't forget
-\usepackage[siunitx]{circuitikz}
-\usetikzlibrary{circuits.logic.IEC}
-\usetikzlibrary{shapes.gates.logic.IEC}
-\usetikzlibrary{circuits.logic.US,circuits.logic.IEC, positioning}
-\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ARRAY 
@@ -258,6 +256,23 @@
 \usepackage{uml}
 
 
+
+
+
+
+\newcommand{\horizb}{%
+  \nointerlineskip \vspace{.5\baselineskip}\hspace{\fill}
+  {\color{general@best@orange}
+    \resizebox{0.75\linewidth}{2ex}
+    {{%
+    {\begin{tikzpicture}
+    \node  (C) at (0,0) {};
+    \node (D) at (9,0) {};
+    \path (C) to [ornament=89] (D);
+    \end{tikzpicture}}}}}%
+    \hspace{\fill}
+    \par\nointerlineskip \vspace{.5\baselineskip}
+  }
 
 
 
