@@ -276,5 +276,34 @@
 
 
 
+%----------------------------------------------------------------------
+%.25-.7
+
+\def\sourcelinkacolor{general@best@aqua}
+\newcommand{\sourcelinka}[1]{%
+  \begin{tabular}{cccc}
+    \arrayrulecolor{\sourcelinkacolor}
+    \hline
+    %\hline 
+     %\rowcolor{\sourcelinkacolor}\multicolumn{1}{C{.25\textwidth}}{ \textbf{titre} } & \multicolumn{1}{C{.7\textwidth}|}{ \textbf{lien} } \\
+    #1
+    %\hline
+  \end{tabular}
+}
+\newcommand{\slar}[2]{%
+%#1&#2&#3\\\hline
+\multicolumn{1}{L{.25\textwidth}}{ \cellcolor{\sourcelinkacolor}#1 } & \multicolumn{1}{L{.7\textwidth}|}{ \footnotesize\url{#2} } \\\hline
+
+%\cellcolor{general@best@aqua}{#1}&\footnotesize\url{#2}\\%\hline
+}
 
 
+
+% ----------------------------------------------------------------------
+
+\newcommand{\bubblea}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@teal,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
