@@ -257,17 +257,17 @@
     \end{tikzpicture}}}}}%
     \hspace{\fill}
     \par\nointerlineskip \vspace{.5\baselineskip}
-  }
+}
 
 
-  \def\lexiqueacolor{general@best@aqua}
+\def\lexiqueacolor{general@best@aqua}
 \newcommand{\lexiquea}[1]{%
-  \begin{longtable}{|R{.3\textwidth}|L{.4\textwidth}|}
+  \begin{longtable}{R{.30\textwidth}L{.60\textwidth}}
     \arrayrulecolor{\lexiqueacolor}
     \hline 
-    \rowcolor{\lexiqueacolor} \textbf{\textcolor{white}{mot arabe}} &  \textbf{\textcolor{white}{traduction}} \\\hline
+    \rowcolor{\lexiqueacolor} \textbf{\textcolor{white}{arabe}} &  \textbf{\textcolor{white}{français}} \\\hline
     #1
-    \hline
+    %\hline
   \end{longtable}
 }
 
@@ -278,12 +278,19 @@
 
 
 
+\newcommand{\rightPartie}[1]{%
+\begin{flushright}
+  \colorbox{general@best@maroon!100}{
+      \textcolor{white!100}{
+          \textbf{#1}
+      }
+  }
+\end{flushright}
+}
 
 %%%%%%%%%%%%%%%%%%%%%% ornaments
 
 % https://tex.stackexchange.com/questions/149996/how-to-put-on-every-page-ornament-symbol
-
-
 
 
 
