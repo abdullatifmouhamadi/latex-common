@@ -285,7 +285,7 @@
     \arrayrulecolor{\sourcelinkacolor}
     %\hline
     %\hline 
-    \rowcolor{\sourcelinkacolor} \bfseries \textcolor{white}{theme} & \bfseries \textcolor{white}{sources}\\\hline
+    \rowcolor{\sourcelinkacolor} \bfseries \textcolor{white}{thème} & \bfseries \textcolor{white}{sources}\\\hline
     %\rowcolor{\sourcelinkacolor}\multicolumn{2}{C{\textwidth}}{ \textbf{sources} } \\
      %\rowcolor{\sourcelinkacolor}\multicolumn{1}{C{.25\textwidth}}{ \textbf{titre} } & \multicolumn{1}{C{.7\textwidth}|}{ \textbf{lien} } \\
     #1
@@ -305,6 +305,18 @@
 \newcommand{\bubblea}[1]{
   \begin{tikzpicture}
     \node[fill=general@best@teal,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bubbleb}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@olive,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bubblec}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@maroon,rounded corners]
     {\textcolor{white}{\bfseries#1}};
     \end{tikzpicture}
 }
