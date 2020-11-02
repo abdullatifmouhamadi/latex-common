@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODELEA
 \def\nolimit{\textcolor{gray}{Illimité}}
 \def\pchecked{\textcolor{\plaquetteMediumColor}{\bfseries\large\checkmark}}
-\def\pnochecked{--}
+\def\pnochecked{\textcolor{\plaquetteMediumColor}{$\bullet$}}
 \def\poption{\textcolor{gray}{Option}}
 \newcommand{\ptext}[1]{\textcolor{gray}{#1}}
 
@@ -32,23 +32,23 @@
     \end{tabular}
 }
 \newcommand{\plaquetteahead}[1]{
-    \bfseries\Large\textcolor{\plaquetteMediumColor}{ \makecell[l]{\\#1\\~}} & ~ & ~ & ~ & ~ & ~ & ~\\\hline
+    \bfseries\Large\textcolor{\plaquetteMediumColor}{ \makecell[l]{\\#1\\~}} & ~ & ~ & ~ & ~ & ~ & ~\\%\hline
 }
 
 \newcommand{\plaquettefoot}[7]{
     \makecell[l]{~\\\Large\textcolor{\plaquetteMediumColor}{#1}\\~} & 
-    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#2}\\~} & 
-    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#3}\\~} & 
-    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#4}\\~} & 
-    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#5}\\~} & 
-    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#6}\\~} & 
+    \makecell[c]{~\\\Large\textcolor{\plaquetteMediumColor}{#2}\\~} & 
+    \makecell[c]{~\\\Large\textcolor{\plaquetteMediumColor}{#3}\\~} & 
+    \makecell[c]{~\\\Large\textcolor{\plaquetteMediumColor}{#4}\\~} & 
+    \makecell[c]{~\\\Large\textcolor{\plaquetteMediumColor}{#5}\\~} & 
+    \makecell[c]{~\\\Large\textcolor{\plaquetteMediumColor}{#6}\\~} & 
     \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#7}\\~}\\\hline
 }
 \newcommand{\plaquetterowa}[7]{
-    \rowcolor{gray!8}\large#1 & #2 & #3 & #4 & #5 & #6 & #7\\\hline
+    \rowcolor{gray!8}\large#1 & #2 & #3 & #4 & #5 & #6 & #7\\%\hline
 }
 \newcommand{\plaquetterowb}[7]{
-    \large#1 & #2 & #3 & #4 & #5 & #6 & #7\\\hline
+    \large#1 & #2 & #3 & #4 & #5 & #6 & #7\\%\hline
 }
 
 
