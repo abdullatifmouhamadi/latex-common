@@ -5,8 +5,51 @@
 \usepackage[frenchb]{babel}
 \usepackage{booktabs}
 
+\renewcommand{\arraystretch}{1.2}
 
 
+
+
+
+
+\def\plaquetteLightColor{general@best@gray}
+\def\plaquetteMediumColor{general@best@maroon}
+\def\plaquetteHighColor{general@best@navy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODELEA
+\def\nolimit{\textcolor{gray}{Illimité}}
+\def\pchecked{\textcolor{\plaquetteMediumColor}{\bfseries\large\checkmark}}
+\def\pnochecked{--}
+\def\poption{\textcolor{gray}{Option}}
+\newcommand{\ptext}[1]{\textcolor{gray}{#1}}
+
+
+\newcommand{\plaquettea}[1]{
+    \begin{tabular}{L{8cm}C{4cm}C{4cm}C{4cm}C{4cm}C{4cm}C{4cm}}
+        %\hline
+        \arrayrulecolor{gray!32}\hline
+        \Huge \textcolor{\plaquetteLightColor}{Nos formules} & \textsc{PAGE PERSO} & STARTER & VITRINE & CMS & BOUTIQUE & SUR MESURE\\\hline
+        #1
+    \end{tabular}
+}
+\newcommand{\plaquetteahead}[1]{
+    \bfseries\Large\textcolor{\plaquetteMediumColor}{ \makecell[l]{\\#1\\~}} & ~ & ~ & ~ & ~ & ~ & ~\\\hline
+}
+
+\newcommand{\plaquettefoot}[7]{
+    \makecell[l]{~\\\Large\textcolor{\plaquetteMediumColor}{#1}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#2}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#3}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#4}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#5}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#6}\\~} & 
+    \makecell[c]{~\\\Large\bfseries\textcolor{\plaquetteMediumColor}{#7}\\~}\\\hline
+}
+\newcommand{\plaquetterowa}[7]{
+    \rowcolor{gray!8}\large#1 & #2 & #3 & #4 & #5 & #6 & #7\\\hline
+}
+\newcommand{\plaquetterowb}[7]{
+    \large#1 & #2 & #3 & #4 & #5 & #6 & #7\\\hline
+}
 
 
 
