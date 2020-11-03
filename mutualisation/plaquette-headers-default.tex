@@ -1,16 +1,19 @@
 
 \usepackage{common/mutualisation/default-packages}
 
-\usepackage{lmodern}
+
 \usepackage[frenchb]{babel}
 \usepackage{booktabs}
 
 \renewcommand{\arraystretch}{1.2}
+\usetikzlibrary{shapes.geometric}
+
+\usepackage{xcolor-material}
+\usepackage{amsmath,bm}
 
 
-
-
-
+%\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
 
 \def\plaquetteLightColor{general@best@gray}
 \def\plaquetteMediumColor{general@best@maroon}
@@ -22,7 +25,65 @@
 \def\poption{\textcolor{gray}{Option}}
 \newcommand{\ptext}[1]{\textcolor{gray}{#1}}
 
+\def\PLAQUETTEAURA{
+    \begin{center}
+        $~^{**}$Tout devis signé consitue un accord de celui-ci, aucune 
+        commande ne sera commencée avant son règlement totale.\\
+        %
+        après réception du règlement la commande pourra être produite avec 
+        le délai journalier stipulé dans le devis.
+    \end{center}
+}
 
+
+
+\def\PLAQUETTEPROMO{
+    \begin{minipage}{.48\textwidth}
+        \Huge
+        \textcolor{\plaquetteHighColor}{\bfseries Découvrez}
+        
+        \textcolor{\plaquetteHighColor}{\bfseries les formules} \textcolor{general@best@maroon}{\bfseries\ttfamily MAOREDEV}
+
+    \end{minipage}
+    \begin{minipage}{.48\textwidth}
+        \begin{flushright}
+            \begin{tikzpicture}
+                \draw[white, ultra thick,fill=general@best@maroon] (0,0)-- (4,0) -- (4,-4) -- ++ (-2,-1) -- ++ (-2,1) -- cycle;
+                \node[white, font=\LARGE\bfseries] at (2,-1) {$\bm{1^{er}}$};
+                \node[white, font=\LARGE\bfseries] at (2,-2) {MOIS};
+                \node[white, font=\LARGE\bfseries] at (2,-3) {OFFERT};
+                \draw[white, line width=1mm] (1.5,-3.5)-- (2.5,-3.5);
+            \end{tikzpicture}
+        \end{flushright}
+    \end{minipage}
+}
+
+\def\PLAQUETTEAVANTAGES{
+    \begin{flushleft}
+        \huge
+        \textcolor{\plaquetteHighColor}{\bfseries Les 4 avantages}
+        
+        \textcolor{\plaquetteHighColor}{\bfseries de nos formules} \textcolor{general@best@maroon}{\bfseries\ttfamily MAOREDEV}
+        ~
+    \end{flushleft}
+    {\renewcommand{\arraystretch}{10.5}
+     \begin{tabular}{L{\textwidth}}
+         \Huge\textcolor{\plaquetteHighColor}{SECURITÉ} \bfseries\Large De l'espace de stockage sécurisé pour la gestion de vos documents et données internet.\\
+
+         \Huge\textcolor{\plaquetteHighColor}{SAUVEGARDE} \bfseries\Large Une sauvegarde automatique et complète des toutes les données de votre projet. \\
+
+         \Huge\textcolor{\plaquetteHighColor}{ASSISTANCE} \bfseries\Large Une assistance téléphonique et mail pour la conception et le développement de votre projet.\\
+
+         \Huge\textcolor{\plaquetteHighColor}{FORMATION} \bfseries\Large Une formation de qualité pour parfaire votre productivité et votre professionnalisme.\\
+     \end{tabular}
+    }
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\plaquettea}[1]{
     \begin{tabular}{L{8cm}C{4cm}C{4cm}C{4cm}C{4cm}C{4cm}C{4cm}}
         %\hline
@@ -54,3 +115,6 @@
 
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
