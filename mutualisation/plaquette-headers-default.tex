@@ -10,6 +10,10 @@
 
 \usepackage{xcolor-material}
 \usepackage{amsmath,bm}
+\usepackage{mdframed}
+\usepackage{framed}
+
+\usepackage{hyperref}
 
 
 %\usepackage{lmodern}
@@ -18,6 +22,8 @@
 \def\plaquetteLightColor{general@best@gray}
 \def\plaquetteMediumColor{general@best@maroon}
 \def\plaquetteHighColor{general@best@navy}
+\def\plaquetteAvantagesColor{white}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODELEA
 \def\nolimit{\textcolor{gray}{Illimité}}
 \def\pchecked{\textcolor{\plaquetteMediumColor}{\bfseries\large\checkmark}}
@@ -37,12 +43,12 @@
 
 
 
-\def\PLAQUETTEPROMO{
+\newcommand{\PLAQUETTEPROMO}[2]{
     \begin{minipage}{.28\textwidth}
         \Huge
         \textcolor{\plaquetteHighColor}{\bfseries Découvrez}
         
-        \textcolor{\plaquetteHighColor}{\bfseries les formules} \textcolor{general@best@maroon}{\bfseries\ttfamily MAOREDEV}
+        \textcolor{\plaquetteHighColor}{\bfseries les formules} \textcolor{#1}{\bfseries\ttfamily MAOREDEV}
 
     \end{minipage}
     \begin{minipage}{.48\textwidth}
@@ -50,18 +56,20 @@
         \begin{tikzpicture}
             %\draw[white, ultra thick,fill=general@best@maroon] (0,0)-- (4,0) -- (4,-4) -- ++ (-2,-1) -- ++ (-2,1) -- cycle;
 
-            \draw[white, ultra thick,fill=general@best@navy] (0,0)-- (20,0)-- (20,-4) -- ++ (-10,-1) -- ++ (-10,1) -- cycle;
+            \draw[#1, ultra thick,fill=#1] (0,0)-- (22,0)-- (22,-4) -- ++ (-10,-1) -- ++ (-10,1) -- cycle;
 
-            \node[white, font=\LARGE\bfseries] at (10,-2.5) {OFFRES ENTERPRISE};
-            %\node[white, font=\LARGE\bfseries] at (2,-2) {MOIS};
-            %\node[white, font=\LARGE\bfseries] at (2,-3) {OFFERT};
+            \node[white, font=\LARGE\bfseries] at (10,-1) {#2};
+            \node[white, font=\LARGE\bfseries] at (11,-2) {\url{www.maoredev.com}};
+            \node[white, font=\LARGE\bfseries] at (12,-3) {maoredev@gmail.com};
+            \node[white, font=\LARGE\bfseries] at (13,-4) {0628051918};
+
             %\draw[white, line width=1mm] (1.5,-3.5)-- (2.5,-3.5);
         \end{tikzpicture}
     \end{minipage}
     \begin{minipage}{.20\textwidth}
         \begin{flushright}
             \begin{tikzpicture}
-                \draw[white, ultra thick,fill=general@best@maroon] (0,0)-- (4,0) -- (4,-4) -- ++ (-2,-1) -- ++ (-2,1) -- cycle;
+                \draw[#1, ultra thick,fill=#1] (0,0)-- (4,0) -- (4,-4) -- ++ (-2,-1) -- ++ (-2,1) -- cycle;
                 \node[white, font=\LARGE\bfseries] at (2,-1) {$\bm{1^{er}}$};
                 \node[white, font=\LARGE\bfseries] at (2,-2) {MOIS};
                 \node[white, font=\LARGE\bfseries] at (2,-3) {OFFERT};
@@ -71,25 +79,23 @@
     \end{minipage}
 }
 
-\newcommand{\PLAQUETTEAVANTAGES}[1]{
-    \begin{flushleft}
-        \huge
-        \textcolor{\plaquetteHighColor}{\bfseries Les 4 avantages}
-        
-        \textcolor{\plaquetteHighColor}{\bfseries de nos formules} \textcolor{general@best@maroon}{\bfseries\ttfamily MAOREDEV}
-        ~
-    \end{flushleft}
-    {\renewcommand{\arraystretch}{#1}%10.5
-     \begin{tabular}{L{\textwidth}}
-         \Huge\textcolor{\plaquetteHighColor}{SECURITÉ} \bfseries\Large De l'espace de stockage sécurisé pour la gestion de vos documents et données internet.\\
-
-         \Huge\textcolor{\plaquetteHighColor}{SAUVEGARDE} \bfseries\Large Une sauvegarde automatique et complète de toutes les données de votre projet. \\
-
-         \Huge\textcolor{\plaquetteHighColor}{ASSISTANCE} \bfseries\Large Une assistance téléphonique et mail pour la conception et le développement de votre projet.\\
-
-         \Huge\textcolor{\plaquetteHighColor}{FORMATION} \bfseries\Large Une formation de qualité pour parfaire votre productivité et votre professionnalisme.\\
-     \end{tabular}
-    }
+\newcommand{\PLAQUETTEAVANTAGES}[2]{
+    \begin{mdframed}[backgroundcolor=#2,linecolor=white] 
+        \begin{flushleft}
+            \huge
+            \textcolor{\plaquetteAvantagesColor}{\bfseries Les 4 avantages}
+            
+            \textcolor{\plaquetteAvantagesColor}{\bfseries de nos formules} \textcolor{\plaquetteAvantagesColor}{\bfseries\ttfamily MAOREDEV}
+            ~
+        \end{flushleft}
+        {\renewcommand{\arraystretch}{#1}%10.5
+        \begin{tabular}{L{\textwidth}}
+            \Huge\textcolor{\plaquetteAvantagesColor}{SECURITÉ} \bfseries\Large \textcolor{general@best@aqua!32}{De l'espace de stockage sécurisé pour la gestion de vos documents et données internet.}\\
+            \Huge\textcolor{\plaquetteAvantagesColor}{SAUVEGARDE} \bfseries\Large \textcolor{general@best@aqua!32}{Une sauvegarde automatique et complète de toutes les données de votre projet.} \\
+            \Huge\textcolor{\plaquetteAvantagesColor}{ASSISTANCE} \bfseries\Large \textcolor{general@best@aqua!32}{Une assistance téléphonique et mail pour la conception et le développement de votre projet.}\\
+            \Huge\textcolor{\plaquetteAvantagesColor}{FORMATION} \bfseries\Large \textcolor{general@best@aqua!32}{Une formation de qualité pour parfaire votre productivité et votre professionnalisme.}\\
+        \end{tabular}}
+    \end{mdframed}
 }
 
 
@@ -121,9 +127,6 @@
 \newcommand{\plaquetterowb}[7]{
     \large#1 & #2 & #3 & #4 & #5 & #6 & #7\\%\hline
 }
-
-
-
 
 
 
