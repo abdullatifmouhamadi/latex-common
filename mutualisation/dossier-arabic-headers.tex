@@ -4,7 +4,7 @@
 \documentclass{report}
 %\documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
 
-\usepackage[object=vectorian]{pgfornament} %%  http://altermundus.com/pages/tkz/ornament/index.html
+%\usepackage[object=vectorian]{pgfornament} %%  http://altermundus.com/pages/tkz/ornament/index.html
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGES 
@@ -287,37 +287,3 @@
   }
 \end{flushright}
 }
-
-%%%%%%%%%%%%%%%%%%%%%% ornaments
-
-% https://tex.stackexchange.com/questions/149996/how-to-put-on-every-page-ornament-symbol
-
-
-
-% Comment below if you are using the eso-pic version
-%--------------------------------------------------------------------
-\usepackage{background}
-
-\backgroundsetup{%
-contents=\eachpageornament,%
-position=current page.north east,%
-angle=0,%
-scale=1,%
-opacity=1%
-}
-%--------------------------------------------------------------------
-\newcommand{\eachpageornament}{%
-\begin{tikzpicture}[remember picture, overlay,color=general@best@olive]
-\node[anchor=north west] at (current page.north west){%
-\pgfornament[width=2cm]{41}};
-\node[anchor=north east] at (current page.north east){%
-\pgfornament[width=2cm,symmetry=v]{41}};
-\node[anchor=south west] at (current page.south west){%
-\pgfornament[width=2cm,symmetry=h]{41}};
-\node[anchor=south east] at (current page.south east){%
-\pgfornament[width=2cm,symmetry=c]{41}};
-\end{tikzpicture}
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
