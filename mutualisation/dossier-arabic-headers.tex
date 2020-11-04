@@ -283,7 +283,7 @@
   \begin{longtable}{R{.65\textwidth}L{.30\textwidth}}
     \arrayrulecolor{\dialogacolor}
     \hline 
-    \rowcolor{\dialogacolor} \textbf{\textcolor{white}{arabe}} &  \textbf{\textcolor{white}{français}} \\\hline
+    \rowcolor{\dialogacolor} \textbf{\textcolor{white}{arabe}} &  \textbf{\textcolor{white}{notes}} \\\hline
     #1
     %\hline
   \end{longtable}
@@ -310,7 +310,13 @@
 
 
 %%%%%%%%%%
-
+\def\arbredacolor{general@best@red}
 \newcommand{\reda}[1]{
-  \textcolor{general@best@red}{#1}
+  \textcolor{\arbredacolor}{#1}
 }
+\def\arbremacolor{general@best@fuchsia}
+\newcommand{\rema}[1]{
+  \textcolor{\arbremacolor}{#1}
+}
+
+
