@@ -259,7 +259,7 @@
     \par\nointerlineskip \vspace{.5\baselineskip}
 }
 
-
+%%%%%%%%%%%%%% ARRAY VOCABULAIRE
 \def\lexiqueacolor{general@best@aqua}
 \newcommand{\lexiquea}[1]{%
   \begin{longtable}{R{.30\textwidth}L{.60\textwidth}}
@@ -277,6 +277,26 @@
 }
 
 
+%%%%%%%%%%%%%% ARRAY DIALOGUES
+\def\dialogacolor{general@best@green}
+\newcommand{\dialoga}[1]{%
+  \begin{longtable}{R{.65\textwidth}L{.30\textwidth}}
+    \arrayrulecolor{\dialogacolor}
+    \hline 
+    \rowcolor{\dialogacolor} \textbf{\textcolor{white}{arabe}} &  \textbf{\textcolor{white}{français}} \\\hline
+    #1
+    %\hline
+  \end{longtable}
+}
+
+\newcommand{\dar}[2]{%
+%#1&#2&#3\\\hline
+\cellcolor{\dialogacolor!16}{#1}&#2\\\hline
+}
+
+
+%%%%%%%%%%%%%
+
 
 \newcommand{\rightPartie}[1]{%
 \begin{flushright}
@@ -286,4 +306,11 @@
       }
   }
 \end{flushright}
+}
+
+
+%%%%%%%%%%
+
+\newcommand{\reda}[1]{
+  \textcolor{general@best@red}{#1}
 }
