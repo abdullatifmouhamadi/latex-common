@@ -20,6 +20,8 @@
 
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
+
 %\pagenumbering{arabic}
 
 
@@ -125,7 +127,7 @@
 
 %\newfontfamily\arabicfont[Script=Arabic]{Lateef}
 %\newfontfamily\arabicfont[Script=Arabic]{Noto Naskh Arabic}
-%\newfontfamily\arabicfont[Script=Arabic, Scale=2.0]{Amiri}
+%\newfontfamily\arabicfont[Script=Arabic, Scale=1.5]{Amiri}
 \newfontfamily\arabicfont[Script=Arabic, Scale=2.0]{Scheherazade}
 
 
@@ -298,14 +300,22 @@
 %%%%%%%%%%%%%
 
 
-
 \newcommand{\rightPartie}[1]{%
+% https://tex.stackexchange.com/questions/65264/latex-tikz-auto-resize-block-to-fit-text
 \begin{flushright}
-  \colorbox{general@best@maroon!100}{
-      \textcolor{white!100}{
-          \textbf{#1}
-      }
-  }
+
+  %\colorbox{general@best@maroon!100}{
+  %    \textcolor{white!100}{
+  %        \textbf{#1}
+  %    }
+  %}
+\begin{tikzpicture}
+  [every node/.style={signal, draw, text=white, signal to=nowhere}]
+  %\node [block, xshift=0em](start){DASDASDADASDASsalut};
+  %\node [block, signal to=east](process1){#1};
+  \node[white, fill=general@best@orange!100!50, signal to=west, signal from=east] at (0,1) {\bfseries#1};
+\end{tikzpicture}
+
 \end{flushright}
 }
 
