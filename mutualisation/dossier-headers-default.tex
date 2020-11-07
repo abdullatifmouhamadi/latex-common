@@ -300,6 +300,34 @@
 }
 
 
+% ----------------------------------------------------------------------
+
+\def\imgdescacolor{general@best@fuchsia}
+\newcommand{\imgdesca}[4]{%
+\begin{longtable}{cc}
+  \arrayrulecolor{\imgdescacolor}
+  \hline
+  \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\imgdescacolor}{\textsc{#1}} }  \\
+  \hline
+  \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{ \raisebox{-\totalheight}{
+      \begin{tikzpicture}
+          \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#2}};
+          #3
+        \end{tikzpicture}
+      }}\\  
+
+      \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{~} \\
+  #4
+\end{longtable}
+}
+\newcommand{\imgdescatag}[2]{%
+  \node[white, circle,draw,fill=\imgdescacolor, ultra thick] at #1 {\bfseries #2};
+}
+\newcommand{\imgdescrow}[2]{%
+  \multicolumn{1}{C{.05\textwidth}}{ \cellcolor{\imgdescacolor}\textcolor{white}{\Large\bfseries#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
+}
+
+
 
 % ----------------------------------------------------------------------
 
