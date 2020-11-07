@@ -20,6 +20,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TIMING
 \usepackage{tikz-timing}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+
+
 \usetikzlibrary{positioning,arrows.meta}
 \usetikztiminglibrary[new={char=Q,reset char=R}]{counters}
 \usetikztiminglibrary{nicetabs} 
@@ -29,6 +33,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS/FOOTERS
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{enumitem}
 
 
 
@@ -281,17 +286,19 @@
 
 \def\sourcelinkacolor{general@best@teal}
 \newcommand{\sourcelinka}[1]{%
-  \begin{longtable}{cc}
-    \arrayrulecolor{\sourcelinkacolor}
-    %\hline
-    \hline 
-    \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\sourcelinkacolor}{\textsc{sources}} }  \\
-    \rowcolor{\sourcelinkacolor} \bfseries \textcolor{white}{thème} & \bfseries \textcolor{white}{lien}\\\hline
-    %\rowcolor{\sourcelinkacolor}\multicolumn{2}{C{\textwidth}}{ \textbf{sources} } \\
-     %\rowcolor{\sourcelinkacolor}\multicolumn{1}{C{.25\textwidth}}{ \textbf{titre} } & \multicolumn{1}{C{.7\textwidth}|}{ \textbf{lien} } \\
-    #1
-    %\hline
-  \end{longtable}
+  \TEACHERBLOC{
+    \begin{longtable}{cc}
+      \arrayrulecolor{\sourcelinkacolor}
+      %\hline
+      \hline 
+      \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\sourcelinkacolor}{\textsc{sources}} }  \\
+      \rowcolor{\sourcelinkacolor} \bfseries \textcolor{white}{thème} & \bfseries \textcolor{white}{lien}\\\hline
+      %\rowcolor{\sourcelinkacolor}\multicolumn{2}{C{\textwidth}}{ \textbf{sources} } \\
+      %\rowcolor{\sourcelinkacolor}\multicolumn{1}{C{.25\textwidth}}{ \textbf{titre} } & \multicolumn{1}{C{.7\textwidth}|}{ \textbf{lien} } \\
+      #1
+      %\hline
+    \end{longtable}
+  }{}
 }
 \newcommand{\slar}[2]{%
 %#1&#2&#3\\\hline
@@ -327,6 +334,32 @@
   \multicolumn{1}{C{.05\textwidth}}{ \cellcolor{\imgdescacolor}\textcolor{white}{\Large\bfseries#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
 }
 
+% ----------------------------------------------------------------------
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[white,shape=circle,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
+\newcommand*\stared[1]{\tikz[baseline=(char.base)]{%
+            \node[white,shape=star, star points=8,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
+
+
+
+
+% https://tex.stackexchange.com/questions/22406/how-to-make-a-textbox-with-this-tikz-code
+\colorlet{bancolor}{general@best@navy}
+\def\bancolor{mycolor}
+\newenvironment{objectifa}[3][]{%
+    \begin{tikzpicture}[#1]%
+        \def\myboxname{\textcolor{white}{\textsc{#3}}}%
+        \node [bancolor,draw,inner sep=1.5ex,text width=#2]% good options: minimum height, minimum width
+            (BOXCONTENT) \bgroup\rule{0pt}{3ex}\ignorespaces
+}{%
+        \egroup;
+        \node [right,inner xsep=1em,fill=bancolor!75,outer sep=0pt,text height=2ex,text depth=.5ex] (BOXNAME) 
+            at ([shift={(-1em,0pt)}]BOXCONTENT.north west) {\myboxname};
+        \fill[bancolor] (BOXNAME.north east) -- +(-1em,1em) -- +(-1em,0) -- cycle;
+        \fill[bancolor] (BOXNAME.south west) -- +(1em,-1em) -- +(1em,0) -- cycle;
+    \end{tikzpicture}
+}
 
 
 % ----------------------------------------------------------------------
