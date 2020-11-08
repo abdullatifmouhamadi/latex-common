@@ -283,7 +283,7 @@
 
 
 %----------------------------------------------------------------------
-\def\signalracolor{general@best@blue}
+\def\signalracolor{general@best@red}
 \newcommand{\signalra}[1]{
   \begin{tikzpicture} [every node/.style={signal, draw, text=orange, signal to=nowhere, inner sep=1.1pt}]
     %\node[white] (FAKE) at (0,.25) {};
@@ -324,17 +324,17 @@
 \newcommand{\imgdesca}[4]{%
 \begin{longtable}{cc}
   \arrayrulecolor{\imgdescacolor}
-  \hline
-  \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\imgdescacolor}{\textsc{#1}} }  \\
-  \hline
+  %\hline
+  %\rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\imgdescacolor}{\textsc{#1}} }  \\
+  %\hline
   \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{ \raisebox{-\totalheight}{
       \begin{tikzpicture}
           \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#2}};
+
           #3
         \end{tikzpicture}
-      }}\\  
-
-      \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{~} \\
+      }}\\
+      \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{~} \\\hline
   #4
 \end{longtable}
 }
