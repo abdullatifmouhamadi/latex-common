@@ -27,6 +27,8 @@
 \usetikzlibrary{positioning,arrows.meta}
 \usetikztiminglibrary[new={char=Q,reset char=R}]{counters}
 \usetikztiminglibrary{nicetabs} 
+\usetikzlibrary{shapes}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -280,6 +282,15 @@
   }
 
 
+%----------------------------------------------------------------------
+\def\signalracolor{general@best@blue}
+\newcommand{\signalra}[1]{
+  \begin{tikzpicture} [every node/.style={signal, draw, text=orange, signal to=nowhere, inner sep=1.1pt}]
+    %\node[white] (FAKE) at (0,.25) {};
+    \node[white, fill=\signalracolor, signal to=east, signal from=nowhere] at (0,0) {\ttfamily\normalsize#1};
+  \end{tikzpicture}
+}
+
 
 %----------------------------------------------------------------------
 %.25-.7
@@ -309,7 +320,7 @@
 
 % ----------------------------------------------------------------------
 
-\def\imgdescacolor{general@best@fuchsia}
+\def\imgdescacolor{general@best@maroon}
 \newcommand{\imgdesca}[4]{%
 \begin{longtable}{cc}
   \arrayrulecolor{\imgdescacolor}
@@ -328,7 +339,7 @@
 \end{longtable}
 }
 \newcommand{\imgdescatag}[2]{%
-  \node[white, circle,draw,fill=\imgdescacolor, ultra thick] at #1 {\bfseries #2};
+  \node[white, chamfered rectangle,double=\imgdescacolor, draw, fill=\imgdescacolor, very thick] at #1 {\bfseries #2};
 }
 \newcommand{\imgdescrow}[2]{%
   \multicolumn{1}{C{.05\textwidth}}{ \cellcolor{\imgdescacolor}\textcolor{white}{\Large\bfseries#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
@@ -361,7 +372,7 @@
     \end{tikzpicture}
 }
 
-
+% chamfered rectangle
 % ----------------------------------------------------------------------
 
 \newcommand{\bubblea}[1]{
@@ -372,13 +383,11 @@
 }
 \newcommand{\bubbleb}[1]{
   \begin{tikzpicture}
-    \node[fill=general@best@olive,rounded corners]
-    {\textcolor{white}{\bfseries#1}};
+    \node[general@best@olive, draw,inner sep=1.0pt]{#1};
     \end{tikzpicture}
 }
 \newcommand{\bubblec}[1]{
   \begin{tikzpicture}
-    \node[fill=general@best@maroon,rounded corners]
-    {\textcolor{white}{\bfseries#1}};
+    \node[general@best@maroon, draw, inner sep=1.0pt]{#1};
     \end{tikzpicture}
 }
