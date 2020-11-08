@@ -11,7 +11,8 @@
 % method 2
 \usepackage{geometry}
 \geometry{hmargin=1.0cm,vmargin=1.5cm}
-
+%\usepackage{geometry}
+%\geometry{hmargin=1.5cm,vmargin=2.0cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,8 +40,8 @@
 
 
 
-\fancyhead[LE,RO]{\textsl{}}
-\fancyhead[LO,RE]{\textsl{}}
+%\fancyhead[LE,RO]{\textsl{}}
+%\fancyhead[LO,RE]{\textsl{}}
 
 %\fancyhead[LE,RO]{\textsl{\rightmark}}
 %\fancyhead[LO,RE]{\textsl{\leftmark}}
@@ -52,8 +53,8 @@
 %\fancyfoot[C]{Electronique \& Communication}
 %\fancyfoot[R]{\thepage}
 \fancyfoot[R]{\today }
-%\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0.0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -283,7 +284,7 @@
 
 
 %----------------------------------------------------------------------
-\def\signalracolor{general@best@red}
+\def\signalracolor{general@best@purple}
 \newcommand{\signalra}[1]{
   \begin{tikzpicture} [every node/.style={signal, draw, text=orange, signal to=nowhere, inner sep=1.1pt}]
     %\node[white] (FAKE) at (0,.25) {};
@@ -320,29 +321,33 @@
 
 % ----------------------------------------------------------------------
 
-\def\imgdescacolor{general@best@maroon}
-\newcommand{\imgdesca}[4]{%
+\def\tutorialacolor{general@best@purple}
+\newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
-  \arrayrulecolor{\imgdescacolor}
-  %\hline
-  %\rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\imgdescacolor}{\textsc{#1}} }  \\
-  %\hline
-  \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{ \raisebox{-\totalheight}{
-      \begin{tikzpicture}
-          \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#2}};
+  \arrayrulecolor{\tutorialacolor}
+  \hline
+  \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
+  \hline
 
-          #3
-        \end{tikzpicture}
-      }}\\
-      \rowcolor{\imgdescacolor!16}\multicolumn{2}{c}{~} \\\hline
-  #4
+  #2
 \end{longtable}
 }
-\newcommand{\imgdescatag}[2]{%
-  \node[white, chamfered rectangle,double=\imgdescacolor, draw, fill=\imgdescacolor, very thick] at #1 {\bfseries #2};
+
+\newcommand{\tutorialapic}[2]{%
+\rowcolor{\tutorialacolor!16}\multicolumn{2}{c}{ \raisebox{-\totalheight}{
+  \begin{tikzpicture}
+      \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#1}};
+
+      #2
+    \end{tikzpicture}
+  }}\\
+  \rowcolor{\tutorialacolor!16}\multicolumn{2}{c}{~} \\\hline
 }
-\newcommand{\imgdescrow}[2]{%
-  \multicolumn{1}{C{.05\textwidth}}{ \cellcolor{\imgdescacolor}\textcolor{white}{\Large\bfseries#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
+\newcommand{\tutorialatag}[2]{%
+  \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] at #1 {\bfseries #2};
+}
+\newcommand{\tutorialarow}[2]{%
+  \multicolumn{1}{C{.05\textwidth}|}{ \footnotesize\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
 }
 
 % ----------------------------------------------------------------------
@@ -351,6 +356,8 @@
             \node[white,shape=circle,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
 \newcommand*\stared[1]{\tikz[baseline=(char.base)]{%
             \node[white,shape=star, star points=8,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
+\newcommand*\charmed[1]{\tikz[baseline=(char.base)]{%
+            \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] (char) {\bfseries #1};}}
 
 
 
