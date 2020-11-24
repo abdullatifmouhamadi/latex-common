@@ -1,8 +1,58 @@
-\usepackage[T1]{fontenc}
-\usepackage{libertine}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{microtype}
-\pagenumbering{gobble}
-\CutLine{3}
-\usepackage{xcolor}
-\renewcommand{\sectfont}{\large\sffamily\bfseries\color{blue}}
+\usepackage{common/mutualisation/default-packages}
+
+
+
+\usetikzlibrary{decorations.pathmorphing, patterns,shapes,arrows}
+
+
+
+
+
+%\usepackage[T1]{fontenc}
+%\usepackage{libertine}
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{microtype}
+%\pagenumbering{gobble}
+%\CutLine{3}
+%\usepackage{xcolor}
+%\renewcommand{\sectfont}{\large\sffamily\bfseries\color{blue}}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{titlesec}
+
+%\titleformat*{\section}{\Large\color{red}}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfdeclarepatternformonly{zigzagpat}
+{\pgfpointorigin}
+{\pgfpoint{8mm}{2mm}} % Upper right corner so the box is 8x2 mm
+{\pgfpoint{8mm}{1mm}} % The tile size is smaller than the picture itself 
+                      % So the teeth are getting closer
+{
+\pgfdecoration{{zigzag}{\pgfdecoratedpathlength}{%Setting up the decoration for the full path
+                        \pgfdecorationsegmentlength=4mm      % The zigzag thread width
+                        \pgfdecorationsegmentamplitude=1mm   % The zigzag thread height
+                   }
+              }
+\pgfpathmoveto{\pgfpoint{0cm}{1mm}}        % So first we move 1 mm up
+\pgfpathlineto{\pgfpoint{8mm}{1mm}}        % And draw a straight horizontal line to the end of our box
+\endpgfdecoration                          % Close the decoration environment
+\pgfusepathqstroke                         % Now draw the decorated path
+}
+
+
+%%%%%%%
+
