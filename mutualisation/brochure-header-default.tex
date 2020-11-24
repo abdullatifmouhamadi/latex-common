@@ -40,19 +40,24 @@
 %https://tex.stackexchange.com/questions/42003/decorating-with-random-steps-a-filling-pattern
 
 
+\def\zigx{10cm}
+\def\zigy{16mm}
+
 \pgfdeclarepatternformonly{zigzagpat}
 {\pgfpointorigin}
-{\pgfpoint{8mm}{2mm}} % Upper right corner so the box is 8x2 mm
-{\pgfpoint{8mm}{1mm}} % The tile size is smaller than the picture itself 
+{\pgfpoint{\zigx}{\zigy}} % Upper right corner so the box is 8x2 mm
+{\pgfpoint{\zigx}{0.5*\zigy}} % The tile size is smaller than the picture itself 
                       % So the teeth are getting closer
 {
 \pgfdecoration{{zigzag}{\pgfdecoratedpathlength}{%Setting up the decoration for the full path
-                        \pgfdecorationsegmentlength=4mm      % The zigzag thread width
-                        \pgfdecorationsegmentamplitude=1mm   % The zigzag thread height
+                        \pgfdecorationsegmentlength=16mm      % The zigzag thread width
+                        \pgfdecorationsegmentamplitude=4mm   % The zigzag thread height
+                        \pgfsetlinewidth{0.25cm}
+                        \pgfsetcolor{black}
                    }
               }
-\pgfpathmoveto{\pgfpoint{0cm}{1mm}}        % So first we move 1 mm up
-\pgfpathlineto{\pgfpoint{8mm}{1mm}}        % And draw a straight horizontal line to the end of our box
+\pgfpathmoveto{\pgfpoint{0cm}{0.5*\zigy}}        % So first we move 1 mm up
+\pgfpathlineto{\pgfpoint{\zigx}{0.5*\zigy}}        % And draw a straight horizontal line to the end of our box
 \endpgfdecoration                          % Close the decoration environment
 \pgfusepathqstroke                         % Now draw the decorated path
 }
