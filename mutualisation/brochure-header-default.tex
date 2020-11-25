@@ -9,17 +9,19 @@
 
 
 %\usepackage[T1]{fontenc}
-%\usepackage{libertine}
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{microtype}
-%\pagenumbering{gobble}
-%\CutLine{3}
+\usepackage{libertine}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\pagenumbering{gobble}
+\CutLine{3}
 %\usepackage{xcolor}
-%\renewcommand{\sectfont}{\large\sffamily\bfseries\color{blue}}
+\renewcommand{\sectfont}{\large\sffamily\bfseries\color{blue}}
 
 
 
 
+\usepackage{environ}
+\usepackage{eso-pic}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +42,7 @@
 %https://tex.stackexchange.com/questions/42003/decorating-with-random-steps-a-filling-pattern
 
 
-\def\zigx{10cm}
+\def\zigx{16cm}
 \def\zigy{16mm}
 
 \pgfdeclarepatternformonly{zigzagpat}
@@ -65,3 +67,29 @@
 
 %%%%%%%
 
+\newenvironment{advisepage}
+  {%
+    \clearpage
+    \AddToShipoutPictureBG*
+      {%
+        \AtPageUpperLeft
+          {%
+            \color{blue}%
+            \raisebox{-.5\paperheight}{\rule{\paperwidth}{.5\paperheight}}%
+          }%
+        \color{orange}%
+        \rule{\paperwidth}{.5\paperheight}%
+      }%
+  }
+  {%
+    \clearpage
+  }
+\newenvironment{advise}
+  {%
+    \noindent
+    \begin{minipage}[t][.5\textheight]{\textwidth}
+  }
+  {%
+    \end{minipage}%
+  }
+\usepackage{duckuments}
