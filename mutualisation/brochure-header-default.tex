@@ -18,6 +18,7 @@
 \renewcommand{\sectfont}{\large\sffamily\bfseries\color{blue}}
 
 
+\usepackage{xcolor}
 
 
 \usepackage{environ}
@@ -42,31 +43,81 @@
 %https://tex.stackexchange.com/questions/42003/decorating-with-random-steps-a-filling-pattern
 
 
-\def\zigx{16cm}
-\def\zigy{16mm}
+
 
 \pgfdeclarepatternformonly{zigzagpat}
 {\pgfpointorigin}
-{\pgfpoint{\zigx}{\zigy}} % Upper right corner so the box is 8x2 mm
-{\pgfpoint{\zigx}{0.5*\zigy}} % The tile size is smaller than the picture itself 
+{\pgfpoint{8cm}{2cm}} % Upper right corner so the box is 8x2 mm
+{\pgfpoint{4cm}{0.75cm}} % The tile size is smaller than the picture itself 
                       % So the teeth are getting closer
 {
 \pgfdecoration{{zigzag}{\pgfdecoratedpathlength}{%Setting up the decoration for the full path
-                        \pgfdecorationsegmentlength=16mm      % The zigzag thread width
-                        \pgfdecorationsegmentamplitude=4mm   % The zigzag thread height
-                        \pgfsetlinewidth{0.25cm}
-                        \pgfsetcolor{black}
+                        \pgfdecorationsegmentlength=2cm      % The zigzag thread width
+                        \pgfdecorationsegmentamplitude=0.5cm   % The zigzag thread height
+                        \pgfsetlinewidth{8pt}
+                        %\pgfsetcolor{gray}
                    }
               }
-\pgfpathmoveto{\pgfpoint{0cm}{0.5*\zigy}}        % So first we move 1 mm up
-\pgfpathlineto{\pgfpoint{\zigx}{0.5*\zigy}}        % And draw a straight horizontal line to the end of our box
+\pgfpathmoveto{\pgfpoint{0cm}{1cm}}        % So first we move 1 mm up
+\pgfpathlineto{\pgfpoint{8cm}{1cm}}        % And draw a straight horizontal line to the end of our box
 \endpgfdecoration                          % Close the decoration environment
 \pgfusepathqstroke                         % Now draw the decorated path
 }
 
+%%
 
-%%%%%%%
+\pgfdeclarepatternformonly{stars}
+{\pgfpointorigin}{\pgfpoint{1cm}{1cm}}
+{\pgfpoint{1cm}{1cm}}
+{
+\pgftransformshift{\pgfpoint{.5cm}{.5cm}}
+\pgfpathmoveto{\pgfpointpolar{0}{4mm}}
+\pgfpathlineto{\pgfpointpolar{144}{4mm}}
+\pgfpathlineto{\pgfpointpolar{288}{4mm}}
+\pgfpathlineto{\pgfpointpolar{72}{4mm}}
+\pgfpathlineto{\pgfpointpolar{216}{4mm}}
+\pgfpathclose%
+\pgfusepath{fill}
+}
 
+%%
+
+%\tikzset{mystripes dist/.initial=0.25}
+\tikzset{mystripes dist/.initial=1.75}
+\pgfdeclarepatternformonly[/tikz/mystripes dist]{mystripes}
+{\pgfpointorigin}{\pgfpoint{1cm}{1cm}}
+{\pgfpoint{1cm}{1cm}}
+{
+  \foreach \x in {0,\pgfkeysvalueof{/tikz/mystripes dist},...,1}{
+    \pgfmathsetmacro{\nx}{1-\x}
+    \tikz[overlay,line width=0pt]\draw[decoration = {random steps,segment length = 0.5mm, amplitude = 0.15pt}, decorate] (\x, 0) -- ++(\nx,\nx);
+    \tikz[overlay,line width=0pt]\draw[decoration = {random steps, segment length = 0.5mm, amplitude = 0.15pt}, decorate] (0, \x) -- ++(\nx,\nx);
+  }
+}
+
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% https://tex.stackexchange.com/questions/29769/colored-box-in-new-environment
+
+\newsavebox{\selvestebox}
+\newenvironment{colbox}[1]
+  {\newcommand\colboxcolor{#1}%
+   \begin{lrbox}{\selvestebox}%
+   \begin{minipage}{\dimexpr\columnwidth-2\fboxsep\relax}}
+  {\end{minipage}\end{lrbox}%
+   %\begin{center}
+   \colorbox{\colboxcolor}{\usebox{\selvestebox}}
+   %\end{center}
+   }
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/443466/how-to-split-latex-page-horizontally-and-have-a-different-colour-background-to/443499
+%
 \newenvironment{advisepage}
   {%
     \clearpage
@@ -74,22 +125,24 @@
       {%
         \AtPageUpperLeft
           {%
-            \color{blue}%
+            \color{white}%
             \raisebox{-.5\paperheight}{\rule{\paperwidth}{.5\paperheight}}%
           }%
-        \color{orange}%
+        \color{white}%
         \rule{\paperwidth}{.5\paperheight}%
       }%
   }
   {%
     \clearpage
   }
-\newenvironment{advise}
+\newenvironment{advise}[2]
   {%
     \noindent
-    \begin{minipage}[t][.5\textheight]{\textwidth}
+    \begin{minipage}[t][#1\textheight]{\textwidth}
+    \begin{colbox}{#2}
   }
   {%
-    \end{minipage}%
+    \end{colbox}
+    \end{minipage}%%
   }
 \usepackage{duckuments}
