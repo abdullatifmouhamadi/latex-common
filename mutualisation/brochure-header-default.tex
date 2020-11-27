@@ -123,17 +123,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % https://tex.stackexchange.com/questions/443466/how-to-split-latex-page-horizontally-and-have-a-different-colour-background-to/443499
 %
-\newenvironment{advisepage}
+\newenvironment{advisepage}[2]
   {%
     \clearpage
     \AddToShipoutPictureBG*
       {%
         \AtPageUpperLeft
           {%
-            \color{white}%
+            \color{#1}%
             \raisebox{-.5\paperheight}{\rule{\paperwidth}{.5\paperheight}}%
           }%
-        \color{white}%
+        \color{#2}%
         \rule{\paperwidth}{.5\paperheight}%
       }%
   }
