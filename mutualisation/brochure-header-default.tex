@@ -6,7 +6,7 @@
 \usetikzlibrary{decorations.pathmorphing, patterns,shapes,arrows}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
-
+\usepackage[framemethod=tikz]{mdframed}
 
 
 %\usepackage[T1]{fontenc}
@@ -151,3 +151,9 @@
     \end{minipage}%%
   }
 \usepackage{duckuments}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newmdenv[align=center,innerlinewidth=1.0pt, roundcorner=8pt,linecolor=gray!32,innerleftmargin=6pt,backgroundcolor=white,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{logobox}
