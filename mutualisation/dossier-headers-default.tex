@@ -321,6 +321,41 @@
 
 % ----------------------------------------------------------------------
 
+\def\articlesacolor{general@best@maroon}
+\newcommand{\articlesa}[1]{%
+    \begin{longtable}{cccccc}
+      \arrayrulecolor{\articlesacolor}
+      \hline 
+      \rowcolor{white}\multicolumn{6}{|c|}{ \textcolor{\articlesacolor}{\textsc{catalogue}} }  \\
+      \rowcolor{\articlesacolor} \bfseries \textcolor{white}{$\boldsymbol{\#}$}&
+      \textcolor{white}{\bfseries image}&
+      \textcolor{white}{\bfseries article}&
+      \textcolor{white}{\bfseries commentaires}&
+      \textcolor{white}{\bfseries prix}&
+      \textcolor{white}{\bfseries lien}\\\hline
+      #1
+    \end{longtable}
+}
+\newcommand{\artr}[6]{%
+\multicolumn{1}{|C{.05\textwidth}|}{#1} &
+\multicolumn{1}{|C{.20\textwidth}|}{\includegraphics[width=1\linewidth]{#2}} &
+\multicolumn{1}{|L{.270\textwidth}|}{\footnotesize\bfseries #3}&
+\multicolumn{1}{|L{.220\textwidth}|}{\footnotesize\bfseries #4}&
+\multicolumn{1}{|C{.075\textwidth}|}{\textcolor{red}{\bfseries #5€}}&
+\multicolumn{1}{|C{.05\textwidth}|}{\large\href{#6}{aller}}\\\hline
+}
+
+%    $1$&\includegraphics[width=\linewidth]{img1}&\footnotesize\bfseries Wangkangyi Moniteur portable 15" TFT-LCD USB écran tactile LCD PC Moniteur de caisse utilisé pour Kiosk Restaurant Bar&167&\large\href{https://www.amazon.fr/dp/B08GCGV99B/}{aller}
+
+%|C{.05\textwidth}|L{.3\textwidth}|L{.393\textwidth}|C{0.075\textwidth}|C{.05\textwidth}|
+
+
+
+% ----------------------------------------------------------------------
+
+
+
+
 \def\tutorialacolor{general@best@navy}
 \newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
