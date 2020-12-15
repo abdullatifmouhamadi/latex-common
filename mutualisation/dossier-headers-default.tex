@@ -1,6 +1,6 @@
 
-%\documentclass{report}
-\documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
+\documentclass{report}
+%\documentclass[ams,openany,10pt,presentation,utf8]{common/themes/dossiers/dossiers}
 
 
 \usepackage[object=vectorian]{pgfornament} %%  http://altermundus.com/pages/tkz/ornament/index.html
@@ -337,11 +337,11 @@
     \end{longtable}
 }
 \newcommand{\artr}[6]{%
-\multicolumn{1}{|C{.05\textwidth}|}{#1} &
-\multicolumn{1}{|C{.20\textwidth}|}{\includegraphics[width=1\linewidth]{#2}} &
-\multicolumn{1}{|L{.270\textwidth}|}{\footnotesize\bfseries #3}&
-\multicolumn{1}{|L{.220\textwidth}|}{\footnotesize\bfseries #4}&
-\multicolumn{1}{|C{.075\textwidth}|}{\textcolor{red}{\bfseries #5€}}&
+\multicolumn{1}{|C{.05\textwidth}}{#1} &
+\multicolumn{1}{|C{.20\textwidth}}{\includegraphics[width=1\linewidth]{#2}} &
+\multicolumn{1}{|L{.270\textwidth}}{\footnotesize\bfseries #3}&
+\multicolumn{1}{|L{.220\textwidth}}{\footnotesize\bfseries #4}&
+\multicolumn{1}{|C{.075\textwidth}}{\textcolor{red}{\bfseries #5€}}&
 \multicolumn{1}{|C{.05\textwidth}|}{\large\href{#6}{aller}}\\\hline
 }
 
