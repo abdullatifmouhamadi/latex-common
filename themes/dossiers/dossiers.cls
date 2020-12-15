@@ -68,7 +68,7 @@
 %%% Packages  %%%
 %%%%%%%%%%%%%%%%%
 %
-\RequirePackage[\inputoption]{inputenc}
+%\RequirePackage[\inputoption]{inputenc} --desactivé car clash sur la dernière mise à jour latex
 \RequirePackage[T1]{fontenc}
 \RequirePackage{cellspace}
 %\RequirePackage[cmyk,table]{xcolor} 
