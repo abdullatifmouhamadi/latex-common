@@ -404,7 +404,7 @@
     \begin{tikzpicture}[#1]%
         \def\myboxname{\textcolor{white}{\textsc{#3}}}%
         \node [bancolor,draw,inner sep=1.5ex,text width=#2]% good options: minimum height, minimum width
-            (BOXCONTENT) \bgroup\rule{0pt}{3ex}\ignorespaces
+            (BOXCONTENT) \bgroup\rule{0pt}{0ex}\ignorespaces
 }{%
         \egroup;
         \node [right,inner xsep=1em,fill=bancolor!75,outer sep=0pt,text height=2ex,text depth=.5ex] (BOXNAME) 
