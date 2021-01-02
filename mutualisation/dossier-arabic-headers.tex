@@ -17,6 +17,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADERS/FOOTERS
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{lastpage}
+
 
 \usepackage{amssymb}
 \usepackage{tikz}
@@ -42,10 +44,13 @@
 %\renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\footrulewidth}{0.4pt}
 
-\fancyfoot[L]{\arb{'isl.Am}}
+%\fancyfoot[L]{\arb{'isl.Am}}
+\fancyfoot[L]{\arb{.Al-llu.gaT .Al`arabyyaT}}
 %\fancyfoot[C]{Electronique \& Communication}
 %\fancyfoot[R]{\thepage}
 \fancyfoot[R]{\today }
+\fancyfoot[C]{\thepage\ / \pageref{LastPage}}
+
 \renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\headrulewidth}{0.0pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -116,10 +121,11 @@
 
 
 \usepackage[tuenc]{fontspec}
+\usepackage[francais]{babel}
 
 %\usepackage{polyglossia}
 %\setdefaultlanguage{french}
-%\setotherlanguage{arabic}
+%\setotherlanguage{french}
 %\setmainfont{Amiri}
 
 
@@ -280,7 +286,7 @@
 
 
 %%%%%%%%%%%%%% ARRAY DIALOGUES
-\def\dialogacolor{general@best@green}
+\def\dialogacolor{general@best@olive}
 \newcommand{\dialoga}[1]{%
   \begin{longtable}{R{.65\textwidth}L{.30\textwidth}}
     \arrayrulecolor{\dialogacolor}
@@ -313,7 +319,7 @@
   [every node/.style={signal, draw, text=white, signal to=nowhere}]
   %\node [block, xshift=0em](start){DASDASDADASDASsalut};
   %\node [block, signal to=east](process1){#1};
-  \node[white, fill=general@best@orange!100!50, signal to=west, signal from=east] at (0,1) {\bfseries#1};
+  \node[white, fill=general@best@orange!100!50, signal to=west, signal from=east] at (0,1) {\bfseries\normalsize#1};
 \end{tikzpicture}
 
 \end{flushright}
