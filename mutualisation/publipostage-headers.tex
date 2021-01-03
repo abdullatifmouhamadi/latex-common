@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}          
+\moderncvcolor{blue}                      
+\nopagenumbers{}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+
+
+%%%%%%%%%%%%% Beginning of \makelettertittle modification %%%%%%%%%%%%%%%%%%
+
+\makeatletter
+%-------------------------------------------------------------------------------
+%                letter style definition
+%-------------------------------------------------------------------------------
+% commands
+\renewcommand*{\recomputeletterlengths}{%
+\recomputecvlengths%
+\setlength{\parskip}{6\p@}}
+
+\newcommand*{\subject}[1]{\def\@subject{#1}}                   
+
+\renewcommand*{\makelettertitle}{%
+% recompute lengths (in case we are switching from letter to resume, or vice versa)
+\recomputeletterlengths%
+% sender contact info
+%\hfill%         
+\begin{minipage}{.5\textwidth}%
+\raggedright%                                                  
+\addressfont\textcolor{color2}{%            
+  {\bfseries\upshape\@firstname~\@familyname}\@firstdetailselementfalse%
+  \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+    \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}}%
+  \ifthenelse{\isundefined{\@mobile}}{}{\makenewline\mobilesymbol\@mobile}%
+ % \ifthenelse{\isundefined{\@phone}}{}{\makenewline\phonesymbol\@phone}%
+  \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+  \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+  \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}%
+\end{minipage}\vspace{2em}% << Add space with \vspace, have actual paragraph break
+
+% recipient block        V--V Adjust to fit text and align as desired
+\hfill\begin{minipage}[t]{.5\textwidth}       % << \hfill now works
+\raggedright%
+\addressfont%
+{\bfseries\upshape\@recipientname}\\%
+\@recipientaddress\\[2em]%
+\@date\\[1.5em]%                                               
+\end{minipage} % << Another paragraph break here needed
+
+% date
+\hfill  % << This wasn't doing anything good before, probably not now either.
+\null\\[2em]%                                              
+%\raggedright % << Remove ragged right from definition
+\ifthenelse{\isundefined{\@subject}}{}{%                             
+\begin{tabular}{ p{0.08\textwidth} p{0.92\textwidth} }
+Objet: & \raggedright \@subject
+\end{tabular}
+\\[1.5em]}%
+% opening
+%\raggedright % << Remove ragged right from definition
+\@opening\\[1.5em]%
+\hspace{0pt}\par\vspace{-\baselineskip}\vspace{-\parskip}}
+
+\renewcommand*{\makeletterclosing}{
+\@closing\\[3em]%
+{\bfseries \@firstname~\@familyname}%
+\ifthenelse{\isundefined{\@enclosure}}{}{%
+\\%
+\vfill%
+{\color{color2}\itshape\enclname: \@enclosure}}}
+\makeatother%
+%%%%%%%%%%%%%%%%% End of \makelettertittle modification%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\patchcmd{\makeletterclosing}             %%% Flushing right the signature
+{\@closing}
+{\raggedleft \@closing}
+{}{}
+\makeatother
+
+% character encoding
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+
+
+% adjust the page margins
+\usepackage[top=1.1cm, bottom=1.1cm, left=2cm, right=2cm]{geometry}
+\setlength{\hintscolumnwidth}{3cm}
