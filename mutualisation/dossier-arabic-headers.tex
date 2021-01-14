@@ -345,3 +345,17 @@
 \newcommand{\arem}[1]{\arbcolor[\arbremacolor]{\arb[fullvoc]{#1}}}
 \newcommand{\aans}[1]{\arbcolor[general@best@purple]{\arb{#1}}}
 \newcommand{\arbrem}[1]{\arbcolor[\arbremacolor]{\arb{#1}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{csvsimple}
+
+
+% https://tex.stackexchange.com/questions/178904/use-datatool-to-read-a-row-from-a-csv-file-then-use-the-variables-in-the-docume
+\usepackage{datatool}
+%\DTLsetdelimiter{|} 
+%\DTLsetseparator{|} % works
+\DTLsetseparator{,} % works
+
+
