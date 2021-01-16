@@ -433,3 +433,15 @@
     \node[general@best@maroon, draw, inner sep=1.0pt]{#1};
     \end{tikzpicture}
 }
+\newcommand{\bubblefa}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@red,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bubblefb}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@olive,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
