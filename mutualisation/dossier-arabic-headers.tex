@@ -359,3 +359,26 @@
 \DTLsetseparator{,} % works
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LEXIQUE
+
+% https://www.latex4technics.com/?note=nnf
+% https://www.latex4technics.com/?note=JR7
+
+\newcommand{\arblex}[2]{
+    \begin{longtable}{|C{.04\linewidth}|R{.195\linewidth}|L{.195\linewidth}|}
+        \hline
+        \rowcolor{general@best@orange}\multicolumn{3}{|c|}{\textcolor{white}{\bfseries #2}}
+        %\textbf{~} & \textbf{arb} & \textbf{fr}
+        \DTLforeach[\DTLiseq{\key}{#1}]{datas}{% 
+                \key=key,%
+                \unit=unit,%
+                \arabic=arabic,% 
+                \french=french%
+            }{%
+            \\\hline
+            \unit & \arabic & \french 
+        }\\\hline
+    \end{longtable}%
+}
+
+
