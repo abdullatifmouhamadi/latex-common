@@ -374,6 +374,9 @@
 \multicolumn{1}{|L{.33\textwidth}}{\footnotesize\bfseries #5}\\\hline
 }
 
+\newcommand{\prrsection}[1]{%
+\rowcolor{general@best@silver}\multicolumn{5}{|c|}{ \textcolor{general@best@maroon}{\textsc{#1}} }  \\\hline
+}
 
 
 % ----------------------------------------------------------------------
@@ -461,7 +464,12 @@
     {\textcolor{white}{\bfseries#1}};
     \end{tikzpicture}
 }
-
+\newcommand{\bnote}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@green,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
 %% deprecated
 \newcommand{\bubblea}[1]{
   \begin{tikzpicture}
