@@ -352,7 +352,7 @@
 
 
 % ----------------------------------------------------------------------
-\def\pricingacolor{general@best@orange}
+\def\pricingacolor{general@best@fuchsia}
 \newcommand{\pricinga}[1]{%
     \begin{longtable}{ccccc}
       \arrayrulecolor{\pricingacolor}
@@ -360,18 +360,18 @@
       \rowcolor{white}\multicolumn{5}{|c|}{ \textcolor{\pricingacolor}{\textsc{pricing}} }  \\
       \rowcolor{\pricingacolor} \bfseries \textcolor{white}{$\boldsymbol{\#}$}&
       \textcolor{white}{\bfseries service}&
-      \textcolor{white}{\bfseries fixe (h)}&
-      \textcolor{white}{\bfseries /mois (€)}&
+      \textcolor{white}{\bfseries fixe}&
+      \textcolor{white}{\bfseries /mois}&
       \textcolor{white}{\bfseries commentaires}\\\hline
       #1
     \end{longtable}
 }
 \newcommand{\prr}[5]{%
 \multicolumn{1}{|C{.05\textwidth}}{#1} &
-\multicolumn{1}{|L{.25\textwidth}}{\bfseries #2} &
-\multicolumn{1}{|C{.10\textwidth}}{\bfseries \textcolor{red}{#3h}} &
-\multicolumn{1}{|C{.10\textwidth}}{\bfseries \textcolor{red}{#4€}} &
-\multicolumn{1}{|L{.38\textwidth}}{\footnotesize\bfseries #5}\\\hline
+\multicolumn{1}{|L{.40\textwidth}}{ \textit{#2}} &
+\multicolumn{1}{|C{.05\textwidth}}{ \normalsize\textcolor{red}{\textbf{#3}h}} &
+\multicolumn{1}{|C{.05\textwidth}}{ \normalsize\textcolor{red}{\textbf{#4}€}} &
+\multicolumn{1}{|L{.33\textwidth}}{\footnotesize\bfseries #5}\\\hline
 }
 
 
@@ -441,6 +441,28 @@
 % chamfered rectangle
 % ----------------------------------------------------------------------
 
+
+
+\newcommand{\bwarning}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@orange,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bdanger}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@red,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\binfo}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@olive,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+
+%% deprecated
 \newcommand{\bubblea}[1]{
   \begin{tikzpicture}
     \node[fill=general@best@teal,rounded corners]
