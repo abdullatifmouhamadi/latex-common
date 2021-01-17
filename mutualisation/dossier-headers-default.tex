@@ -352,7 +352,31 @@
 
 
 % ----------------------------------------------------------------------
+\def\pricingacolor{general@best@orange}
+\newcommand{\pricinga}[1]{%
+    \begin{longtable}{ccccc}
+      \arrayrulecolor{\pricingacolor}
+      \hline 
+      \rowcolor{white}\multicolumn{5}{|c|}{ \textcolor{\pricingacolor}{\textsc{pricing}} }  \\
+      \rowcolor{\pricingacolor} \bfseries \textcolor{white}{$\boldsymbol{\#}$}&
+      \textcolor{white}{\bfseries service}&
+      \textcolor{white}{\bfseries fixe (h)}&
+      \textcolor{white}{\bfseries /mois (€)}&
+      \textcolor{white}{\bfseries commentaires}\\\hline
+      #1
+    \end{longtable}
+}
+\newcommand{\prr}[5]{%
+\multicolumn{1}{|C{.05\textwidth}}{#1} &
+\multicolumn{1}{|L{.25\textwidth}}{\bfseries #2} &
+\multicolumn{1}{|C{.10\textwidth}}{\bfseries \textcolor{red}{#3h}} &
+\multicolumn{1}{|C{.10\textwidth}}{\bfseries \textcolor{red}{#4€}} &
+\multicolumn{1}{|L{.38\textwidth}}{\footnotesize\bfseries #5}\\\hline
+}
 
+
+
+% ----------------------------------------------------------------------
 
 
 
