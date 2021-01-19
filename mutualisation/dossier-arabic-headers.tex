@@ -367,18 +367,22 @@
 \newcommand{\arblex}[2]{
     \begin{longtable}{|C{.04\linewidth}|R{.195\linewidth}|L{.195\linewidth}|}
         \hline
-        \rowcolor{general@best@orange}\multicolumn{3}{|c|}{\textcolor{white}{\bfseries #2}}
-        %\textbf{~} & \textbf{arb} & \textbf{fr}
-        \DTLforeach[\DTLiseq{\key}{#1}]{datas}{% 
-                \key=key,%
-                \unit=unit,%
-                \arabic=arabic,% 
-                \french=french%
-            }{%
-            \\\hline
-            \unit & \arabic & \french 
-        }\\\hline
+        \rowcolor{general@best@orange}\multicolumn{3}{|c|}{\textcolor{white}{\bfseries #1}}\\
+        %\textbf{~} & \textbf{arb} & \textbf{fr}\\\hline
+        %\DTLforeach[\DTLiseq{\key}{#1}]{datas}{% 
+        %        \key=key,%
+        %        \unit=unit,%
+        %        \arabic=arabic,% 
+        %        \french=french%
+        %    }{%
+        %    \\\hline
+        %    \unit & \arabic & \french 
+        %}\\\hline
+        #2
     \end{longtable}%
+}
+\newcommand{\alr}[4]{
+    #1&#2&#3\\\hline
 }
 
 
