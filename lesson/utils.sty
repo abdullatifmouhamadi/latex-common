@@ -79,11 +79,15 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\newcommand{\TEACHERBLOC}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+%\newcommand{\TEACHERBLOC}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+\newcommand{\TEACHERBLOCIFTHEN}{\ifthenelse{\equal{\PRINTMODE}{PROFESSEUR}}}
+
+
+\newcommand{\TEACHERBLOC}[2]{\TEACHERBLOCIFTHEN{\textcolor{red}{#1}}{#2}}
 
 
 \newcommand{\fillDots}[1]{\foreach \x in {1,...,#1} {$\dots$}}
-\newcommand{\TEACHERBLOCD}[2]{\TEACHERBLOC{#1}{\fillDots{#2}}}
+\newcommand{\TEACHERBLOCD}[2]{\TEACHERBLOCIFTHEN{\textcolor{red}{#1}}{\fillDots{#2}}}
 
 
 
