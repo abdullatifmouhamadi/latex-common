@@ -6,6 +6,8 @@
 
 \RequirePackage[l2tabu,orthodox]{nag} % turn on warnings because of bad style
 \documentclass[a4paper,11pt,bibtotoc]{scrartcl}
+\usepackage{common/mutualisation/default-packages}
+
 
 
 \usepackage[french]{babel}
@@ -36,7 +38,7 @@
 
 
 \usepackage{multicol}
-\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{0.5cm}
 
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
@@ -45,4 +47,6 @@
 
 
 
-
+\usepackage{enumitem}
+\setlist[itemize]{align=parleft,left=0pt..1em}
+\setlist[enumerate]{align=parleft,left=0pt..1em}
