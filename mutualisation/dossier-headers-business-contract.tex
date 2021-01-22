@@ -50,3 +50,126 @@
 \usepackage{enumitem}
 \setlist[itemize]{align=parleft,left=0pt..1em}
 \setlist[enumerate]{align=parleft,left=0pt..1em}
+
+
+
+\def \O{$\square$}
+\def \X{$\boldsymbol{\boxtimes}$}
+
+
+%%%%%%%%%%%%%%%%%%%%
+
+\def\contracolor{general@best@blue}
+
+\newcommand{\invoicea}[2]{
+    \begin{tabular}{|L{.76\textwidth}|C{.2\textwidth}|}
+        \hline
+        \bfseries \textcolor{\contracolor}{#1} & \bfseries \textcolor{\contracolor}{MONTANT TTC}\\
+        \hline
+        #2
+        \hline
+    \end{tabular}
+}
+
+\newcommand{\invr}[2]{
+    \textcolor{\contracolor}{#1} & \textcolor{\contracolor}{#2}\\
+    \hhline{~|-}
+}
+\newcommand{\invrt}[2]{
+    \hline
+    \bfseries\textcolor{\contracolor}{#1} & \bfseries\textcolor{\contracolor}{#2}\\
+    
+}
+
+
+
+
+
+\newcommand{\clientida}[9]{
+\begin{boxa}
+    \begin{tabular}{lll}
+         \textbf{CLIENT :} #1 \hspace{1cm} \textbf{N° DE SIRET :} #2\\
+        ~\\
+        \textbf{NOM ou RAISON SOCIALE :} #3\\
+        ~\\
+        \textbf{N° :} #4 \hspace{1cm} \textbf{Rue :} #5\\ 
+        ~\\
+        \textbf{Code postal :} #6 \hspace{1cm} \textbf{Commune :} #7\\
+        ~\\
+        \textbf{Tel :} #8 \hspace{1cm} \textbf{Mail :} #9
+    \end{tabular}
+\end{boxa}
+}
+
+
+
+\newcommand{\contractfoota}[1]{
+    \textbf{Date d’effet du contrat :} \today~ et reconductible conformément aux conditions générales. 
+
+    \textbf{Durée minimale d’abonnement :} $\Box$~6 mois\hspace{2cm}$\boxtimes$~12 mois\hspace{2cm}$\Box$~24 mois
+
+    \textbf{Mode de paiement :} prélèvement bancaire
+
+    \vspace{.5cm}
+
+    \textit{Le client, après avoir pris connaissance des conditions générales régissant le contrat d’abonnement à nos services et de la
+    faculté de renonciation prévue par la loi n° 72-1137 du 22 décembre 1972, art. 3C. cons. art. L.121-25 reproduit dans les
+    conditions générales, déclare les accepter sans restrictions ni réserves.}
+
+    \vspace{.5cm}
+
+    Fait à Melun en deux exemplaires dont un remis au client, le \today
+
+    \vspace{1cm}
+
+    Signature du Client : \hspace{5cm} Nom et signature du commercial :
+}
+
+
+
+\newcommand{\contractheada}[1]{
+    \begin{minipage}[h]{.3\textwidth}
+        \begin{boxa}\large
+            \textbf{MAOREDEV}\\
+            5 Rue de Farcy, 77000 Melun\\
+            Mail : maoredev@gmail.com\\
+            Tel : 06~28~05~19~18
+        \end{boxa}
+    \end{minipage}
+    \hspace{4cm}
+    \begin{minipage}[h]{.66\textwidth}
+        $\boxtimes$ CONTRAT D’ABONNEMENT N° : 0000020
+    
+        $\Box$ AVENANT N° : ..... 
+        
+        Date contrat initial :...../....../......
+    \end{minipage}
+    
+    \vspace{.5cm}
+    
+    \begin{center}
+        \LARGE{\textbf{CONTRAT D'ABONNEMENT AU SERVICE}}\\
+        \vspace{.5cm}
+        \scriptsize{Pour souscrire un abonnement MAOREDEV merci de de bien vouloir nous retourner ce contrat en 2 exemplaires dûment rempli daté et signé}
+    \end{center}
+}
+
+
+
+\newcommand{\contractbodya}[2]{
+    \textbf{FORFAIT MISE EN PLACE :}
+
+    \invoicea{FORFAIT ASSISTANCE OU AUTRES PRESTATIONS :}{
+        #1
+    }
+    
+    \vspace{0.5cm}
+    
+    \textbf{OFFRE D’ABONNEMENT :}
+    
+    \invoicea{ABONNEMENTS MENSUELS :}{
+        #2
+    }
+    
+    \vspace{0.5cm}
+}
