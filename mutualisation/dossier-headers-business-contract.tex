@@ -4,6 +4,43 @@
 % https://www2.icp.uni-stuttgart.de/~icp/mediawiki/images/5/51/Latex-template.tex
 
 
+\RequirePackage[l2tabu,orthodox]{nag} % turn on warnings because of bad style
+\documentclass[a4paper,11pt,bibtotoc]{scrartcl}
+
+
+\usepackage[french]{babel}
+%\usepackage[a5paper,top=2cm, bottom=2cm, left = 2.5cm, right=2cm]{geometry}
+
+\usepackage{geometry}
+\geometry{hmargin=1.0cm,vmargin=2.5cm}
+
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}        % Tries to use Postscript Type 1 Fonts for better rendering
+\usepackage{lmodern}            % Provides the Latin Modern Font which offers more glyphs than the default Computer Modern
+\usepackage[intlimits]{amsmath} % Provides all mathematical commands
+
+\usepackage{hyperref}           % Provides clickable links in the PDF-document for \ref
+\usepackage{grffile}            % Allow you to include images (like graphicx). Usage: \includegraphics{path/to/file}
+
+% Allows to set units
+\usepackage[ugly]{units}        % Allows you to type units with correct spacing and font style. Usage: $\unit[100]{m}$ or $\unitfrac[100]{m}{s}$
+
+% Additional packages
+\usepackage{url}                % Lets you typeset urls. Usage: \url{http://...}
+\usepackage{breakurl}           % Enables linebreaks for urls
+\usepackage{xspace}             % Use \xpsace in macros to automatically insert space based on context. Usage: \newcommand{\es}{ESPResSo\xspace}
+\usepackage{xcolor}             % Obviously colors. Usage: \color{red} Red text
+\usepackage{booktabs}           % Nice rules for tables. Usage \begin{tabular}\toprule ... \midrule ... \bottomrule
+
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+
 
 
 
