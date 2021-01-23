@@ -74,28 +74,33 @@
 
 %%%%%%%%%%%%%%%%%%%% headers
 
+
+
 \def\specpagebgcolor{general@best@navy}
-\renewcommand{\headrulewidth}{0pt}
-\fancypagestyle{plain}{%
-\fancyhead[R]{
-    \begin{tikzpicture}[remember picture,overlay]
-        \draw [draw=\specpagebgcolor!60,fill=\specpagebgcolor!60,opacity=0.65] (0,0) -- (0,1.75) --++(-2,0) -- cycle;
-        \draw [draw=\specpagebgcolor!60,fill=\specpagebgcolor!60,opacity=0.65] (0,0.7) -- (0,1.75) --++(-2.5,0) -- cycle;
-        \draw [draw=\specpagebgcolor!100,fill=\specpagebgcolor!100,opacity=0.65] (0,0.1) -- (0,1.75) --++(-1.2,0) -- cycle;
-        \draw[text=white,xshift=-0.375cm,yshift=1.35cm] node {\bfseries \thepage};
-    \end{tikzpicture}
+\newcommand{\mainpagestyle}[2]{
+  \renewcommand{\headrulewidth}{0pt}
+  \fancypagestyle{plain}{%
+  \fancyhead[R]{
+      \begin{tikzpicture}[remember picture,overlay]
+          \draw [draw=\specpagebgcolor!60,fill=\specpagebgcolor!60,opacity=0.65] (0,0) -- (0,1.75) --++(-2,0) -- cycle;
+          \draw [draw=\specpagebgcolor!60,fill=\specpagebgcolor!60,opacity=0.65] (0,0.7) -- (0,1.75) --++(-2.5,0) -- cycle;
+          \draw [draw=\specpagebgcolor!100,fill=\specpagebgcolor!100,opacity=0.65] (0,0.1) -- (0,1.75) --++(-1.2,0) -- cycle;
+          \draw[text=white,xshift=-0.375cm,yshift=1.35cm] node {\bfseries \thepage};
+      \end{tikzpicture}
+  }
+    \fancyhead[L]{
+      \logoMDB
+      %\vspace{.05cm}
+    }%
+    \fancyfoot[C]{}
+    \fancyfoot[R]{
+      \textcolor{general@best@blue}{#1} 
+      \textcolor{general@best@gray}{| #2}
+    }%
+  }
+  \pagestyle{plain}
 }
-  \fancyhead[L]{
-    \logoMDB
-    %\vspace{.05cm}
-  }%
-  \fancyfoot[C]{}
-  \fancyfoot[R]{
-    \textcolor{general@best@blue}{HOTEL DIWA PROJET GESTION D’UN HOTEL} 
-    \textcolor{general@best@gray}{| Combani commune de Tsingoni}
-  }%
-}
-\pagestyle{plain}
+
 
 
 
