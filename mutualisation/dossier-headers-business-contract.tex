@@ -52,6 +52,20 @@
 \setlist[enumerate]{align=parleft,left=0pt..1em}
 
 
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{hhline}
+
+
+
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}
+
+\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=mycolor,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
+
+
+
+
+
 
 \def \O{$\square$}
 \def \X{$\boldsymbol{\boxtimes}$}
@@ -104,7 +118,7 @@
 
 
 \newcommand{\contractfoota}[1]{
-    \textbf{Date d’effet du contrat :} \today~ et reconductible conformément aux conditions générales. 
+    \textbf{Date d’effet du contrat :} #1 et reconductible conformément aux conditions générales. 
 
     \textbf{Durée minimale d’abonnement :} $\Box$~6 mois\hspace{2cm}$\boxtimes$~12 mois\hspace{2cm}$\Box$~24 mois
 
@@ -118,7 +132,7 @@
 
     \vspace{.5cm}
 
-    Fait à Melun en deux exemplaires dont un remis au client, le \today
+    Fait à Melun en deux exemplaires dont un remis au client, le #1
 
     \vspace{1cm}
 
@@ -173,3 +187,4 @@
     
     \vspace{0.5cm}
 }
+
