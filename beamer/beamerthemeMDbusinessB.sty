@@ -1,0 +1,261 @@
+\RequirePackage{tikz}
+\RequirePackage{roboto}
+\RequirePackage{hyperref}
+\RequirePackage{common/lesson/pretty}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
+  
+
+\newcommand{\verticalshift}{.5}
+\newcommand{\horizontalshift}{1}
+
+\def\MDBcolorA{general@business@gray}
+\def\MDBcolorB{general@best@navy}
+\def\MDBcolorC{general@best@maroon}
+
+
+
+
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=\MDBcolorD,
+%    filecolor=magenta,      
+%    urlcolor=\MDBcolorD,
+%}
+
+
+
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large,series=\mdseries}
+\setbeamercolor{structure}{fg=\MDBcolorC}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{subsection in toc}{size=\bfseries\footnotesize}
+\setbeamercolor{section page}{fg=white}
+\setbeamerfont{section page}{size=\Large,series=\bfseries}
+\setbeamercolor{frametitle}{fg=\MDBcolorB}
+\setbeamercolor{framesubtitle}{fg=\MDBcolorC}
+\setbeamercolor{title in head/foot}{fg=gray}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\setbeamercolor{section in toc}{fg=\MDBcolorB}
+\setbeamercolor{subsection in toc}{fg=\MDBcolorC}
+
+
+
+
+%\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{slide}}
+
+\setbeamertemplate{background canvas}{
+  \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+    %\draw [\MDBcolorA!32,fill=\MDBcolorA!32] (0,0)  rectangle  (\the\paperwidth,-1.4);
+    \node[scale=0.8] at (.8,-0.70\paperwidth) (logoscope){
+      \logoMD
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\MDbusinessAtableofcontents}{
+  \begingroup
+  %\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{toc}}
+  \setbeamertemplate{background canvas}{
+    \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+        \fill [color=\MDBcolorA!32] (0,-3) -- (7,-\the\paperheight)-- (0,-\the\paperheight) --cycle;
+        \fill [color=\MDBcolorB!64] (0,0) -- (0,-7) -- (7,0)-- (0,0);
+
+        \node[scale=0.8] at (.8,-0.70\paperwidth) (logoscope){
+          \logoMD
+        };
+
+    \end{tikzpicture}
+    }
+    \begin{frame}[plain,t]
+    \vspace*{1.55cm}
+    \begin{columns}[onlytextwidth,t]
+      \begin{column}{.4\textwidth}
+        \usebeamerfont{frametitle}%
+        \color{white}%
+        Sommaire
+      \end{column}
+      \begin{column}{.6\textwidth}
+        \tableofcontents
+      \end{column}
+    \end{columns}
+  \end{frame}   
+  \endgroup
+}
+
+\AtBeginSection{%
+  \begingroup
+  %\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{section}}
+  \setbeamertemplate{background canvas}{
+    \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+        \draw [white,fill=\MDBcolorC] (0,0)  rectangle  (\the\paperwidth,-\the\paperwidth);
+
+        \fill [color=\MDBcolorB!64] (0,0) -- (0,-7) -- (7,0)-- (0,0);
+        \fill [color=white] (0,-3) -- (7,-\the\paperheight)-- (0,-\the\paperheight) --cycle;
+        \node[scale=0.8] at (.8,-0.70\paperwidth) (logoscope){
+          \logoMD
+        };
+    \end{tikzpicture}
+    }
+
+    \begin{frame}[plain,c]
+    \hfill
+    \begin{minipage}{.8\textwidth}
+      \flushright%
+      {%
+        \usebeamerfont{section page}%
+        \usebeamercolor[fg]{section page}%
+        \insertsection\par
+      }%
+    \end{minipage}
+  \end{frame}   
+  \endgroup
+}
+
+\setbeamertemplate{frametitle}{%
+}
+
+\setbeamertemplate{footline}{%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{title page}{MDbusinessA}%[1][]
+{%\leavemode%
+    \begin{beamercolorbox}[wd=\the\paperwidth, ht=\the\paperheight,ignorebg,center]{}
+        \begin{tikzpicture}[%
+            inner sep=0pt,
+        ]
+
+        %= defining coordinate
+            \coordinate (SE') at (\the\paperwidth,0);
+            \coordinate (SE) at (\the\paperwidth,1);
+            \coordinate (NE) at (\the\paperwidth,\the\paperheight);
+            \coordinate (SW) at (0,1);
+            \coordinate (SW') at (0,0);
+            \coordinate (NW) at (0,\the\paperheight);
+
+
+            \clip (SW') rectangle (NE);
+
+
+            \coordinate (M) at (8.89, {10-5.56});
+            \node (Mbis) [above right=210 and 30 of M] {};
+            \node (Mter) [below left=210 and 30 of M] {};
+
+            \path [name path=top] (NW) -- (NE);
+            \path [name path=bottom] (SW) -- (SE);
+            \path [name path=left] (SW) -- (NW);
+            \path [name path=right] (SE) -- (NE);
+            \path [name path=oblique] (Mbis) -- (Mter);
+
+            \coordinate (L) at ($(NW)!(M)!(SW)$);
+            \coordinate (R) at ($(NE)!(M)!(SE)$);
+            \path [name intersections={of = oblique and top}] (intersection-1) coordinate (T);
+            \path [name intersections={of = oblique and bottom}] (intersection-1) coordinate (B);
+
+        %= Footer
+            %\fill[black,opacity=1] (0,0) rectangle (\the\paperwidth,1cm);
+
+
+        %= Upper left corner
+            \fill [color=white] (L) -- (M) -- (T) -- (NW) -- cycle;
+
+            \node [%
+                anchor=base west,
+                above right= \verticalshift and \horizontalshift of L, 
+                inner sep=0pt, 
+                align=left,
+                font={\Large},
+                text = white!30!black,
+            ] (subtitle) {%
+                \insertsubtitle
+            };  
+
+            \node [%
+                above = .25  of subtitle.north west,
+                anchor=south west, 
+                inner sep=0pt,
+                font = {\robotoslab\huge\bfseries}
+            ] (title) {%
+                \inserttitle
+            };
+
+        %= lower right corner
+            \fill [color=white] (R) -- (M) -- (B) -- (SE) -- cycle;
+
+            \node [%
+                anchor=base east,
+                below left= \verticalshift and {.618*\horizontalshift} of R, 
+                inner sep=0pt, 
+                align=right,
+                font={\robotoslab\bfseries},
+            ] (author) {%
+                \strut%
+                \insertauthor
+            };
+
+            \node [
+                below = {.5*\verticalshift}  of author.base east,
+                anchor=north east, 
+                inner sep=0pt,
+                align=right, 
+                text=white!30!black,
+            font={\scriptsize}          
+            ] (institution) {%
+                \strut%
+                \insertinstitute\\
+                \insertshortauthor% (= email)
+            };
+
+        %= lower left corner
+            \fill [color=\MDBcolorB] (B)+(0,-1) -- (M) -- (L) -- (SW') -- cycle;
+
+            \node [%
+                anchor=base west,
+                below right= .5 and 1 of L, 
+                inner sep=0pt, 
+                align=left,
+                text=\MDBcolorB!13!white,
+                font={},
+            ] (event) {%
+                \strut%
+                \insertshortdate% = event 
+            };
+
+            \node [
+                below = {.5*\verticalshift}  of event.base west,
+                anchor=north west, 
+                inner sep=0pt,
+                align=left, 
+                text=white!64!\MDBcolorB,
+                font={\scriptsize}
+            ] (date_n_location) {%
+                \strut%
+                \insertdate
+            };
+
+            
+        %= upper right corner
+            \fill [color=\MDBcolorB] (T) -- (M) -- (R) -- (NE) -- cycle;
+
+            \node[scale=1.5] at (.84\paperwidth,1.2) (logoscope){
+              \logoMD
+            };
+        \end{tikzpicture}
+    \end{beamercolorbox}%
+    %
+}
