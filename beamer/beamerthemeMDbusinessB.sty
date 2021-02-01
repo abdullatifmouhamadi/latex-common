@@ -265,6 +265,8 @@
 %%%%%%%%%%%%%
 
 
+\def\sidebarColor{general@best@navy}
+
 % https://tex.stackexchange.com/questions/8043/change-the-background-color-of-a-frame-in-beamer
 \defbeamertemplate*{background canvas}{mydefault}
 {%
@@ -274,13 +276,13 @@
 \defbeamertemplate*{background canvas}{bg}
 {%
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
-    \draw[fill=blue,orange] (0,0) -- (0.4\paperwidth,0) -- (0.4\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor,\sidebarColor] (0,0) -- (0.35\paperwidth,0) -- (0.35\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
   \end{tikzpicture}
 }
 \defbeamertemplate*{background canvas}{bgB}
 {%
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
-    \draw[fill=blue,orange] (0,0) -- (0.6\paperwidth,0) -- (0.6\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor,\sidebarColor] (0,0) -- (0.6\paperwidth,0) -- (0.6\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
   \end{tikzpicture}
 }
 
