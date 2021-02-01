@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
 
-
+\usepackage{lmodern}
 
 
 
@@ -17,6 +17,23 @@
     \def\beamer@themelocation{#1}
   }
   \def\beamer@themelocation{}
+
+
+
+
+%\usepackage{enumitem}
+%\setbeamertemplate{itemize subsubitem}[circle]
+%\setbeamertemplate{itemize/enumerate body begin}{\scriptsize}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\tiny}
+\setbeamertemplate{itemize item}[circle]
+
+%% remove indent
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+%\setlength\itemsep{-0.5em}
+
+%\setlist[itemize]{align=parleft,left=0pt..1em}
+%\setlist[enumerate]{align=parleft,left=0pt..1em}
 
 
 

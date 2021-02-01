@@ -18,6 +18,7 @@
 
 
 
+
 %\hypersetup{
 %    colorlinks=true,
 %    linkcolor=\MDBcolorD,
@@ -276,7 +277,8 @@
 \defbeamertemplate*{background canvas}{bg}
 {%
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
-    \draw[fill=\sidebarColor,\sidebarColor] (0,0) -- (0.35\paperwidth,0) -- (0.35\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor,\sidebarColor, opacity=0.97] (0,0) -- (0.35\paperwidth,0) -- (0.35\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor, \sidebarColor] (0,0) -- (0.35\paperwidth,0) -- (0.35\paperwidth,-\paperheight) -- cycle;
   \end{tikzpicture}
 }
 \defbeamertemplate*{background canvas}{bgB}
