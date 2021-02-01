@@ -179,7 +179,7 @@
                 above right= \verticalshift and \horizontalshift of L, 
                 inner sep=0pt, 
                 align=left,
-                font={\Large},
+                font={\large},
                 text = white!30!black,
             ] (subtitle) {%
                 \insertsubtitle
@@ -189,7 +189,7 @@
                 above = .25  of subtitle.north west,
                 anchor=south west, 
                 inner sep=0pt,
-                font = {\robotoslab\huge\bfseries}
+                font = {\robotoslab\Large\bfseries}
             ] (title) {%
                 \inserttitle
             };
@@ -259,3 +259,41 @@
     \end{beamercolorbox}%
     %
 }
+
+
+
+%%%%%%%%%%%%%
+
+
+% https://tex.stackexchange.com/questions/8043/change-the-background-color-of-a-frame-in-beamer
+\defbeamertemplate*{background canvas}{mydefault}
+{%
+  \ifbeamercolorempty[bg]{background canvas}{}{\color{bg}\vrule width\paperwidth height\paperheight}% copied beamer default here
+}
+
+\defbeamertemplate*{background canvas}{bg}
+{%
+  \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+    \draw[fill=blue,orange] (0,0) -- (0.4\paperwidth,0) -- (0.4\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+  \end{tikzpicture}
+}
+\defbeamertemplate*{background canvas}{bgB}
+{%
+  \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+    \draw[fill=blue,orange] (0,0) -- (0.6\paperwidth,0) -- (0.6\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+  \end{tikzpicture}
+}
+
+
+\BeforeBeginEnvironment{frame}{%
+  \setbeamertemplate{background canvas}[mydefault]%
+}
+\makeatletter
+\define@key{beamerframe}{bg}[true]{%
+  \setbeamertemplate{background canvas}[bg]%
+}
+\define@key{beamerframe}{bgB}[true]{%
+  \setbeamertemplate{background canvas}[bgB]%
+}
+\makeatother
+
