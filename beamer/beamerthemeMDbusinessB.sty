@@ -284,7 +284,9 @@
 \defbeamertemplate*{background canvas}{bgB}
 {%
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
-    \draw[fill=\sidebarColor,\sidebarColor] (0,0) -- (0.6\paperwidth,0) -- (0.6\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor,\sidebarColor, opacity=0.97] (0,0) -- (0.45\paperwidth,0) -- (0.45\paperwidth,-\paperheight) -- (0,-\paperheight) -- cycle;
+    \draw[fill=\sidebarColor, \sidebarColor] (0,0) -- (0.45\paperwidth,0) -- (0.45\paperwidth,-\paperheight) -- cycle;
+
   \end{tikzpicture}
 }
 
@@ -301,3 +303,32 @@
 }
 \makeatother
 
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\sidebara}[2]{
+\begin{frame}[bg]
+    \hspace{.1cm}
+    \begin{minipage}[]{.32\paperwidth}
+        \textcolor{white}{\large\bfseries#1}
+    \end{minipage}
+    \hspace{0.1cm}
+    \begin{minipage}[]{.63\paperwidth}
+        #2
+    \end{minipage}
+\end{frame}
+}
+
+
+\newcommand{\sidebarb}[2]{
+\begin{frame}[bgB]
+    \hspace{.1cm}
+    \begin{minipage}[]{.42\paperwidth}
+        \textcolor{white}{\large\bfseries#1}
+    \end{minipage}
+    \hspace{0.1cm}
+    \begin{minipage}[]{.53\paperwidth}
+        #2
+    \end{minipage}
+\end{frame}
+}
