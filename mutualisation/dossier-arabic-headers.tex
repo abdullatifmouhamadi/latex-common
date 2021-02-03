@@ -134,7 +134,7 @@
 %\newfontfamily\arabicfont[Script=Arabic]{Lateef}
 %\newfontfamily\arabicfont[Script=Arabic]{Noto Naskh Arabic}
 %\newfontfamily\arabicfont[Script=Arabic, Scale=1.5]{Amiri}
-\newfontfamily\arabicfont[Script=Arabic, Scale=2.0]{Scheherazade}
+\newfontfamily\arabicfont[Script=Arabic, Scale=1.5]{ScheherazadeNew}
 
 
 \newcommand{\prth}[1]{\textfrench{)}#1\textfrench{(}}
@@ -365,9 +365,10 @@
 % https://www.latex4technics.com/?note=JR7
 
 \newcommand{\arblex}[2]{
-    \begin{longtable}{|C{.04\linewidth}|R{.195\linewidth}|L{.195\linewidth}|}
-        \hline
-        \rowcolor{general@best@orange}\multicolumn{3}{|c|}{\textcolor{white}{\bfseries #1}}\\
+    \begin{longtable}{C{.04\linewidth}R{.195\linewidth}L{.195\linewidth}}
+      \arrayrulecolor{gray}
+        %\hline
+        \rowcolor{general@best@maroon}\multicolumn{3}{c}{\textcolor{white}{\bfseries #1}}\\
         %\textbf{~} & \textbf{arb} & \textbf{fr}\\\hline
         %\DTLforeach[\DTLiseq{\key}{#1}]{datas}{% 
         %        \key=key,%
@@ -382,7 +383,7 @@
     \end{longtable}%
 }
 \newcommand{\alr}[4]{
-    #1&#2&#3\\\hline
+    \cellcolor{general@best@orange!16}{#1}&\cellcolor{general@best@yellow!16}{#2}&#3\\\hline
 }
 
 
