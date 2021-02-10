@@ -1,0 +1,63 @@
+
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bubbles}[2019/08/22 Extension personnelle, V1.0]
+\RequirePackage{common/mutualisation/default-packages}
+
+
+
+\newcommand{\bwarning}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@orange,rounded corners=0.75mm, inner sep=0.75pt]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bdanger}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@red,rounded corners=0.75mm, inner sep=0.75pt]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\binfo}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@olive,rounded corners=0.75mm, inner sep=0.75pt]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bnote}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@green,rounded corners=0.75mm, inner sep=0.75pt]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+%% deprecated
+\newcommand{\bubblea}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@teal,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bubbleb}[1]{
+  \begin{tikzpicture}
+    \node[general@best@olive, draw,inner sep=.5pt]{#1};
+    \end{tikzpicture}
+}
+\newcommand{\bubblec}[1]{
+  \begin{tikzpicture}
+    \node[general@best@maroon, draw, inner sep=1.0pt]{#1};
+    \end{tikzpicture}
+}
+\newcommand{\bubblefa}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@red,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}
+\newcommand{\bubblefb}[1]{
+  \begin{tikzpicture}
+    \node[fill=general@best@olive,rounded corners]
+    {\textcolor{white}{\bfseries#1}};
+    \end{tikzpicture}
+}

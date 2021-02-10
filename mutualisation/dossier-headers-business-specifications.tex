@@ -168,8 +168,8 @@
 
 %------------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------
 
+% ----------------------------------------------------------------------
 \def\specdelayacolor{general@best@blue}
 \def\specdelaybcolor{general@best@yellow}
 \newcommand{\specdelaya}[1]{%
@@ -189,7 +189,7 @@
 \multicolumn{1}{|C{.05\textwidth}}{#1} &
 \multicolumn{1}{|L{.52\textwidth}}{#2} &
 \multicolumn{1}{|C{.100\textwidth}}{\bfseries #3}&
-\multicolumn{1}{|C{.045\textwidth}}{\bfseries #4}&
+\multicolumn{1}{|C{.055\textwidth}}{\bfseries #4}&
 \multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries #5}}\\\hline
 }
 \newcommand{\spdtr}[1]{%
@@ -197,5 +197,31 @@
 }
 % ----------------------------------------------------------------------
 
+\def\exbesoinacolor{general@best@blue}
+\def\exbesoinbcolor{general@best@yellow}
+\newcommand{\exbesoina}[1]{%
+    \begin{longtable}{ccc}
+      \arrayrulecolor{\exbesoinacolor}
+      \hline 
+      \rowcolor{white}\multicolumn{3}{|c|}{ \textcolor{\exbesoinacolor}{\textbf{expression du besoin}} }  \\
+      %\rowcolor{\exbesoinacolor} \bfseries \textcolor{white}{$\boldsymbol{\#}$}&
+      \rowcolor{\exbesoinacolor} \bfseries
+      \textcolor{white}{\bfseries besoin}&
+      \textcolor{white}{\bfseries priorité}&
+      %\textcolor{white}{\bfseries \%}&
+      \textcolor{white}{\bfseries échéance}\\\hline
+      #1
+    \end{longtable}
+}
+\newcommand{\expbr}[3]{%
+%\multicolumn{1}{|C{.05\textwidth}}{#1} &
+\multicolumn{1}{|L{.64\textwidth}}{#1} &
+\multicolumn{1}{|C{.145\textwidth}}{\bfseries #2}&
+%\multicolumn{1}{|C{.045\textwidth}}{\bfseries #3}&
+\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries #3}}\\\hline
+}
+\newcommand{\expbtr}[1]{%
+\rowcolor{\exbesoinbcolor}\multicolumn{3}{l}{\textsc{#1}}\\\hline
+}
 
-
+% ----------------------------------------------------------------------
