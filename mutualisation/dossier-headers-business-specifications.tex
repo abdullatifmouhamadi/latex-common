@@ -5,11 +5,10 @@
 
 
 \RequirePackage[l2tabu,orthodox]{nag} % turn on warnings because of bad style
-\documentclass[a4paper,11pt]{scrartcl}
-%\documentclass[a4paper,11pt]{article}
+%\documentclass[a4paper,11pt]{scrartcl}
+\documentclass[a4paper,11pt]{article}
 %\usepackage{common/mutualisation/default-packages}
 \usepackage{common/business/business-invoice}
-
 
 
 \usepackage[french]{babel}
@@ -76,8 +75,12 @@
 \usetikzlibrary{positioning,arrows.meta}
 \usetikzlibrary{shapes}
 
-%%%%%%%%%%%%%%%%%%%% headers
 
+% --------------- pointillés
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+%%%%%%%%%%%%%%%%%%%% headers
 
 
 \def\specpagebgcolor{general@best@navy}
@@ -186,11 +189,11 @@
     \end{longtable}
 }
 \newcommand{\spdr}[5]{%
-\multicolumn{1}{|C{.05\textwidth}}{#1} &
-\multicolumn{1}{|L{.52\textwidth}}{#2} &
-\multicolumn{1}{|C{.100\textwidth}}{\bfseries #3}&
-\multicolumn{1}{|C{.055\textwidth}}{\bfseries #4}&
-\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries #5}}\\\hline
+\multicolumn{1}{|C{.05\textwidth}}{\footnotesize#1} &
+\multicolumn{1}{|L{.52\textwidth}}{\footnotesize#2} &
+\multicolumn{1}{|C{.100\textwidth}}{\bfseries\footnotesize#3}&
+\multicolumn{1}{|C{.055\textwidth}}{\bfseries\footnotesize\cellcolor{\specdelayacolor}\textcolor{white}{#4}}&
+\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries\footnotesize#5}}\\\hline
 }
 \newcommand{\spdtr}[1]{%
 \rowcolor{\specdelaybcolor}\multicolumn{5}{l}{\textsc{#1}}\\\hline
@@ -215,10 +218,10 @@
 }
 \newcommand{\expbr}[3]{%
 %\multicolumn{1}{|C{.05\textwidth}}{#1} &
-\multicolumn{1}{|L{.64\textwidth}}{#1} &
-\multicolumn{1}{|C{.145\textwidth}}{\bfseries #2}&
+\multicolumn{1}{|L{.64\textwidth}}{\footnotesize#1} &
+\multicolumn{1}{|C{.145\textwidth}}{\bfseries\footnotesize#2}&
 %\multicolumn{1}{|C{.045\textwidth}}{\bfseries #3}&
-\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries #3}}\\\hline
+\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries\footnotesize#3}}\\\hline
 }
 \newcommand{\expbtr}[1]{%
 \rowcolor{\exbesoinbcolor}\multicolumn{3}{l}{\textsc{#1}}\\\hline
