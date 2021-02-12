@@ -191,13 +191,16 @@
 \newcommand{\spdr}[5]{%
 \multicolumn{1}{|C{.05\textwidth}}{\footnotesize#1} &
 \multicolumn{1}{|L{.52\textwidth}}{\footnotesize#2} &
-\multicolumn{1}{|C{.100\textwidth}}{\bfseries\footnotesize#3}&
+\multicolumn{1}{|C{.150\textwidth}}{\bfseries\footnotesize#3}&
 \multicolumn{1}{|C{.055\textwidth}}{\bfseries\footnotesize\cellcolor{\specdelayacolor}\textcolor{white}{#4}}&
-\multicolumn{1}{|C{.150\textwidth}|}{\textcolor{red}{\bfseries\footnotesize#5}}\\\hline
+\multicolumn{1}{|C{.100\textwidth}|}{\textcolor{red}{\bfseries\footnotesize#5}}\\\hline
 }
 \newcommand{\spdtr}[1]{%
 \rowcolor{\specdelaybcolor}\multicolumn{5}{l}{\textsc{#1}}\\\hline
 }
+\def\delayurgent{\bwarning{urgent}}
+\def\delayinter{-}%{\binfo{intermédiaire}}
+\def\delayturgent{\bdanger{très urgent}}
 % ----------------------------------------------------------------------
 
 \def\exbesoinacolor{general@best@blue}
