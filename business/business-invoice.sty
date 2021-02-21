@@ -139,3 +139,31 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
 }
 
 
+
+\newcommand{\certificationheada}[1]{
+    \begin{minipage}[h]{.3\textwidth}
+        \begin{boxa}\large
+            #1
+        \end{boxa}
+    \end{minipage}
+    \begin{minipage}[h]{.66\textwidth}
+        \begin{flushright}
+            \logoMDBS{0.2}
+        \end{flushright}
+    \end{minipage}
+    
+    \vspace{.5cm}
+    
+    \begin{center}
+        \Large{\textbf{Attestation individuelle
+        relative à l'utilisation d'un logiciel de comptabilité ou
+        de gestion ou un système de caisse satisfaisant à des
+        conditions d'inaltérabilité, de sécurisation, de conservation
+        et d'archivage des données (CGI, art. 286, I-3° bis)}}\\
+        \noindent\makebox[\linewidth]{\rule{.9\paperwidth}{0.4pt}}
+        \vspace{.5cm}
+        \scriptsize{c}
+    \end{center}
+}
+
+
