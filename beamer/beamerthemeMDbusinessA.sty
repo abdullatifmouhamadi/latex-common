@@ -296,3 +296,45 @@
     \end{beamercolorbox}%
     %
 }
+
+
+
+
+
+
+
+
+
+
+
+\newcommand{\MDbusinessAFooter}{
+  \begingroup
+  %\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{toc}}
+  \setbeamertemplate{background canvas}{
+    \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
+        %\fill [color=\MDBcolorA!32] (0,-3) -- (7,-\the\paperheight)-- (0,-\the\paperheight) --cycle;
+        %\fill [color=\MDBcolorB!64] (0,0) -- (0,-7) -- (7,0)-- (0,0);
+        \fill [color=\MDBcolorB!64] (0,0.5\paperheight) -- (\paperwidth,0.5\paperheight) -- (\paperwidth,-\paperheight)-- cycle;
+        \node[scale=0.8] at (.8,-0.70\paperwidth) (logoscope){
+          \logoMD
+        };
+
+    \end{tikzpicture}
+    }
+    \begin{frame}[plain,t]
+    \vspace*{1.55cm}
+    \begin{columns}[onlytextwidth,t]
+      \begin{column}{.4\textwidth}
+        \usebeamerfont{frametitle}%
+        \color{white}%
+        Sommaire
+
+        salut tout le monde
+      \end{column}
+      \begin{column}{.6\textwidth}
+        oui et toi ça va?
+      \end{column}
+    \end{columns}
+  \end{frame}   
+  \endgroup
+}
