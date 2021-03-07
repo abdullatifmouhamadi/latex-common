@@ -27,8 +27,7 @@
 
 
 
-
-
+\setbeamersize{text margin left=10pt, text margin right=10pt}
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamercolor{title}{fg=white}
@@ -59,9 +58,9 @@
 \setbeamertemplate{background canvas}{
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
     \draw [\MDBcolorA!32,fill=\MDBcolorA!32] (0,0)  rectangle  (\the\paperwidth,-1.4);
-    \node[inner sep=1pt,scale=0.4] at (.4,-0.65) (logoscope){
-      \logoMD
-    };
+    %\node[inner sep=1pt,scale=0.4] at (.4,-0.65) (logoscope){
+    %  \logoMD
+    %};
   \end{tikzpicture}
 }
 
@@ -97,6 +96,8 @@
 
 \AtBeginSection{%
   \begingroup
+  %\setbeamersize{text margin left=0pt, text margin right=0pt}
+
   %\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{section}}
   \setbeamertemplate{background canvas}{
     \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]

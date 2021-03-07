@@ -166,20 +166,22 @@
 }
 
 \newcommand{\tutorialapic}[2]{%
-\rowcolor{\tutorialacolor!16}\multicolumn{2}{c}{ \raisebox{-\totalheight}{
+%\rowcolor{\tutorialacolor!16}
+\multicolumn{2}{c}{ \raisebox{-\totalheight}{
   \begin{tikzpicture}
       \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#1}};
 
       #2
     \end{tikzpicture}
   }}\\
-  \rowcolor{\tutorialacolor!16}\multicolumn{2}{c}{~} \\\hline
+  %\rowcolor{\tutorialacolor!16}
+  \multicolumn{2}{c}{~} \\\hline
 }
 \newcommand{\tutorialatag}[2]{%
-  \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] at #1 {\bfseries #2};
+  \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] at #1 { \tiny\bfseries#2};
 }
 \newcommand{\tutorialarow}[2]{%
-  \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
+  \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \rule{0pt}{2.0ex}\\\hline
   }
 
 
