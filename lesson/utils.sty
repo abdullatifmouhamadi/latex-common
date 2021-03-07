@@ -4,6 +4,9 @@
 \ProvidesPackage{utils}[2019/08/22 Extension personnelle, V1.0]
 \RequirePackage{efbox, pgffor}
 
+%\RequirePackage{tikz}
+
+%\RequirePackage{common/lesson/pretty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROFESSOR/STUDENT
 
@@ -53,6 +56,24 @@
 \newcommand{\prettyPartie}[1]{\vspace{.1cm}\textcolor{mediumGray}{$\blacksquare$} \underline{#1 } \vspace{.1cm}\\~}
 
 
+\newcommand{\rightPartie}[1]{%
+% https://tex.stackexchange.com/questions/65264/latex-tikz-auto-resize-block-to-fit-text
+\begin{flushright}
+
+  %\colorbox{general@best@maroon!100}{
+  %    \textcolor{white!100}{
+  %        \textbf{#1}
+  %    }
+  %}
+\begin{tikzpicture}
+  [every node/.style={signal, draw, text=white, signal to=nowhere}]
+  %\node [block, xshift=0em](start){DASDASDADASDASsalut};
+  %\node [block, signal to=east](process1){#1};
+  \node[white, inner sep=2pt,fill=general@best@maroon, signal to=west, signal from=east] at (0,1) {\bfseries\large#1};
+\end{tikzpicture}
+
+\end{flushright}
+}
 
 
 

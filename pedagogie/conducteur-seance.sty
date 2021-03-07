@@ -1,7 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{conducteur-seance}[2020/05/24 Extension personnelle, V1.0]
 \RequirePackage{common/core/filestream}
-
+\RequirePackage{makecell}
+\RequirePackage{longtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bloom
 
 \def \bloomReconnaitre{\textbf{reconnaître}~}
@@ -104,22 +105,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% sequenceBlockModelB 
 
-
 \newcommand{\sequenceBlockModelB}[4]{%
+
+\def\sequenceColor{solidadGray}
+
 \large
 \begin{center}
-    \begin{tabular}{|l|l|l|l|l|l|}
-        \hline
-        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #1}} \\
-        \hline
-        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #2 } } \\
-        \hline
-        \multicolumn{2}{|L{0.44\textwidth}|}{ \textbf{Déroulé (activités)}  } & 
-        \multicolumn{2}{L{0.4\textwidth}|}{ \textbf{Outil utilisé} } & 
-        \multicolumn{2}{C{0.08\textwidth}|}{ \textbf{Durée} }\\
-        \hline
+    \begin{tabular}{l|l|l|l|l|l}\arrayrulecolor{\sequenceColor}
+        %\hline
+        \rowcolor{\sequenceColor}\multicolumn{6}{l|}{ \makecell[{{p{0.92\textwidth}}}]{ \textcolor{white}{#1}}} \\
+        %\hline
+        \rowcolor{\sequenceColor}\multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ \textcolor{white}{#2} } } \\
+        %\hline
+        \rowcolor{\sequenceColor}\multicolumn{2}{|L{0.46\textwidth}}{ \textbf{\textcolor{white}{Déroulé (activités)}}  } & 
+        \multicolumn{2}{L{0.4\textwidth}|}{ \textbf{\textcolor{white}{Outil utilisé}} } & 
+        \multicolumn{2}{C{0.08\textwidth}|}{ \textbf{\textcolor{white}{Durée}} }\\
+        %\hline
         #3
-        \multicolumn{6}{|l|}{ \makecell[{{p{0.92\textwidth}}}]{ #4 }} \\
+        \rowcolor{general@best@maroon!8}\multicolumn{6}{l}{ \makecell[{{p{0.92\textwidth}}}]{ #4 }} \\
         \hline
     \end{tabular}
 \end{center}
@@ -127,9 +130,9 @@
 
 
 \newcommand{\sequenceBlockRowModelB}[3]{
-    \multicolumn{2}{|L{0.44\textwidth}|}{ #1 } & 
-    \multicolumn{2}{L{0.4\textwidth}|}{ #2 } & 
-    \multicolumn{2}{C{0.08\textwidth}|}{#3} \\
+    \multicolumn{2}{L{0.46\textwidth}}{ \cellcolor{gray!16}#1 } & 
+    \multicolumn{2}{L{0.4\textwidth}}{ #2 } & 
+    \multicolumn{2}{C{0.08\textwidth}}{#3} \\
     \hline
 }
 
