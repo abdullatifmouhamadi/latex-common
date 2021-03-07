@@ -10,6 +10,11 @@
 %\RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{longtable}
 \RequirePackage{common/lesson/tables}
+\RequirePackage{common/lesson/bubbles}
+\RequirePackage{common/lesson/utils}
+
+
+
 
 
 \usetikzlibrary{calc}
@@ -200,64 +205,5 @@
             at ([shift={(-1em,0pt)}]BOXCONTENT.north west) {\myboxname};
         \fill[bancolor] (BOXNAME.north east) -- +(-1em,1em) -- +(-1em,0) -- cycle;
         \fill[bancolor] (BOXNAME.south west) -- +(1em,-1em) -- +(1em,0) -- cycle;
-    \end{tikzpicture}
-}
-
-% chamfered rectangle
-% ----------------------------------------------------------------------
-
-
-
-\newcommand{\bwarning}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@orange,rounded corners=0.75mm, inner sep=0.75pt]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-\newcommand{\bdanger}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@red,rounded corners=0.75mm, inner sep=0.75pt]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-\newcommand{\binfo}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@olive,rounded corners=0.75mm, inner sep=0.75pt]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-\newcommand{\bnote}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@green,rounded corners=0.75mm, inner sep=0.75pt]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-%% deprecated
-\newcommand{\bubblea}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@teal,rounded corners]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-\newcommand{\bubbleb}[1]{
-  \begin{tikzpicture}
-    \node[general@best@olive, draw,inner sep=.5pt]{#1};
-    \end{tikzpicture}
-}
-\newcommand{\bubblec}[1]{
-  \begin{tikzpicture}
-    \node[general@best@maroon, draw, inner sep=1.0pt]{#1};
-    \end{tikzpicture}
-}
-\newcommand{\bubblefa}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@red,rounded corners]
-    {\textcolor{white}{\bfseries#1}};
-    \end{tikzpicture}
-}
-\newcommand{\bubblefb}[1]{
-  \begin{tikzpicture}
-    \node[fill=general@best@olive,rounded corners]
-    {\textcolor{white}{\bfseries#1}};
     \end{tikzpicture}
 }
