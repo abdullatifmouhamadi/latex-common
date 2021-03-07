@@ -8,11 +8,14 @@
 
 %\RequirePackage{common/mutualisation/default-packages}
 %\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{longtable}
+\RequirePackage{common/lesson/tables}
 
 
-
-
-
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{positioning,arrows.meta}
+\usetikzlibrary{shapes}
 
 
 
@@ -133,6 +136,18 @@
 }
 
 
+
+
+% ----------------------------------------------------------------------
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[white,shape=circle,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
+\newcommand*\stared[1]{\tikz[baseline=(char.base)]{%
+            \node[white,shape=star, star points=8,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
+\newcommand*\charmed[1]{\tikz[baseline=(char.base)]{%
+            \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] (char) {\bfseries #1};}}
+
+
 % ----------------------------------------------------------------------
 
 
@@ -140,9 +155,10 @@
 \def\tutorialacolor{general@best@navy}
 \newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
-  \arrayrulecolor{\tutorialacolor}
+  %\arrayrulecolor{\tutorialacolor}
   \hline
-  \rowcolor{white}\multicolumn{2}{|c|}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
+  %\rowcolor{white}
+  \multicolumn{2}{|c|}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
   \hline
 
   #2
@@ -163,18 +179,8 @@
   \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] at #1 {\bfseries #2};
 }
 \newcommand{\tutorialarow}[2]{%
-  \multicolumn{1}{C{.05\textwidth}|}{ \footnotesize\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
-}
-
-% ----------------------------------------------------------------------
-
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
-            \node[white,shape=circle,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
-\newcommand*\stared[1]{\tikz[baseline=(char.base)]{%
-            \node[white,shape=star, star points=8,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
-\newcommand*\charmed[1]{\tikz[baseline=(char.base)]{%
-            \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] (char) {\bfseries #1};}}
-
+  \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \\\hline
+  }
 
 
 
