@@ -245,7 +245,26 @@
 
 
 
+% ---------------------------------------------------------------------- block
 
-
+\tikzset{
+  %node distance=5mm and 0mm,
+  boite/.style={
+    fill=general@best@navy,draw,align=left,
+    font=\footnotesize\bfseries,text=white,
+  },
+  boite coins ronds/.style={boite,rounded corners=3pt},
+  boite circulaire/.style={boite,circle},
+  fleche/.style={
+    line cap=round,-latex,line width=0.25mm,
+    draw=blue!50!red!30,
+  },
+  eqfleche/.style={
+    line cap=round,latex-latex,line width=0.25mm,
+    draw=blue!50!orange!30,
+  },
+  grosse fleche/.style={fleche,line width=1mm},
+  grosse eqfleche/.style={eqfleche,line width=1mm},
+}
 
 
