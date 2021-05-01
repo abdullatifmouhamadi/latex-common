@@ -268,3 +268,25 @@
 }
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Style des itemize
+
+\newcommand{\itemclass}[2] % #1 = couleur ; #2 = fonte
+{
+
+  
+  %\setlist[itemize,1]{label={\color{#1}\raisebox{.25\height}{$\bullet$}},itemsep=0pt,topsep=0pt}
+	%\setlist[itemize,1]{label={\color{#1}$\circ$}}
+	%\setlist[itemize,2]{label={\color{#1}$\rightarrow$}}
+
+  %\setlist[itemize,2]{label={\color{#1}a}}
+  \setlength{\fboxsep}{2pt}
+	\setlist[enumerate,1]
+	{%
+		label=\fcolorbox{#1}
+		{#1!100}
+		{\color{white}#2\bfseries\normalsize\arabic*}
+	}
+	\setlist[enumerate,2]{label=\textcolor{#1}{#2\normalsize\alph*.}}
+}
+\itemclass{general@best@navy}{}
+
