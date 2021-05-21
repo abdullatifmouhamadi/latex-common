@@ -160,10 +160,11 @@
 \def\tutorialacolor{general@best@navy}
 \newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
-  %\arrayrulecolor{\tutorialacolor}
+  %\noalign{\global\arrayrulewidth=0.5mm}
+  \arrayrulecolor{\tutorialacolor}
   \hline
-  %\rowcolor{white}
-  \multicolumn{2}{|c|}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
+  \rowcolor{white}
+  \multicolumn{2}{c}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
   \hline
 
   #2
@@ -171,7 +172,7 @@
 }
 
 \newcommand{\tutorialapic}[2]{%
-%\rowcolor{\tutorialacolor!16}
+\rowcolor{\tutorialacolor!16}
 \multicolumn{2}{c}{ \raisebox{-\totalheight}{
   \begin{tikzpicture}
       \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#1}};
@@ -179,7 +180,7 @@
       #2
     \end{tikzpicture}
   }}\\
-  %\rowcolor{\tutorialacolor!16}
+  \rowcolor{\tutorialacolor!16}
   \multicolumn{2}{c}{~} \\\hline
 }
 \newcommand{\tutorialatag}[2]{%

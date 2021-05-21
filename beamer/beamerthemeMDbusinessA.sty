@@ -57,7 +57,8 @@
 
 \setbeamertemplate{background canvas}{
   \begin{tikzpicture}[inner sep=0pt,remember picture,overlay]
-    \draw [\MDBcolorA!32,fill=\MDBcolorA!32] (0,0)  rectangle  (\the\paperwidth,-1.4);
+   % \draw [\MDBcolorA!32,fill=\MDBcolorA!32] (0,0)  rectangle  (\the\paperwidth,-1.4);
+   \draw [\MDBcolorA!32,fill=\MDBcolorA!32] (0,0)  rectangle  (\the\paperwidth,-1.1);
     %\node[inner sep=1pt,scale=0.4] at (.4,-0.65) (logoscope){
     %  \logoMD
     %};
@@ -130,7 +131,8 @@
   \hskip-0.3cm%
   \begin{beamercolorbox}[sep=.3cm,wd=.8\textwidth]{frametitle}
     \usebeamerfont{frametitle}%
-    \vbox{}\vskip-1ex%
+    %\vbox{}\vskip-1ex%
+    \vbox{}\vskip-1.75ex%
     \strut\insertframetitle\strut\par%
     {%
       \ifx\insertframesubtitle\@empty%
@@ -138,7 +140,7 @@
       {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\strut\par}%
       \fi
     }%
-    \vskip-1ex%
+    \vskip-0.75ex%
   \end{beamercolorbox}%
   \hfill
   \begin{beamercolorbox}[sep=0.3cm,wd=.2\textwidth]{frametitle}
