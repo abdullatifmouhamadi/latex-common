@@ -157,15 +157,15 @@
 
 
 
-\def\tutorialacolor{general@best@navy}
+\def\tutorialacolor{general@best@orange}
 \newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
   %\noalign{\global\arrayrulewidth=0.5mm}
   \arrayrulecolor{\tutorialacolor}
   \hline
-  \rowcolor{gray!16}
-  \multicolumn{2}{c}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
-  \hline
+  %\rowcolor{general@best@navy!16}
+  %\multicolumn{2}{c}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
+  %\hline
 
   #2
 \end{longtable}
@@ -189,7 +189,10 @@
 \newcommand{\tutorialarow}[2]{%
   \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \rule{0pt}{2.0ex}\\\hline
   }
-
+  \newcommand{\tutorialbrow}[2]{%
+  \rowcolor{\tutorialacolor!16}
+  \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \rule{0pt}{2.0ex}\\\hline
+  }
 
 
 % https://tex.stackexchange.com/questions/22406/how-to-make-a-textbox-with-this-tikz-code
