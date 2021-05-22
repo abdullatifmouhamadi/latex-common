@@ -150,18 +150,20 @@
 \newcommand*\stared[1]{\tikz[baseline=(char.base)]{%
             \node[white,shape=star, star points=8,fill=general@best@navy!75,draw,inner sep=2.0pt, very thick] (char) {\bfseries #1};}}
 \newcommand*\charmed[1]{\tikz[baseline=(char.base)]{%
-            \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] (char) {\bfseries #1};}}
+            \node[white, chamfered rectangle,double=\tutorialacolorb, draw, fill=\tutorialacolorb, very thick] (char) {\bfseries #1};}}
 
 
 % ----------------------------------------------------------------------
 
 
 
-\def\tutorialacolor{general@best@orange}
+%\def\tutorialacolor{general@best@orange}
+\def\tutorialacolora{general@best@gray}
+\def\tutorialacolorb{general@best@orange}
 \newcommand{\tutoriala}[2]{%
 \begin{longtable}{cc}
   %\noalign{\global\arrayrulewidth=0.5mm}
-  \arrayrulecolor{\tutorialacolor}
+  \arrayrulecolor{\tutorialacolora}
   \hline
   %\rowcolor{general@best@navy!16}
   %\multicolumn{2}{c}{ \textcolor{\tutorialacolor}{\textsc{#1}} }  \\
@@ -172,7 +174,7 @@
 }
 
 \newcommand{\tutorialapic}[2]{%
-\rowcolor{\tutorialacolor!16}
+\rowcolor{\tutorialacolora!16}
 \multicolumn{2}{c}{ \raisebox{-\totalheight}{
   \begin{tikzpicture}
       \node[inner sep=0pt] (img) at (0,0) {\includegraphics[width=0.95\linewidth]{#1}};
@@ -180,17 +182,17 @@
       #2
     \end{tikzpicture}
   }}\\
-  \rowcolor{\tutorialacolor!16}
+  \rowcolor{\tutorialacolora!16}
   \multicolumn{2}{c}{~} \\\hline
 }
 \newcommand{\tutorialatag}[2]{%
-  \node[white, chamfered rectangle,double=\tutorialacolor, draw, fill=\tutorialacolor, very thick] at #1 { \tiny\bfseries#2};
+  \node[white, chamfered rectangle,double=\tutorialacolorb, draw, fill=\tutorialacolorb, very thick] at #1 { \tiny\bfseries#2};
 }
 \newcommand{\tutorialarow}[2]{%
   \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \rule{0pt}{2.0ex}\\\hline
   }
   \newcommand{\tutorialbrow}[2]{%
-  \rowcolor{\tutorialacolor!16}
+  \rowcolor{\tutorialacolorb!16}
   \multicolumn{1}{C{.05\textwidth}|}{ \tiny\charmed{#1} } & \multicolumn{1}{L{.9\textwidth}}{ #2 } \rule{0pt}{2.0ex}\\\hline
   }
 
