@@ -100,12 +100,17 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
 
 
 \newcommand{\contractheada}[7]{
-    \begin{minipage}[h]{.3\textwidth}
-        \begin{boxa}\large
-            #1
-        \end{boxa}
+    \begin{minipage}[h]{.45\textwidth}
+        %\begin{boxa}\large
+            \begin{minipage}[h]{.28\linewidth}
+                \logoMDBS{0.22}
+            \end{minipage}
+            \begin{minipage}[h]{.65\linewidth}
+                #1
+            \end{minipage}
+        %\end{boxa}
     \end{minipage}
-    \hspace{4cm}
+    \hspace{2cm}
     \begin{minipage}[h]{.66\textwidth}
         #2 CONTRAT D’ABONNEMENT N° : #3
     
@@ -160,11 +165,39 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
     
     \vspace{0.5cm}
 }
+% -------------------------------------------------------------------
+
+\newcommand{\prelevementheada}[7]{
+    \begin{minipage}[h]{.45\textwidth}
+        %\begin{boxa}\large
+            \begin{minipage}[h]{.28\linewidth}
+                \logoMDBS{0.22}
+            \end{minipage}
+            \begin{minipage}[h]{.65\linewidth}
+                #1
+            \end{minipage}
+        %\end{boxa}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}[h]{.51\textwidth}
+        #2 CONTRAT D’ABONNEMENT N° : #3
+    
+        #4 AVENANT N° : #5
+        
+        Date contrat initial :#6
+    \end{minipage}
+    
+    \vspace{.5cm}
+    
+    \begin{center}
+        \LARGE{\textbf{CONTRAT D'ABONNEMENT AU SERVICE}}\\
+        \vspace{.5cm}
+        \scriptsize{Pour souscrire un abonnement #7 merci de bien vouloir nous retourner ce contrat en 2 exemplaires dûment rempli daté et signé}
+    \end{center}
+}
 
 
-
-
-
+% -------------------------------------------------------------------
 \newcommand{\certificationheada}[1]{
     \begin{minipage}[h]{.3\textwidth}
         \begin{boxa}\large
