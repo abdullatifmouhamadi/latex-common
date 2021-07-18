@@ -166,8 +166,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
     \vspace{0.5cm}
 }
 % -------------------------------------------------------------------
-
-\newcommand{\prelevementheada}[7]{
+\newcommand{\businessheadera}[2]{
     \begin{minipage}[h]{.45\textwidth}
         %\begin{boxa}\large
             \begin{minipage}[h]{.28\linewidth}
@@ -182,6 +181,18 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
     \begin{minipage}[h]{.51\textwidth}
         $N^{\circ}$ de client : #2
     \end{minipage}
+}
+
+\newcommand{\prelevementheada}[2]{
+    \businessheadera{#1}{#2}
+    
+    \par\noindent%
+    \begin{tikzpicture}[]
+        \draw[solidadGray,text=white,fill=solidadGray] (0,0) rectangle (.11\textwidth, 1.0) node[pos=.5] {\bfseries \Huge 2021};
+        \draw[solidadGray,fill=white, text=black] (.11\textwidth,0) rectangle (.41\textwidth, 1.0) node[pos=.5,yshift=1.2ex] {\bfseries \Large abonnement mensuel}
+        node[pos=.5,yshift=-1.2ex] {\large avis d'échéance valant facture};
+    \end{tikzpicture}%
+    
 }
 
 
@@ -212,3 +223,16 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{boxa}
 }
 
 
+% ------------------------------------------------------- common
+
+
+\def\MACROBUSINESSLETTERADDRESS{
+    \begin{flushright}
+        \begin{tabular}{l}
+            \CLIENTRAISONSOCIALE\\
+            \CLIENTNUMEROVOIE~\CLIENTNOMRUE\\
+            \CLIENTCODEPOSTAL~\CLIENTCOMMUNE
+        \end{tabular}
+    \end{flushright}
+
+}
